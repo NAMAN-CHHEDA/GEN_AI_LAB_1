@@ -1,0 +1,88 @@
+# Task 1 - Character-level GPT on TinyStories.
+# Every hyperparameter used by the notebook lives in this file.
+# Paths are relative to the notebook folder (task1_llm/naman/src).
+
+seed: 8893              # must match SEED in the personal-parameters cell (the notebook enforces SEED)
+run_name: main          # prefix for checkpoints, raw logs and manifests
+device: auto            # auto | cpu | cuda
+
+paths:
+  data_dir: ../../data                          # shared raw TinyStories
+  processed_dir: ../data_processed
+  checkpoint_dir: ../checkpoints
+  output_dir: ../outputs
+  raw_logs_dir: ../../reproducibility/raw_logs
+  manifest_dir: ../../reproducibility/manifests
+  metrics_csv: ../metrics_report.csv
+
+data:
+  raw_url: https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt
+  raw_file: TinyStoriesV2-GPT4-valid.txt        # downloaded into paths.data_dir if missing
+  story_delimiter: "<|endoftext|>"              # separates stories in the raw file
+  story_joiner: "\n\n"                          # what I put between stories after splitting
+  strip_story_edges: true                       # strip only whitespace around the delimiter, never inside a story
+  split_unit: sequences                             # chars | sequences
+  train_size: 100000                            # characters or sequences, depending on split_unit
+  val_size: 10000
+  block_size: 128
+
+model:
+  d_model: 128
+  n_layers: 4
+  n_heads: 4
+  d_ff: 512
+  dropout: 0.2
+  tie_weights: false
+  init_std: 0.02
+
+train:
+  epochs: 15
+  batch_size: 64
+  steps_per_epoch: null       # null = (non-overlapping train windows) // batch_size
+  lr: 1.0e-3
+  min_lr_ratio: 0.1
+  warmup_frac: 0.05
+  weight_decay: 0.1
+  betas: [0.9, 0.95]
+  grad_clip: 1.0
+  amp: true                   # fp16 autocast + GradScaler, only used when CUDA is available
+  print_every_steps: 50
+  resume: false               # true = continue from the latest resume checkpoint of this run_name
+
+eval:
+  batch_size: 256
+  train_eval_windows: 2000    # fixed, evenly spaced train windows used for the eval-mode train loss
+  checkpoint: best            # best | final
+
+sanity:
+  enabled: true
+  init_batch_size: 32
+  init_loss_tol: 0.3          # |initial loss - ln(vocab)| must be below this
+  causal_position_frac: 0.5   # which position of the window gets its token changed
+  causal_atol: 1.0e-5
+  overfit_batch_size: 8
+  overfit_steps: 300
+  overfit_lr: 3.0e-3
+  overfit_pass_loss: 0.1
+  overfit_print_every: 50
+
+generation:
+  max_new_tokens: 500
+  ngram_unit: words           # chars | words (unit for Distinct-n and repeated 4-gram rate)
+  prompts:
+    - "Once upon a time"
+    - "One day, a little girl named Lily"
+    - "The big dog"
+    - "Tom and his mom went to the"
+    - "Sara was sad because"
+  settings:
+    - {name: greedy, greedy: true}
+    - {name: temp_0.7, temperature: 0.7}
+    - {name: temp_1.0, temperature: 1.0}
+    - {name: temp_1.2, temperature: 1.2}
+    - {name: temp_0.7_topk40, temperature: 0.7, top_k: 40}
+    - {name: temp_1.0_topk40, temperature: 1.0, top_k: 40}
+    - {name: temp_1.2_topk40, temperature: 1.2, top_k: 40}
+
+plots:
+  smooth_window: 20           # moving-average window for the per-step curves

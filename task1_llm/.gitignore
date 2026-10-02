@@ -1,0 +1,6 @@
+naman/smoke/
+naman/src/smoke_run.ipynb
+naman/src/.ipynb_checkpoints/
+data/*.txt
+data/*.part
+__pycache__/

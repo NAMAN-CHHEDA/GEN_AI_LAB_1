@@ -1,0 +1,48 @@
+# Tiny smoke-test config: 1 epoch, a few batches, throwaway outputs in ../smoke.
+# It extends config.yaml and only overrides what is listed here.
+base: config.yaml
+
+run_name: smoke
+
+paths:
+  processed_dir: ../smoke/data_processed
+  checkpoint_dir: ../smoke/checkpoints
+  output_dir: ../smoke/outputs
+  raw_logs_dir: ../smoke/raw_logs
+  manifest_dir: ../smoke/manifests
+  metrics_csv: ../smoke/metrics_report.csv
+
+data:
+  split_unit: sequences
+  train_size: 500
+  val_size: 100
+  block_size: 32
+
+model:
+  d_model: 32
+  n_layers: 2
+  n_heads: 2
+  d_ff: 128
+  dropout: 0.1
+
+train:
+  epochs: 1
+  batch_size: 8
+  steps_per_epoch: 4
+  print_every_steps: 1
+  resume: false
+
+eval:
+  batch_size: 32
+  train_eval_windows: 32
+
+sanity:
+  overfit_batch_size: 4
+  overfit_steps: 150
+  overfit_print_every: 50
+
+generation:
+  max_new_tokens: 40
+
+plots:
+  smooth_window: 2

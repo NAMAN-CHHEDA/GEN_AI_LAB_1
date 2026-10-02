@@ -1,0 +1,24 @@
+{
+ "run_name": "abl_heads2",
+ "param_count": 830976,
+ "epochs_completed": 15,
+ "steps_per_epoch": 1562,
+ "total_steps": 23430,
+ "warmup_steps": 1172,
+ "best_val_loss": 0.8415052913665771,
+ "best_epoch": 15,
+ "final_val_loss": 0.8415052913665771,
+ "train_tokens_per_sec_mean": 664038.5396595938,
+ "tokens_seen": 191938560,
+ "total_train_time_sec": 296.3420272000076,
+ "peak_memory_mb": 268.369140625,
+ "nonfinite_steps": 7,
+ "max_grad_norm": 5.3474040031433105,
+ "device": "cuda",
+ "fp16_autocast": true,
+ "checkpoints": {
+  "best": "..\\checkpoints\\abl_heads2_best.pt",
+  "final": "..\\checkpoints\\abl_heads2_final.pt",
+  "resume": "..\\checkpoints\\abl_heads2_resume.pt"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "first_story_index": 10030,
+ "n_stories_in_raw_file": 27630,
+ "train_chars": 12800001,
+ "val_chars": 1280001,
+ "val_start_offset_in_chunk": 12800471,
+ "dropped_chars_between_train_and_val": 470,
+ "split_unit": "sequences",
+ "train_size": 100000,
+ "val_size": 10000,
+ "block_size": 128,
+ "seed": 8893
+}

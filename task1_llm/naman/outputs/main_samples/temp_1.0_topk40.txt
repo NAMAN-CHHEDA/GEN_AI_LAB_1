@@ -1,0 +1,37 @@
+setting: temp_1.0_topk40 | greedy=False temperature=1.0 top_k=40 | seed base 8893
+
+=== prompt 1: 'Once upon a time' ===
+Once upon a time, there was a xect. They were sad busy. Whire they were playing, they went home, and dary asked for help as her they enjoyed the worm. They played with the sunflower together.
+They all became best friends, together. They played with their holes and played all day. And when they finished him found a big tree on his ship. They learned that they have been a canap.
+
+Once upon a time, there was a fun cat lived near a small house. The pear. They had a nail together. The cat was so happy, and the cat a
+
+=== prompt 2: 'One day, a little girl named Lily' ===
+One day, a little girl named Lily went for a walk. One day, she found a big bird and said, "Hello, old little girl. You are brave and a beautiful surprise.
+Shade was clean and said, "Yes, Mom!" she said. 
+Mommy smiled and said, "Sure, that's important to find a fun, but as you can make the mask share?" Tom promises to jump eat. He looks at the cake?
+"Yes, let's come back on the water!" Anna says. "Let's princess what are you doing at the game."
+She sees the dog and scars. She got ready to the park. She does not like what to do.
+
+=== prompt 3: 'The big dog' ===
+The big dog did not want to play with the big rock. So, the little girl ran to the mouse and went back to their house. Soon, Sally played with the dogs all day. She loved to eat with her favorite towisir and she had a fun day playing.
+One day, Fluffy went to the park with her mom. She wanted to bleep and stay wait for them at Tom.
+"That's a shore," Mom said.
+"No, I can help me. I use the jacket."
+Lily put them in a special hill. She looked at Mom and Dad.
+"I need to stay at the children of each."
+Tom took 
+
+=== prompt 4: 'Tom and his mom went to the' ===
+Tom and his mom went to the village. They saw a big tree in the sky. They ran to the ice cream. They were happy and bright. They played with the band cars. They were not having a great day the plane.
+
+Once upon a time, there was a big piece. The little boy was very happy to find someone. The gummy was not what would save the wand thought Lucy went outside to help.
+And free, they jumped very cold. At that, Luna and Tom became good friends. They all had encouraged tears together.
+
+Once upon a time, there was a boy named Tom
+
+=== prompt 5: 'Sara was sad because' ===
+Sara was sad because she loved to help her friends in the end.
+One day, Penny had an idea. He said, "My mom, I am happy. Do you know what I wanted this. That we replied and touch the mop." He put the rock under the clib. He pulls for me find fast and butterfly. The big cloud fly and say sorry for she have each other. When they put the stair, Tim and Sam were so happy to share their door.
+
+Once upon a time, there was a little boy lived in a small box with his best. Tim had a big tree with his fright and a nice toy b

@@ -1,0 +1,33 @@
+setting: temp_0.7_topk40 | greedy=False temperature=0.7 top_k=40 | seed base 8893
+
+=== prompt 1: 'Once upon a time' ===
+Once upon a time, there was a little girl named Lily who was made a big park. She had a big ball and danced together every day, the ball would be happy with a big ball. The ball was the match and wanted to wear the park to play with his friends.
+One day, a little ball wanted to share with his mom. They had many other new day and the fancy hats. They all played together all day.
+
+Once upon a time, there was a big shop. The lion loved to play with his friends. One day, the little girl was playing in the park with
+
+=== prompt 2: 'One day, a little girl named Lily' ===
+One day, a little girl named Lily went for a walk. She saw a big tree. The tree was very sorry. She looked at Lily and said, "I will share you around the tree." Lily was sad.
+"We can left the tree!" Anna said. "That's a bug of branches!" But then she kept trying to not get the bread for her anymore. She ran to the sea. She enjoyed their party with Sam. They tried to cry. The ribbon came and said, "Let's go to the sack to play with a big red ball." They were very happy and said, "Thank you, Tim!" Tim and Sue said.
+They both play
+
+=== prompt 3: 'The big dog' ===
+The big dog said, "I will help you." The cat was a little bird named Ben. Ben loved to play with his toy box. He would put the cat on his hands.
+One day, Tom saw a big bird in his park with a big tree. He wanted to be a fun day to take a loud noise and wanted to share the shampoo.
+
+Ben and Ben lived happily ever after. They played together and had fun. They had so much fun together and had fun. They liked to sing and shiny things.
+
+Once upon a time, there was a little girl named Sue. She loved to play with
+
+=== prompt 4: 'Tom and his mom went to the' ===
+Tom and his mom went to the park.
+Amy wanted to play and run away. She saw a big red ball to help her ball. She had a long stone and played with Lily all day. She was very sad, and not enough something unexpected happened. Everyone thought it was a very fast of more careful when she was fine.
+
+Once upon a time, there was a big named Jack. He lived in a big forest with a big pocket. One day, he found a big rock. He wanted to find a big strange when he went for a walk. One day, he saw a big rock in the water. The star in th
+
+=== prompt 5: 'Sara was sad because' ===
+Sara was sad because she loved to play with her toys and her friends. They were very proud of their friends and became best friends.
+
+Once upon a time, there was a little boy named Tim. Tim liked to play with his friends. One day, Tim saw a big box on a banana. The book was sad and said, "I like you to wait and have fun. It was your red and fly away." Tim and Sue played together every day.
+
+Once upon a time, there was a little mole of a little girl named Lucy. She had a ball had a blue ball in her room. She had a b

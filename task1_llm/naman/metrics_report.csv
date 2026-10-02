@@ -1,0 +1,54 @@
+metric,setting,value,notes
+val_loss,all,0.83012515,"nats per character, fixed validation windows"
+val_perplexity,all,2.2936058,exp(val_loss)
+val_bpc,all,1.1976174,val_loss / ln 2
+train_loss_eval_mode,all,0.80998349,"fixed train windows, dropout off"
+generalization_gap,all,0.020141658,val_loss - train_loss
+val_top1_accuracy,all,0.73917344,argmax(logits) == target
+train_top1_accuracy,all,0.74379297,"fixed train windows, dropout off"
+param_count,all,830976,
+train_tokens_per_sec,all,649526.16,mean over training steps
+peak_gpu_memory_mb,all,324.36914,torch.cuda.max_memory_allocated; 0 on a CPU run
+total_train_time_sec,all,303.23195,"wall clock, includes per-epoch validation"
+nonfinite_steps,all,6,steps with NaN/inf loss or grad norm
+max_grad_norm,all,5.34267,largest finite grad norm before clipping
+best_epoch,all,15,
+epochs_completed,all,15,
+checkpoint_evaluated,all,best,saved at epoch 15
+split_unit,all,sequences,"train_size=100000, val_size=10000"
+vocab_size,all,83,
+distinct_1,greedy,0.32389121,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,greedy,0.44859736,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,greedy,0.49798594,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,greedy,0.59879675,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,greedy,330.61347,"new characters / generation time, batch size 1"
+distinct_1,temp_0.7,0.6337989,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_0.7,0.89291175,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_0.7,0.95764921,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_0.7,0.046722839,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_0.7,319.94837,"new characters / generation time, batch size 1"
+distinct_1,temp_1.0,0.71340273,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_1.0,0.95756588,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_1.0,0.98541667,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_1.0,0.016842105,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_1.0,329.81208,"new characters / generation time, batch size 1"
+distinct_1,temp_1.2,0.78294524,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_1.2,0.98173362,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_1.2,0.99589646,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_1.2,0,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_1.2,322.76948,"new characters / generation time, batch size 1"
+distinct_1,temp_0.7_topk40,0.6337989,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_0.7_topk40,0.89291175,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_0.7_topk40,0.95764921,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_0.7_topk40,0.046722839,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_0.7_topk40,353.37327,"new characters / generation time, batch size 1"
+distinct_1,temp_1.0_topk40,0.71340273,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_1.0_topk40,0.95756588,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_1.0_topk40,0.98541667,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_1.0_topk40,0.016842105,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_1.0_topk40,353.67214,"new characters / generation time, batch size 1"
+distinct_1,temp_1.2_topk40,0.78294524,"mean over 5 prompts, words-grams of the continuation"
+distinct_2,temp_1.2_topk40,0.98173362,"mean over 5 prompts, words-grams of the continuation"
+distinct_3,temp_1.2_topk40,0.99589646,"mean over 5 prompts, words-grams of the continuation"
+repeated_4gram_rate,temp_1.2_topk40,0,"mean over 5 prompts, words-grams of the continuation"
+generation_tokens_per_sec,temp_1.2_topk40,357.25176,"new characters / generation time, batch size 1"

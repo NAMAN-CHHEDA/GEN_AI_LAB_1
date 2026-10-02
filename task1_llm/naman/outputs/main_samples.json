@@ -1,0 +1,380 @@
+{
+ "greedy": {
+  "greedy": true,
+  "temperature": null,
+  "top_k": null,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a little girl named Lily. She loved to play with her friends. One day, she was playing with her friends. She wanted to play with her friends. She saw a big box on the ground. She wanted to play with her friends.\nThe boy said, \"I will help you find your friends.\" The boy was so happy to have a big box. The boy was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to h",
+    "distinct_1": 0.36607142857142855,
+    "distinct_2": 0.4774774774774775,
+    "distinct_3": 0.5363636363636364,
+    "repeated_4gram_rate": 0.5779816513761468
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went to the park. She saw a big box on the ground. She wanted to play with her friends. She was so happy to have a big box. She wanted to play with her friends.\nThe boy said, \"I will help you find your friends.\" They played with the box and had lots of fun. They were happy and had lots of fun.\n\nOnce upon a time, there was a little girl named Lily. She loved to play with her friends. One day, she went to the park with her mom. She saw a big box on the ground. She wanted to play with her friends.",
+    "distinct_1": 0.5,
+    "distinct_2": 0.6952380952380952,
+    "distinct_3": 0.7596153846153846,
+    "repeated_4gram_rate": 0.3300970873786408
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to hav",
+    "distinct_1": 0.088,
+    "distinct_2": 0.08870967741935484,
+    "distinct_3": 0.08943089430894309,
+    "repeated_4gram_rate": 0.9918032786885246
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " park. They saw a big box on the ground. They wanted to play with the box. They were very happy.\nThey played with the box and had lots of fun. They were happy and had lots of fun. They played together all day long. They liked to play with their toys and have fun.\nOne day, they saw a big box on the ground. The box was very happy and said, \"Thank you, Tim!\" Tim said, \"Yes, I will help you.\"\nTim and Sue were so happy to have a new friend. They played together and had lots of fun. They liked to play",
+    "distinct_1": 0.49038461538461536,
+    "distinct_2": 0.7378640776699029,
+    "distinct_3": 0.8333333333333334,
+    "repeated_4gram_rate": 0.18811881188118812
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she was so happy to have a big box. She was so happy to have a big box of fun.\nThe box was so happy to have a big box. He wanted to play with the box and have fun. He was so happy to have a big box. He wanted to play with the box and have fun.\nThe box was so happy to have a big box. He wanted to play with the box and have fun. He was so happy to have a big box. He wanted to play with the box and have fun.\nThe box was so happy to have a big box. He wanted to play with the box and have fun. He wa",
+    "distinct_1": 0.175,
+    "distinct_2": 0.24369747899159663,
+    "distinct_3": 0.2711864406779661,
+    "repeated_4gram_rate": 0.905982905982906
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.3238912087912088,
+   "distinct_2": 0.4485973613592854,
+   "distinct_3": 0.4979859378598527,
+   "repeated_4gram_rate": 0.5987967470614812
+  },
+  "generation_tokens_per_sec": 330.61347326899283
+ },
+ "temp_0.7": {
+  "greedy": false,
+  "temperature": 0.7,
+  "top_k": null,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a little girl named Lily who was made a big park. She had a big ball and danced together every day, the ball would be happy with a big ball. The ball was the match and wanted to wear the park to play with his friends.\nOne day, a little ball wanted to share with his mom. They had many other new day and the fancy hats. They all played together all day.\n\nOnce upon a time, there was a big shop. The lion loved to play with his friends. One day, the little girl was playing in the park with",
+    "distinct_1": 0.5384615384615384,
+    "distinct_2": 0.8349514563106796,
+    "distinct_3": 0.9411764705882353,
+    "repeated_4gram_rate": 0.07920792079207921
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. She saw a big tree. The tree was very sorry. She looked at Lily and said, \"I will share you around the tree.\" Lily was sad.\n\"We can left the tree!\" Anna said. \"That's a bug of branches!\" But then she kept trying to not get the bread for her anymore. She ran to the sea. She enjoyed their party with Sam. They tried to cry. The ribbon came and said, \"Let's go to the sack to play with a big red ball.\" They were very happy and said, \"Thank you, Tim!\" Tim and Sue said.\nThey both play",
+    "distinct_1": 0.7087378640776699,
+    "distinct_2": 0.9607843137254902,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " said, \"I will help you.\" The cat was a little bird named Ben. Ben loved to play with his toy box. He would put the cat on his hands.\nOne day, Tom saw a big bird in his park with a big tree. He wanted to be a fun day to take a loud noise and wanted to share the shampoo.\n\nBen and Ben lived happily ever after. They played together and had fun. They had so much fun together and had fun. They liked to sing and shiny things.\n\nOnce upon a time, there was a little girl named Sue. She loved to play with",
+    "distinct_1": 0.6320754716981132,
+    "distinct_2": 0.8952380952380953,
+    "distinct_3": 0.9423076923076923,
+    "repeated_4gram_rate": 0.05825242718446602
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " park.\nAmy wanted to play and run away. She saw a big red ball to help her ball. She had a long stone and played with Lily all day. She was very sad, and not enough something unexpected happened. Everyone thought it was a very fast of more careful when she was fine.\n\nOnce upon a time, there was a big named Jack. He lived in a big forest with a big pocket. One day, he found a big rock. He wanted to find a big strange when he went for a walk. One day, he saw a big rock in the water. The star in th",
+    "distinct_1": 0.6542056074766355,
+    "distinct_2": 0.8962264150943396,
+    "distinct_3": 0.9809523809523809,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to play with her toys and her friends. They were very proud of their friends and became best friends.\n\nOnce upon a time, there was a little boy named Tim. Tim liked to play with his friends. One day, Tim saw a big box on a banana. The book was sad and said, \"I like you to wait and have fun. It was your red and fly away.\" Tim and Sue played together every day.\n\nOnce upon a time, there was a little mole of a little girl named Lucy. She had a ball had a blue ball in her room. She had a b",
+    "distinct_1": 0.6355140186915887,
+    "distinct_2": 0.8773584905660378,
+    "distinct_3": 0.9238095238095239,
+    "repeated_4gram_rate": 0.09615384615384616
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.6337989000811092,
+   "distinct_2": 0.8929117541869285,
+   "distinct_3": 0.9576492135315664,
+   "repeated_4gram_rate": 0.04672283882607827
+  },
+  "generation_tokens_per_sec": 319.9483741544038
+ },
+ "temp_1.0": {
+  "greedy": false,
+  "temperature": 1.0,
+  "top_k": null,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a xect. They were sad busy. Whire they were playing, they went home, and dary asked for help as her they enjoyed the worm. They played with the sunflower together.\nThey all became best friends, together. They played with their holes and played all day. And when they finished him found a big tree on his ship. They learned that they have been a canap.\n\nOnce upon a time, there was a fun cat lived near a small house. The pear. They had a nail together. The cat was so happy, and the cat a",
+    "distinct_1": 0.6632653061224489,
+    "distinct_2": 0.9484536082474226,
+    "distinct_3": 0.9791666666666666,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. One day, she found a big bird and said, \"Hello, old little girl. You are brave and a beautiful surprise.\nShade was clean and said, \"Yes, Mom!\" she said. \nMommy smiled and said, \"Sure, that's important to find a fun, but as you can make the mask share?\" Tom promises to jump eat. He looks at the cake?\n\"Yes, let's come back on the water!\" Anna says. \"Let's princess what are you doing at the game.\"\nShe sees the dog and scars. She got ready to the park. She does not like what to do.",
+    "distinct_1": 0.7474747474747475,
+    "distinct_2": 0.9693877551020408,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " did not want to play with the big rock. So, the little girl ran to the mouse and went back to their house. Soon, Sally played with the dogs all day. She loved to eat with her favorite towisir and she had a fun day playing.\nOne day, Fluffy went to the park with her mom. She wanted to bleep and stay wait for them at Tom.\n\"That's a shore,\" Mom said.\n\"No, I can help me. I use the jacket.\"\nLily put them in a special hill. She looked at Mom and Dad.\n\"I need to stay at the children of each.\"\nTom took ",
+    "distinct_1": 0.7142857142857143,
+    "distinct_2": 0.9711538461538461,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " village. They saw a big tree in the sky. They ran to the ice cream. They were happy and bright. They played with the band cars. They were not having a great day the plane.\n\nOnce upon a time, there was a big piece. The little boy was very happy to find someone. The gummy was not what would save the wand thought Lucy went outside to help.\nAnd free, they jumped very cold. At that, Luna and Tom became good friends. They all had encouraged tears together.\n\nOnce upon a time, there was a boy named Tom",
+    "distinct_1": 0.673469387755102,
+    "distinct_2": 0.9175257731958762,
+    "distinct_3": 0.9479166666666666,
+    "repeated_4gram_rate": 0.08421052631578947
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to help her friends in the end.\nOne day, Penny had an idea. He said, \"My mom, I am happy. Do you know what I wanted this. That we replied and touch the mop.\" He put the rock under the clib. He pulls for me find fast and butterfly. The big cloud fly and say sorry for she have each other. When they put the stair, Tim and Sam were so happy to share their door.\n\nOnce upon a time, there was a little boy lived in a small box with his best. Tim had a big tree with his fright and a nice toy b",
+    "distinct_1": 0.7685185185185185,
+    "distinct_2": 0.9813084112149533,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.7134027348313063,
+   "distinct_2": 0.9575658787828278,
+   "distinct_3": 0.9854166666666666,
+   "repeated_4gram_rate": 0.016842105263157894
+  },
+  "generation_tokens_per_sec": 329.81208362756905
+ },
+ "temp_1.2": {
+  "greedy": false,
+  "temperature": 1.2,
+  "top_k": null,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a xect. They were sad busy. Whirl they were playing, they went home, and dary on, time they had a big kind and a nuts. One sunny day, Lily found a flower to the bubble. He wanted to lead a big, toast wish liked.\n\"Come we go invite my raft towards?\" her mom was an uolcause branchest.\nMom told Sam that Bob that was too lanch. He felt some secret and scared for how. Leo jumped and was in the whole. Anna couldn't provide the prunes because it told happen.\nOne sunny day, Amy saw a lot. Am",
+    "distinct_1": 0.7722772277227723,
+    "distinct_2": 0.98,
+    "distinct_3": 0.98989898989899,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. One day, she found a new big tree in her knack collection. Lily wanted to buy many arm seat.\n\"Study was hurt. Let's see the tree!\" Lily wanted to see what I made her nearby her.\nShe noticed the hnose is happy. They need ask Sam to tust the treats again. He printed see the tent. Tom's friends wouldn't prose them coming.\n\nOnce upon a time, in a small house, there lived a rabbit, happy boy. He had closer to each other. He shouted Sam because it says seen, door.\nBut tosh the paints",
+    "distinct_1": 0.7959183673469388,
+    "distinct_2": 0.9690721649484536,
+    "distinct_3": 0.9895833333333334,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " did not under the tree. She held hands her window to ask the sandwich.\nBut then, one day, Sam came to Tom see outside. They bunny wanted to ex the zoo for this wings.\nTom and Max had a big branch. They wanted to counte them up and give you a big bossy too. They laughed and watched it looked at the wall more.\nMom picked up their favorite path. She thought maybe I maybe you serve of mess. When you give many Timmy him big balls juicy family, they all knew that they have come, Olliee has running an",
+    "distinct_1": 0.78,
+    "distinct_2": 0.9797979797979798,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " village. They all played and had lots of fun.\n\nOnce upon a time, there was a little happy who was in a sweet. The cat had can your hand. One day, a little bunny came and saw a bensy. Sally was very restle, shiny things a very fairy. The time was not sweet with calm.\nThe prince owl was very nice and dared. Sally watched Daddy's house and put the lion in her eyes and come back. Sara's eyes. She heard the most said, \"Wow!\"\nTom was scared, but he didn't want to wait to make the toy wanderful. They ",
+    "distinct_1": 0.74,
+    "distinct_2": 0.9797979797979798,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to help her friend, a kind dog named Max. Every day, Spot asked her mom.\n“Hey, I both wanted to eat!\" \nOnce upon a time, there were two wild blows. Amy was three years old anymore. She liked dogs on food just before a pretty, a squirrel! Lucy went to a stars with something special day.\nAfter playing, they took for a walk and a big, small toy. She went very it brought her and saw her mom, \"Please down. What is down ib! The mouse believes! I aate home and yellow unkngle.\"\nMax nodded and",
+    "distinct_1": 0.826530612244898,
+    "distinct_2": 1.0,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.7829452414629219,
+   "distinct_2": 0.9817336249088825,
+   "distinct_3": 0.9958964646464648,
+   "repeated_4gram_rate": 0.0
+  },
+  "generation_tokens_per_sec": 322.76947988403066
+ },
+ "temp_0.7_topk40": {
+  "greedy": false,
+  "temperature": 0.7,
+  "top_k": 40,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a little girl named Lily who was made a big park. She had a big ball and danced together every day, the ball would be happy with a big ball. The ball was the match and wanted to wear the park to play with his friends.\nOne day, a little ball wanted to share with his mom. They had many other new day and the fancy hats. They all played together all day.\n\nOnce upon a time, there was a big shop. The lion loved to play with his friends. One day, the little girl was playing in the park with",
+    "distinct_1": 0.5384615384615384,
+    "distinct_2": 0.8349514563106796,
+    "distinct_3": 0.9411764705882353,
+    "repeated_4gram_rate": 0.07920792079207921
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. She saw a big tree. The tree was very sorry. She looked at Lily and said, \"I will share you around the tree.\" Lily was sad.\n\"We can left the tree!\" Anna said. \"That's a bug of branches!\" But then she kept trying to not get the bread for her anymore. She ran to the sea. She enjoyed their party with Sam. They tried to cry. The ribbon came and said, \"Let's go to the sack to play with a big red ball.\" They were very happy and said, \"Thank you, Tim!\" Tim and Sue said.\nThey both play",
+    "distinct_1": 0.7087378640776699,
+    "distinct_2": 0.9607843137254902,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " said, \"I will help you.\" The cat was a little bird named Ben. Ben loved to play with his toy box. He would put the cat on his hands.\nOne day, Tom saw a big bird in his park with a big tree. He wanted to be a fun day to take a loud noise and wanted to share the shampoo.\n\nBen and Ben lived happily ever after. They played together and had fun. They had so much fun together and had fun. They liked to sing and shiny things.\n\nOnce upon a time, there was a little girl named Sue. She loved to play with",
+    "distinct_1": 0.6320754716981132,
+    "distinct_2": 0.8952380952380953,
+    "distinct_3": 0.9423076923076923,
+    "repeated_4gram_rate": 0.05825242718446602
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " park.\nAmy wanted to play and run away. She saw a big red ball to help her ball. She had a long stone and played with Lily all day. She was very sad, and not enough something unexpected happened. Everyone thought it was a very fast of more careful when she was fine.\n\nOnce upon a time, there was a big named Jack. He lived in a big forest with a big pocket. One day, he found a big rock. He wanted to find a big strange when he went for a walk. One day, he saw a big rock in the water. The star in th",
+    "distinct_1": 0.6542056074766355,
+    "distinct_2": 0.8962264150943396,
+    "distinct_3": 0.9809523809523809,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to play with her toys and her friends. They were very proud of their friends and became best friends.\n\nOnce upon a time, there was a little boy named Tim. Tim liked to play with his friends. One day, Tim saw a big box on a banana. The book was sad and said, \"I like you to wait and have fun. It was your red and fly away.\" Tim and Sue played together every day.\n\nOnce upon a time, there was a little mole of a little girl named Lucy. She had a ball had a blue ball in her room. She had a b",
+    "distinct_1": 0.6355140186915887,
+    "distinct_2": 0.8773584905660378,
+    "distinct_3": 0.9238095238095239,
+    "repeated_4gram_rate": 0.09615384615384616
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.6337989000811092,
+   "distinct_2": 0.8929117541869285,
+   "distinct_3": 0.9576492135315664,
+   "repeated_4gram_rate": 0.04672283882607827
+  },
+  "generation_tokens_per_sec": 353.37327299619767
+ },
+ "temp_1.0_topk40": {
+  "greedy": false,
+  "temperature": 1.0,
+  "top_k": 40,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a xect. They were sad busy. Whire they were playing, they went home, and dary asked for help as her they enjoyed the worm. They played with the sunflower together.\nThey all became best friends, together. They played with their holes and played all day. And when they finished him found a big tree on his ship. They learned that they have been a canap.\n\nOnce upon a time, there was a fun cat lived near a small house. The pear. They had a nail together. The cat was so happy, and the cat a",
+    "distinct_1": 0.6632653061224489,
+    "distinct_2": 0.9484536082474226,
+    "distinct_3": 0.9791666666666666,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. One day, she found a big bird and said, \"Hello, old little girl. You are brave and a beautiful surprise.\nShade was clean and said, \"Yes, Mom!\" she said. \nMommy smiled and said, \"Sure, that's important to find a fun, but as you can make the mask share?\" Tom promises to jump eat. He looks at the cake?\n\"Yes, let's come back on the water!\" Anna says. \"Let's princess what are you doing at the game.\"\nShe sees the dog and scars. She got ready to the park. She does not like what to do.",
+    "distinct_1": 0.7474747474747475,
+    "distinct_2": 0.9693877551020408,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " did not want to play with the big rock. So, the little girl ran to the mouse and went back to their house. Soon, Sally played with the dogs all day. She loved to eat with her favorite towisir and she had a fun day playing.\nOne day, Fluffy went to the park with her mom. She wanted to bleep and stay wait for them at Tom.\n\"That's a shore,\" Mom said.\n\"No, I can help me. I use the jacket.\"\nLily put them in a special hill. She looked at Mom and Dad.\n\"I need to stay at the children of each.\"\nTom took ",
+    "distinct_1": 0.7142857142857143,
+    "distinct_2": 0.9711538461538461,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " village. They saw a big tree in the sky. They ran to the ice cream. They were happy and bright. They played with the band cars. They were not having a great day the plane.\n\nOnce upon a time, there was a big piece. The little boy was very happy to find someone. The gummy was not what would save the wand thought Lucy went outside to help.\nAnd free, they jumped very cold. At that, Luna and Tom became good friends. They all had encouraged tears together.\n\nOnce upon a time, there was a boy named Tom",
+    "distinct_1": 0.673469387755102,
+    "distinct_2": 0.9175257731958762,
+    "distinct_3": 0.9479166666666666,
+    "repeated_4gram_rate": 0.08421052631578947
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to help her friends in the end.\nOne day, Penny had an idea. He said, \"My mom, I am happy. Do you know what I wanted this. That we replied and touch the mop.\" He put the rock under the clib. He pulls for me find fast and butterfly. The big cloud fly and say sorry for she have each other. When they put the stair, Tim and Sam were so happy to share their door.\n\nOnce upon a time, there was a little boy lived in a small box with his best. Tim had a big tree with his fright and a nice toy b",
+    "distinct_1": 0.7685185185185185,
+    "distinct_2": 0.9813084112149533,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.7134027348313063,
+   "distinct_2": 0.9575658787828278,
+   "distinct_3": 0.9854166666666666,
+   "repeated_4gram_rate": 0.016842105263157894
+  },
+  "generation_tokens_per_sec": 353.6721410609758
+ },
+ "temp_1.2_topk40": {
+  "greedy": false,
+  "temperature": 1.2,
+  "top_k": 40,
+  "samples": [
+   {
+    "prompt": "Once upon a time",
+    "continuation": ", there was a xect. They were sad busy. Whirl they were playing, they went home, and dary on, time they had a big kind and a nuts. One sunny day, Lily found a flower to the bubble. He wanted to lead a big, toast wish liked.\n\"Come we go invite my raft towards?\" her mom was an uolcause branchest.\nMom told Sam that Bob that was too lanch. He felt some secret and scared for how. Leo jumped and was in the whole. Anna couldn't provide the prunes because it told happen.\nOne sunny day, Amy saw a lot. Am",
+    "distinct_1": 0.7722772277227723,
+    "distinct_2": 0.98,
+    "distinct_3": 0.98989898989899,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "One day, a little girl named Lily",
+    "continuation": " went for a walk. One day, she found a new big tree in her knack collection. Lily wanted to buy many arm seat.\n\"Study was hurt. Let's see the tree!\" Lily wanted to see what I made her nearby her.\nShe noticed the hnose is happy. They need ask Sam to tust the treats again. He printed see the tent. Tom's friends wouldn't prose them coming.\n\nOnce upon a time, in a small house, there lived a rabbit, happy boy. He had closer to each other. He shouted Sam because it says seen, door.\nBut tosh the paints",
+    "distinct_1": 0.7959183673469388,
+    "distinct_2": 0.9690721649484536,
+    "distinct_3": 0.9895833333333334,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "The big dog",
+    "continuation": " did not under the tree. She held hands her window to ask the sandwich.\nBut then, one day, Sam came to Tom see outside. They bunny wanted to ex the zoo for this wings.\nTom and Max had a big branch. They wanted to counte them up and give you a big bossy too. They laughed and watched it looked at the wall more.\nMom picked up their favorite path. She thought maybe I maybe you serve of mess. When you give many Timmy him big balls juicy family, they all knew that they have come, Olliee has running an",
+    "distinct_1": 0.78,
+    "distinct_2": 0.9797979797979798,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Tom and his mom went to the",
+    "continuation": " village. They all played and had lots of fun.\n\nOnce upon a time, there was a little happy who was in a sweet. The cat had can your hand. One day, a little bunny came and saw a bensy. Sally was very restle, shiny things a very fairy. The time was not sweet with calm.\nThe prince owl was very nice and dared. Sally watched Daddy's house and put the lion in her eyes and come back. Sara's eyes. She heard the most said, \"Wow!\"\nTom was scared, but he didn't want to wait to make the toy wanderful. They ",
+    "distinct_1": 0.74,
+    "distinct_2": 0.9797979797979798,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   },
+   {
+    "prompt": "Sara was sad because",
+    "continuation": " she loved to help her friend, a kind dog named Max. Every day, Spot asked her mom.\n“Hey, I both wanted to eat!\" \nOnce upon a time, there were two wild blows. Amy was three years old anymore. She liked dogs on food just before a pretty, a squirrel! Lucy went to a stars with something special day.\nAfter playing, they took for a walk and a big, small toy. She went very it brought her and saw her mom, \"Please down. What is down ib! The mouse believes! I aate home and yellow unkngle.\"\nMax nodded and",
+    "distinct_1": 0.826530612244898,
+    "distinct_2": 1.0,
+    "distinct_3": 1.0,
+    "repeated_4gram_rate": 0.0
+   }
+  ],
+  "mean_metrics": {
+   "distinct_1": 0.7829452414629219,
+   "distinct_2": 0.9817336249088825,
+   "distinct_3": 0.9958964646464648,
+   "repeated_4gram_rate": 0.0
+  },
+  "generation_tokens_per_sec": 357.2517627884146
+ }
+}

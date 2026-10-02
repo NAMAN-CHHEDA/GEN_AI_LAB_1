@@ -1,0 +1,13 @@
+[2026-10-02T13:57:46] START abl_layers2
+[2026-10-02T14:01:55] END abl_layers2 exit=0 nan=False
+[2026-10-02T14:01:55] START abl_layers6
+[2026-10-02T14:11:14] END abl_layers6 exit=0 nan=False
+[2026-10-02T14:11:14] START abl_heads2
+[2026-10-02T14:17:20] END abl_heads2 exit=0 nan=False
+[2026-10-02T14:17:20] START abl_heads8
+[2026-10-02T14:23:16] END abl_heads8 exit=0 nan=False
+[2026-10-02T14:23:16] START abl_dropout0
+[2026-10-02T14:29:10] END abl_dropout0 exit=0 nan=False
+[2026-10-02T14:29:10] START abl_dropout0p2
+[2026-10-02T14:35:38] END abl_dropout0p2 exit=0 nan=False
+ALL_DONE

@@ -1,0 +1,8 @@
+# Ablation: model.n_layers = 2. Everything else is inherited from config.yaml.
+base: ../config.yaml
+run_name: abl_layers2
+paths:
+  processed_dir: ../data_processed_ablations
+  metrics_csv: ../metrics_abl_layers2.csv
+model:
+  n_layers: 2

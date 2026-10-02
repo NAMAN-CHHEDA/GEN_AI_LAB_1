@@ -1,0 +1,35 @@
+setting: temp_1.2 | greedy=False temperature=1.2 top_k=None | seed base 8893
+
+=== prompt 1: 'Once upon a time' ===
+Once upon a time, there was a xect. They were sad busy. Whirl they were playing, they went home, and dary on, time they had a big kind and a nuts. One sunny day, Lily found a flower to the bubble. He wanted to lead a big, toast wish liked.
+"Come we go invite my raft towards?" her mom was an uolcause branchest.
+Mom told Sam that Bob that was too lanch. He felt some secret and scared for how. Leo jumped and was in the whole. Anna couldn't provide the prunes because it told happen.
+One sunny day, Amy saw a lot. Am
+
+=== prompt 2: 'One day, a little girl named Lily' ===
+One day, a little girl named Lily went for a walk. One day, she found a new big tree in her knack collection. Lily wanted to buy many arm seat.
+"Study was hurt. Let's see the tree!" Lily wanted to see what I made her nearby her.
+She noticed the hnose is happy. They need ask Sam to tust the treats again. He printed see the tent. Tom's friends wouldn't prose them coming.
+
+Once upon a time, in a small house, there lived a rabbit, happy boy. He had closer to each other. He shouted Sam because it says seen, door.
+But tosh the paints
+
+=== prompt 3: 'The big dog' ===
+The big dog did not under the tree. She held hands her window to ask the sandwich.
+But then, one day, Sam came to Tom see outside. They bunny wanted to ex the zoo for this wings.
+Tom and Max had a big branch. They wanted to counte them up and give you a big bossy too. They laughed and watched it looked at the wall more.
+Mom picked up their favorite path. She thought maybe I maybe you serve of mess. When you give many Timmy him big balls juicy family, they all knew that they have come, Olliee has running an
+
+=== prompt 4: 'Tom and his mom went to the' ===
+Tom and his mom went to the village. They all played and had lots of fun.
+
+Once upon a time, there was a little happy who was in a sweet. The cat had can your hand. One day, a little bunny came and saw a bensy. Sally was very restle, shiny things a very fairy. The time was not sweet with calm.
+The prince owl was very nice and dared. Sally watched Daddy's house and put the lion in her eyes and come back. Sara's eyes. She heard the most said, "Wow!"
+Tom was scared, but he didn't want to wait to make the toy wanderful. They 
+
+=== prompt 5: 'Sara was sad because' ===
+Sara was sad because she loved to help her friend, a kind dog named Max. Every day, Spot asked her mom.
+“Hey, I both wanted to eat!" 
+Once upon a time, there were two wild blows. Amy was three years old anymore. She liked dogs on food just before a pretty, a squirrel! Lucy went to a stars with something special day.
+After playing, they took for a walk and a big, small toy. She went very it brought her and saw her mom, "Please down. What is down ib! The mouse believes! I aate home and yellow unkngle."
+Max nodded and

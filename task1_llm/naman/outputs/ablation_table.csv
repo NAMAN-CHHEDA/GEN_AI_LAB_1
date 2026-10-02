@@ -1,0 +1,8 @@
+run_name,changed_value,param_count,best_val_loss,val_perplexity,val_bpc,train_loss,generalization_gap,train_time_sec,peak_memory_mb,nonfinite_steps
+main,"baseline (layers=4, heads=4, dropout=0.2)",830976,0.830125,2.2936,1.1976,0.809983,0.020142,303.2,324.4,6
+abl_layers2,n_layers=2,434432,0.966198,2.6279,1.3939,0.949978,0.016220,181.6,247.2,7
+abl_layers6,n_layers=6,1227520,0.778688,2.1786,1.1234,0.757909,0.020780,425.7,462.1,7
+abl_heads2,n_heads=2,830976,0.841505,2.3199,1.2140,0.822600,0.018905,296.3,268.4,7
+abl_heads8,n_heads=8,830976,0.842902,2.3231,1.2161,0.823889,0.019012,284.2,457.3,7
+abl_dropout0,dropout=0.0,830976,0.743865,2.1041,1.0732,0.710144,0.033721,280.8,300.4,10
+abl_dropout0p2,dropout=0.2 (same as main),830976,0.830161,2.2937,1.1977,0.810647,0.019514,304.9,324.4,7

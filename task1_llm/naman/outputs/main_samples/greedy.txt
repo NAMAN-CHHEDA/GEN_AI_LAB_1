@@ -1,0 +1,26 @@
+setting: greedy | greedy=True temperature=None top_k=None | seed base 8893
+
+=== prompt 1: 'Once upon a time' ===
+Once upon a time, there was a little girl named Lily. She loved to play with her friends. One day, she was playing with her friends. She wanted to play with her friends. She saw a big box on the ground. She wanted to play with her friends.
+The boy said, "I will help you find your friends." The boy was so happy to have a big box. The boy was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to h
+
+=== prompt 2: 'One day, a little girl named Lily' ===
+One day, a little girl named Lily went to the park. She saw a big box on the ground. She wanted to play with her friends. She was so happy to have a big box. She wanted to play with her friends.
+The boy said, "I will help you find your friends." They played with the box and had lots of fun. They were happy and had lots of fun.
+
+Once upon a time, there was a little girl named Lily. She loved to play with her friends. One day, she went to the park with her mom. She saw a big box on the ground. She wanted to play with her friends.
+
+=== prompt 3: 'The big dog' ===
+The big dog was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to have a big box. The box was so happy to hav
+
+=== prompt 4: 'Tom and his mom went to the' ===
+Tom and his mom went to the park. They saw a big box on the ground. They wanted to play with the box. They were very happy.
+They played with the box and had lots of fun. They were happy and had lots of fun. They played together all day long. They liked to play with their toys and have fun.
+One day, they saw a big box on the ground. The box was very happy and said, "Thank you, Tim!" Tim said, "Yes, I will help you."
+Tim and Sue were so happy to have a new friend. They played together and had lots of fun. They liked to play
+
+=== prompt 5: 'Sara was sad because' ===
+Sara was sad because she was so happy to have a big box. She was so happy to have a big box of fun.
+The box was so happy to have a big box. He wanted to play with the box and have fun. He was so happy to have a big box. He wanted to play with the box and have fun.
+The box was so happy to have a big box. He wanted to play with the box and have fun. He was so happy to have a big box. He wanted to play with the box and have fun.
+The box was so happy to have a big box. He wanted to play with the box and have fun. He wa

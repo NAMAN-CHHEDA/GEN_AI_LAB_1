@@ -4,3 +4,7 @@ naman/src/.ipynb_checkpoints/
 data/*.txt
 data/*.part
 __pycache__/
+venv/
+naman/ablation_notebooks/
+naman/data_processed_ablations/
+.ipynb_checkpoints/

@@ -1,0 +1,22 @@
+# Run config. Every null is a decision still owed by the author; code raises if it is read while null.
+run_name: run01
+
+paths:                           # relative to the task3/ folder, never absolute
+  monet_dir: data/monet_jpg      # domain A
+  photo_dir: data/photo_jpg      # domain B
+  manifest_dir: reproducibility/manifests
+  raw_log_dir: reproducibility/raw_logs
+  checkpoint_dir: naman/checkpoints
+  backup_dir: null               # optional second folder that checkpoints are copied to
+
+data:
+  split_seed: 8893
+  holdout_a: null                # int count or float fraction in (0,1)
+  holdout_b: null
+  image_size: null
+  augment: null                  # list from {hflip, random_crop}; [] for none
+  load_size: null                # only needed with random_crop (resize to this, then crop to image_size)
+  batch_size: null
+  num_workers: null
+
+seed: null                       # training seed

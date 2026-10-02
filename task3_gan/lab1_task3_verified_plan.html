@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 1 Task 3 - Verified Plan (Kaggle)</title>
+<style>
+  :root{--bg:#fafaf7;--fg:#1d1d1b;--mut:#62625c;--card:#fff;--line:#e3e2dc;--acc:#2f5d8a;--warn:#a65a00;--ok:#2d6a3e;--code:#f1f0ea}
+  @media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe5;--mut:#a3a29a;--card:#1f1f1c;--line:#34332f;--acc:#7fb0e0;--warn:#e0a45a;--ok:#7cc592;--code:#262622}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  main{max-width:920px;margin:0 auto;padding:24px 16px 80px}
+  h1{font-size:1.7rem;margin:.2em 0}
+  h2{font-size:1.25rem;margin:2.1em 0 .5em;padding-top:.6em;border-top:1px solid var(--line)}
+  p,li{max-width:76ch}
+  .sub{color:var(--mut)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+  .warn{border-left:4px solid var(--warn)} .ok{border-left:4px solid var(--ok)} .acc{border-left:4px solid var(--acc)}
+  table{border-collapse:collapse;width:100%;font-size:.92rem;margin:10px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--code)}
+  .scroll{overflow-x:auto}
+  code,pre{background:var(--code);border-radius:6px;font-family:ui-monospace,Consolas,monospace;font-size:.88rem}
+  code{padding:1px 5px} pre{padding:10px 12px;overflow-x:auto}
+  ul.chk{list-style:none;padding-left:0} ul.chk li{margin:3px 0} ul.chk li::before{content:"\2610  "}
+</style>
+</head>
+<body>
+<main>
+<h1>Task 3 (CycleGAN + Kaggle) - Verified Plan</h1>
+<p class="sub">DATA 266 Lab 1 &middot; checked against the lab PDF, Oct 2, 2026</p>
+
+<div class="card ok">
+<strong>Check result:</strong> the second PDF you attached has the same text as the first (same 11 pages, same creation date), so nothing new there. My earlier plan was mostly accurate. Four details needed fixing, listed in section 7.
+</div>
+
+<h2>1. What the PDF says Task 3 is</h2>
+<ul>
+<li><strong>Role:</strong> your team enters one shared Kaggle class competition on unpaired image-to-image translation (photos &harr; Monet). Each member trains their own CycleGAN.</li>
+<li><strong>Competition page:</strong> <code>kaggle.com/competitions/data-266-fall-2026-gan-image-style-transfer</code> (the link behind "Kaggle competition signup" in the PDF).</li>
+<li><strong>Data:</strong> shared <code>task3_gan/data/monet_jpg/</code> and <code>photo_jpg/</code>.</li>
+<li><strong>Marks:</strong> 30 total = 15 individual + 15 team (3.1 Model implementation and training: 20; 3.2 Evaluation and analysis: 10), plus up to 10 bonus for Kaggle rank.</li>
+</ul>
+
+<h2>2. The Kaggle part</h2>
+<div class="scroll"><table>
+<tr><th>Item</th><th>What the PDF says</th></tr>
+<tr><td>What you submit</td><td>Predictions from your own trained CycleGAN, submitted "under your team", with the leaderboard rank recorded</td></tr>
+<tr><td>Score used by Kaggle</td><td>FID / MiFID only (the repo tree labels <code>submission.csv</code> as "Kaggle: FID/MiFID only"). Everything else in your metrics is computed by you locally</td></tr>
+<tr><td>Records needed</td><td>Public and private leaderboard score and rank</td></tr>
+<tr><td>Bonus points by rank</td><td>1-10: 10 &middot; 11-20: 9 &middot; 21-30: 8 &middot; 31-40: 7 &middot; 40+: 6</td></tr>
+<tr><td>Integrity rule</td><td>Output must come directly from your own CycleGAN's inference. No hand-picked, edited, copied or external images; no lookup-table outputs; no peeking at test pairings; no pretrained or foundation image models generating or touching submitted images. A violation scores <strong>zero for Task 3</strong>, whatever your metrics say</td></tr>
+<tr><td>Not in the PDF</td><td>Exact submission file format, image count and size, daily submission limit, public/private split, team-entry mechanics, deadline. These are on the Kaggle page (I couldn't open it without login) and Canvas</td></tr>
+</table></div>
+<div class="card warn">
+<strong>Do this first:</strong> open the Kaggle Overview, Data and Evaluation pages and write down the exact submission format and limits before you design your pipeline. The inference script has to match that format exactly. Also confirm whether each member submits separately under the team, since the repo shows a <code>submission.csv</code> per member.
+</div>
+<p><strong>Sensible Kaggle workflow:</strong> make an early test submission from a short, rough training run just to confirm the format works and you can see a score. Then submit improved checkpoints as your model gets better, keeping a log of which checkpoint produced which score. The "MiFID" part usually penalises outputs that copy training images, so check the Evaluation page for how it works and avoid memorising.</p>
+
+<h2>3. Your steps in order</h2>
+<div class="scroll"><table>
+<tr><th>#</th><th>Step</th><th>PDF item</th></tr>
+<tr><td>1</td><td>Join the Kaggle competition, read Overview / Data / Evaluation, note the submission format and limits. Confirm deadline and team/grouping on Canvas. Book GPU lab time with the reservation form</td><td>Sec. 1, Task 3</td></tr>
+<tr><td>2</td><td>Prepare two unpaired domains from the shared data; create a fixed held-out split and record it in a manifest</td><td>3.1 item 1</td></tr>
+<tr><td>3</td><td>Agree one evaluation script with Sarvesh (image size, feature extractor, sample counts) so the team comparison table is fair</td><td>Sec. 8 tips</td></tr>
+<tr><td>4</td><td>Decide your own architecture and hyperparameters and write down why. They must differ from Sarvesh's</td><td>Sec. 2, 7</td></tr>
+<tr><td>5</td><td>Implement 2 generators + 2 discriminators with adversarial and cycle-consistency loss; log everything to a raw log you never edit</td><td>3.1 items 2-3</td></tr>
+<tr><td>6</td><td>Smoke test, then full training; back up checkpoints and logs off the lab machine regularly</td><td>Sec. 1</td></tr>
+<tr><td>7</td><td>Translate in both directions; analyse convergence and stability</td><td>3.1 items 4-5</td></tr>
+<tr><td>8</td><td>Run local evaluation: FID, KID (both directions), precision/recall or density/coverage, cycle L1, LPIPS, content cosine, loss curves, cycle and identity loss values, gradient norms and NaN count, params, training time, images/sec, peak memory</td><td>Task 3 metrics</td></tr>
+<tr><td>9</td><td>Verify the cycle constraint (input / translation / reconstruction) and assess visual quality</td><td>3.2 items 1-3</td></tr>
+<tr><td>10</td><td>Generate the Kaggle submission from your checkpoint, submit under the team, record public/private score and rank</td><td>3.2 item 5</td></tr>
+<tr><td>11</td><td>Blinded human audit: 30 fixed samples, 2 raters, style / content / artifacts, report inter-rater agreement</td><td>3.2 item 6</td></tr>
+<tr><td>12</td><td>Write <code>failure_analysis.md</code>, <code>results.md</code>, and the discussion of shortcomings</td><td>3.2 item 4, Sec. 5</td></tr>
+<tr><td>13</td><td>Record your manifest: library versions, environment file, which checkpoint maps to which result</td><td>Sec. 5</td></tr>
+<tr><td>14</td><td>Feed your numbers into the team report's Task 3 table; help write the joint analysis; make sure the README can reproduce a smoke test with one command</td><td>Sec. 5, 6</td></tr>
+<tr><td>15</td><td>Viva prep, including how your model differs from Sarvesh's and what the comparison showed</td><td>Sec. 4</td></tr>
+</table></div>
+
+<h2>4. Your folder (names as in the PDF's Task 3 tree)</h2>
+<pre>task3_gan/
+  data/monet_jpg, photo_jpg        (shared)
+  naman/
+    src/                 notebook with outputs + full metrics file
+    checkpoints/
+    outputs/pred_A2B/, pred_B2A/
+    evaluate_local.py
+    submission.csv       (generated)
+    full_metrics_report.csv
+    failure_analysis.md
+    results.md
+reproducibility/manifests, raw_logs</pre>
+
+<h2>5. Who is scored on what</h2>
+<ul>
+<li><strong>Individual (15):</strong> your model builds, metrics, failure analysis, hardware disclosure, and viva defence.</li>
+<li><strong>Team (15):</strong> repo quality, combined comparison tables, joint analysis, reproducibility.</li>
+<li><strong>Viva (5, individual):</strong> depth of understanding of your own implementation, justifying decisions, answering "what if" questions. The PDF says leaderboard rank is not what's judged there.</li>
+</ul>
+<div class="card warn">
+The PDF says you can't use Claude or a similar assistant for core architecture decisions and analysis, because you'll be asked to defend them. Use plans like this one for the process; make the design calls and write the analysis yourself.
+</div>
+
+<h2>6. Pre-submission checklist for Task 3</h2>
+<ul class="chk">
+<li>Your folder exists with code, config, logs and <code>results.md</code></li>
+<li>Your architecture + hyperparameters differ from your teammate's</li>
+<li>All required metrics reported, both directions where relevant</li>
+<li>Kaggle submission made and rank recorded</li>
+<li>Comparison table in the report with architecture, hyperparameters and all metrics side by side</li>
+<li>Raw logs and manifests committed and untouched since the run</li>
+<li>No hard-coded personal paths or secrets in the repo</li>
+<li>Evidence linked for every number: loss curves, logs, sample generations, checkpoint IDs</li>
+<li>CycleGAN paper cited in the report</li>
+</ul>
+
+<h2>7. Corrections to my earlier plans</h2>
+<ol>
+<li><strong>File name:</strong> Task 3's tree uses <code>full_metrics_report.csv</code> (and a metrics file inside <code>src/</code>), not <code>metrics_report.csv</code>. <code>evaluate_local.py</code> and <code>submission.csv</code> are also listed explicitly.</li>
+<li><strong>Kaggle score type:</strong> the PDF says Kaggle scores FID/MiFID only. I had left this open.</li>
+<li><strong>Submission is "under your team":</strong> I had assumed per-person submissions. Confirm how the team entry works on Kaggle.</li>
+<li><strong>Added items:</strong> the per-member manifest (library versions, environment file, checkpoint-to-result mapping), a one-command smoke test in the README, and the viva question on how your model differs from your teammate's.</li>
+</ol>
+</main>
+</body>
+</html>

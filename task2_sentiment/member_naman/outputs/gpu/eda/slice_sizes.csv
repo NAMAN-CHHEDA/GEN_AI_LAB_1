@@ -1,0 +1,7 @@
+slice,reviews,share_pct,positive_share
+all,38000,100.0,0.5
+short,9122,24.01,0.6
+medium,21412,56.35,0.5
+long,7466,19.65,0.379
+has_negation,27859,73.31,0.409
+has_contrast,21277,55.99,0.448

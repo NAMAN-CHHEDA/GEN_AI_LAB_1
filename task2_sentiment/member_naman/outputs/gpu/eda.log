@@ -1,0 +1,192 @@
+EDA for config 'gpu'
+Reusing cached processed data (same cache key)
+
+=== Class balance ===
+        total  negative  positive  positive_share
+split                                            
+train  504000    251808    252192          0.5004
+val     56000     28192     27808          0.4966
+test    38000     19000     19000          0.5000
+
+=== Length statistics (train) ===
+                     mean  median    p75    p90    p95     p99   max
+variable  group                                                     
+raw_words all       133.0    97.0  173.0  282.0  372.0  610.00  1052
+          negative  151.6   112.0  198.0  319.0  419.0  683.00  1052
+          positive  114.5    84.0  150.0  241.0  316.0  514.00   988
+tokens    all        93.0    68.0  121.0  197.0  261.0  427.01   822
+          negative  106.4    78.0  139.0  224.0  294.0  478.00   762
+          positive   79.7    58.0  104.0  169.0  221.0  359.00   822
+
+=== Truncation (train) ===
+         pct_reviews_cut  avg_pct_tokens_lost_in_cut
+max_len                                             
+128                22.78                       32.94
+192                10.55                       27.42
+256                 5.21                       23.92
+320                 2.71                       21.30
+384                 1.47                       19.09
+512                 0.50                       12.66
+
+=== Top words per class (train, count >= 50, log-odds) ===
+negative: unethical, blandest, disrespected, poorest, unprofessionalism, dishonesty, humiliated, livid, argues, argumentative, rudest, unknowledgeable, unedible, unprofessional, ontrac, disputing, unacceptable, uneatable, appalled, rudely
+positive: huli, yummo, delicioso, montagu, tonya, phenominal, addicting, mazing, mmmmmm, versatile, unmatched, creamiest, chaleureux, excellently, goooood, yummmm, unassuming, yumm, scrumptious, sinful
+
+=== Quality checks ===
+train_reviews: 504000
+train_duplicate_extra_copies: 0
+test_reviews_also_in_train_rows: 0
+reviews_under_5_tokens: {'train': 3817, 'val': 399, 'test': 312}
+oov_token_percent: {'val': 0.494, 'test': 0.488}
+test_reviews_also_in_full_original_train_split: 0
+
+=== Most frequent lemmatizer changes (first 5000 train reviews) ===
+           word       lemma  count
+0            us           u   1344
+1       minutes      minute    706
+2         vegas        vega    693
+3         times        time    536
+4        drinks       drink    449
+5         stars        star    420
+6        things       thing    370
+7        prices       price    336
+8       friends      friend    335
+9        places       place    322
+10        fries         fry    322
+11        years        year    301
+12      reviews      review    267
+13       tables       table    243
+14        items        item    236
+15        hours        hour    230
+16  restaurants  restaurant    228
+17       dishes        dish    220
+18        chips        chip    217
+19    customers    customer    199
+20        tacos        taco    197
+21        makes        make    194
+22        rooms        room    193
+23        comes        come    188
+24      options      option    178
+25         days         day    176
+26         lots         lot    174
+27         guys         guy    169
+28          las          la    167
+29         kids         kid    147
+30    employees    employee    144
+31      burgers      burger    143
+32        beans        bean    141
+33      flavors      flavor    140
+34        looks        look    139
+35        rolls        roll    135
+36     portions     portion    134
+37         says         say    130
+38         gets         get    129
+39   sandwiches    sandwich    126
+
+=== Evaluation slice sizes (test) ===
+              reviews  share_pct  positive_share
+slice                                           
+all             38000     100.00           0.500
+short            9122      24.01           0.600
+medium          21412      56.35           0.500
+long             7466      19.65           0.379
+has_negation    27859      73.31           0.409
+has_contrast    21277      55.99           0.448
+
+Saved EDA files to outputs/gpu/eda
+EDA for config 'gpu'
+Reusing cached processed data (same cache key)
+
+=== Class balance ===
+        total  negative  positive  positive_share
+split                                            
+train  504000    251808    252192          0.5004
+val     56000     28192     27808          0.4966
+test    38000     19000     19000          0.5000
+
+=== Length statistics (train) ===
+                     mean  median    p75    p90    p95     p99   max
+variable  group                                                     
+raw_words all       133.0    97.0  173.0  282.0  372.0  610.00  1052
+          negative  151.6   112.0  198.0  319.0  419.0  683.00  1052
+          positive  114.5    84.0  150.0  241.0  316.0  514.00   988
+tokens    all        93.0    68.0  121.0  197.0  261.0  427.01   822
+          negative  106.4    78.0  139.0  224.0  294.0  478.00   762
+          positive   79.7    58.0  104.0  169.0  221.0  359.00   822
+
+=== Truncation (train) ===
+         pct_reviews_cut  avg_pct_tokens_lost_in_cut
+max_len                                             
+128                22.78                       32.94
+192                10.55                       27.42
+256                 5.21                       23.92
+320                 2.71                       21.30
+384                 1.47                       19.09
+512                 0.50                       12.66
+
+=== Top words per class (train, count >= 50, log-odds) ===
+negative: unethical, blandest, disrespected, poorest, unprofessionalism, dishonesty, humiliated, livid, argues, argumentative, rudest, unknowledgeable, unedible, unprofessional, ontrac, disputing, unacceptable, uneatable, appalled, rudely
+positive: huli, yummo, delicioso, montagu, tonya, phenominal, addicting, mazing, mmmmmm, versatile, creamiest, unmatched, chaleureux, excellently, goooood, yummmm, unassuming, yumm, scrumptious, sinful
+
+=== Quality checks ===
+train_reviews: 504000
+train_duplicate_extra_copies: 0
+test_reviews_also_in_train_rows: 0
+reviews_under_5_tokens: {'train': 3817, 'val': 399, 'test': 312}
+oov_token_percent: {'val': 0.494, 'test': 0.489}
+test_reviews_also_in_full_original_train_split: 0
+
+=== Most frequent lemmatizer changes (first 5000 train reviews) ===
+           word       lemma  count
+0       minutes      minute    706
+1         times        time    536
+2        drinks       drink    449
+3         stars        star    420
+4        things       thing    370
+5        prices       price    336
+6       friends      friend    335
+7        places       place    322
+8         fries         fry    322
+9         years        year    301
+10      reviews      review    267
+11       tables       table    243
+12        items        item    236
+13        hours        hour    230
+14  restaurants  restaurant    228
+15       dishes        dish    220
+16        chips        chip    217
+17    customers    customer    199
+18        tacos        taco    197
+19        makes        make    194
+20        rooms        room    193
+21        comes        come    188
+22      options      option    178
+23         days         day    176
+24         lots         lot    174
+25         guys         guy    169
+26         kids         kid    147
+27    employees    employee    144
+28      burgers      burger    143
+29        beans        bean    141
+30      flavors      flavor    140
+31        looks        look    139
+32        rolls        roll    135
+33     portions     portion    134
+34         says         say    130
+35         gets         get    129
+36   sandwiches    sandwich    126
+37        needs        need    125
+38       months       month    124
+39         eggs         egg    123
+
+=== Evaluation slice sizes (test) ===
+              reviews  share_pct  positive_share
+slice                                           
+all             38000     100.00           0.500
+short            9122      24.01           0.600
+medium          21412      56.35           0.500
+long             7466      19.65           0.379
+has_negation    27859      73.31           0.409
+has_contrast    21277      55.99           0.448
+
+Saved EDA files to outputs/gpu/eda

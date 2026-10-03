@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-03T05:09:36",
+  "run_name": "gpu",
+  "seed": 42,
+  "python": "3.12.10",
+  "torch": "2.14.1+cu126",
+  "cuda": "12.6",
+  "packages": {
+    "torch": "2.14.1+cu126",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "PyYAML": "6.0.3",
+    "datasets": "4.8.5",
+    "nltk": "3.10.3",
+    "matplotlib": "3.11.2",
+    "tqdm": "4.70.1",
+    "psutil": "7.2.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.1",
+    "ipykernel": "7.4.0"
+  },
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD Ryzen 9 7950X 16-Core Processor",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "git_commit": null,
+  "git_note": "git is not installed on this machine",
+  "config_sha256": {
+    "configs/gpu.yaml": "81585bfd576dac58702a9a139d02cd874b07a522cbb62f1466ca2951a6587092"
+  },
+  "data_cache_key": {
+    "dataset": "fancyzhx/yelp_polarity",
+    "train_samples": null,
+    "val_samples": null,
+    "val_fraction": 0.1,
+    "test_samples": null,
+    "vocab_max": 50000,
+    "min_freq": 3,
+    "lemmatize": true,
+    "keep_digits": true,
+    "stopwords": "minimal",
+    "seed": 42,
+    "cleaning_version": 2
+  },
+  "dataset": "fancyzhx/yelp_polarity",
+  "dataset_sizes": {
+    "train": 504000,
+    "val": 56000,
+    "test": 38000
+  },
+  "checkpoint_to_result": {
+    "ngram_bag": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/gpu/ngram_bag/best.pt",
+      "checkpoint_sha256": "7507767c6cd3532ee898c33599ef3913dba0d6dcb904e3431702c476fffbe89b",
+      "best_epoch": 2,
+      "best_val_loss": 0.12238511443138123,
+      "train_log": "reproducibility/raw_logs/naman_task2_gpu_ngram_bag_train.log",
+      "summary_json": "task2_sentiment/member_naman/outputs/gpu/ngram_bag/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/gpu/ngram_bag/test_predictions.csv",
+      "metrics_report_row": "ngram_bag"
+    },
+    "transformer": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/gpu/transformer/best.pt",
+      "checkpoint_sha256": "11a9282395f984fecc2f1448fc66d41ce8140d0dc46a2339efd9a8d683e79176",
+      "best_epoch": 2,
+      "best_val_loss": 0.16117511689662933,
+      "train_log": "reproducibility/raw_logs/naman_task2_gpu_transformer_train.log",
+      "summary_json": "task2_sentiment/member_naman/outputs/gpu/transformer/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/gpu/transformer/test_predictions.csv",
+      "metrics_report_row": "transformer"
+    },
+    "bigru": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/gpu/bigru/best.pt",
+      "checkpoint_sha256": "450b772645d35fede5617aab8ab59f9627aa8f34bddd50b9bbcdf46f1db3770b",
+      "best_epoch": 1,
+      "best_val_loss": 0.10155870020389557,
+      "train_log": "reproducibility/raw_logs/naman_task2_gpu_bigru_train.log",
+      "summary_json": "task2_sentiment/member_naman/outputs/gpu/bigru/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/gpu/bigru/test_predictions.csv",
+      "metrics_report_row": "bigru"
+    }
+  }
+}

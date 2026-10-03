@@ -1,0 +1,114 @@
+# Full run config (GPU). local.yaml has the same keys with small values.
+
+# Random seed used for python, numpy and torch.
+seed: 42
+# Name of this run; used to build the per-run folders below.
+run_name: gpu
+
+# Folders are relative to member_naman; they are resolved to absolute paths at runtime.
+paths:
+  # Where cached preprocessing (vocab, token ids) is stored.
+  processed_dir: data_processed/gpu
+  # Where model checkpoints are saved.
+  checkpoint_dir: checkpoints/gpu
+  # Where plots, predictions, logs and results are saved.
+  output_dir: outputs/gpu
+
+data:
+  # Hugging Face dataset id.
+  dataset: fancyzhx/yelp_polarity
+  # Number of TRAINING reviews (null = all train reviews left after the validation split).
+  train_samples: null
+  # Fraction of the full train split used for validation (only used when val_samples is null).
+  val_fraction: 0.10
+  # Number of validation reviews drawn from the train split, separate from train_samples (null = use val_fraction).
+  val_samples: null
+  # Number of test reviews to use (null = all 38,000).
+  test_samples: null
+  # Maximum vocabulary size (most frequent words kept).
+  vocab_max: 50000
+  # Words seen fewer times than this in train are mapped to <unk>.
+  min_freq: 3
+  # Truncate/pad reviews to this many tokens (gpu uses 320, chosen from the EDA truncation table).
+  max_len: 320
+  # Fraction of the kept tokens taken from the start of a long review (rest from the end).
+  head_fraction: 0.25
+  # Reduce words to their lemma during preprocessing.
+  lemmatize: true
+  # minimal = ~40 neutral function words only.
+  stopwords: minimal
+  # Keep numbers as tokens instead of removing them.
+  keep_digits: true
+
+train:
+  # Maximum number of passes over the training data.
+  epochs: 8
+  # Reviews per batch.
+  batch_size: 128
+  # Fraction of total steps used for linear learning-rate warmup.
+  lr_warmup_ratio: 0.05
+  # Learning-rate schedule after warmup.
+  schedule: cosine
+  # Max gradient norm for clipping.
+  grad_clip: 1.0
+  # Stop if validation does not improve for this many epochs.
+  patience: 2
+  # Weight decay for the optimizer (models may override below).
+  weight_decay: 0.01
+  # Use mixed precision (only on CUDA).
+  amp: true
+  # Exponential moving average decay of weights (null = disabled).
+  ema_decay: 0.999
+  # Group reviews of similar length into the same batch to save padding.
+  length_bucketing: true
+
+models:
+  ngram_bag:
+    # Size of each word/bigram embedding.
+    embed_dim: 32
+    # Number of hash buckets for bigrams.
+    bigram_buckets: 2000000
+    # Dropout probability.
+    dropout: 0.4
+    # Learning rate.
+    lr: 2.0e-3
+    # Weight decay for this model.
+    weight_decay: 0.0
+  transformer:
+    # Width of token embeddings and hidden states.
+    d_model: 128
+    # Number of encoder layers.
+    layers: 2
+    # Number of attention heads.
+    heads: 4
+    # Hidden size of the feed-forward block.
+    ffn: 512
+    # Dropout probability.
+    dropout: 0.2
+    # Probability of randomly dropping whole input tokens during training.
+    token_dropout: 0.1
+    # How to pool token outputs into one vector.
+    pool: "mean_max"
+    # Learning rate.
+    lr: 5.0e-4
+  bigru:
+    # Size of word embeddings.
+    word_dim: 128
+    # Size of hashed bigram embeddings.
+    bigram_dim: 64
+    # Number of hash buckets for bigrams.
+    bigram_buckets: 500000
+    # Hidden size of each GRU direction.
+    hidden: 128
+    # Number of stacked GRU layers.
+    layers: 2
+    # Dropout between GRU layers.
+    rnn_dropout: 0.25
+    # Dropout on the embeddings.
+    emb_dropout: 0.25
+    # Dropout before the classifier.
+    head_dropout: 0.4
+    # How to pool GRU outputs into one vector.
+    pooling: "max_mean_attn"
+    # Learning rate.
+    lr: 1.0e-3

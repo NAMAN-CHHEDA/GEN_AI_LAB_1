@@ -1,0 +1,529 @@
+{
+  "config": "gpu",
+  "info": {
+    "data_config": {
+      "dataset": "fancyzhx/yelp_polarity",
+      "train_samples": null,
+      "val_fraction": 0.1,
+      "val_samples": null,
+      "test_samples": null,
+      "vocab_max": 50000,
+      "min_freq": 3,
+      "max_len": 320,
+      "head_fraction": 0.25,
+      "lemmatize": true,
+      "stopwords": "minimal",
+      "keep_digits": true
+    },
+    "seed": 42,
+    "cache_key": {
+      "dataset": "fancyzhx/yelp_polarity",
+      "train_samples": null,
+      "val_samples": null,
+      "val_fraction": 0.1,
+      "test_samples": null,
+      "vocab_max": 50000,
+      "min_freq": 3,
+      "lemmatize": true,
+      "keep_digits": true,
+      "stopwords": "minimal",
+      "seed": 42,
+      "cleaning_version": 2
+    },
+    "vocab_size": 50000,
+    "counts": {
+      "train": 504000,
+      "val": 56000,
+      "test": 38000
+    },
+    "class_counts": {
+      "train": {
+        "label_0": 251808,
+        "label_1": 252192
+      },
+      "val": {
+        "label_0": 28192,
+        "label_1": 27808
+      },
+      "test": {
+        "label_0": 19000,
+        "label_1": 19000
+      }
+    },
+    "dropped_rows": {
+      "train": {
+        "not_a_string": 0,
+        "empty": 0,
+        "bad_label": 0
+      },
+      "test": {
+        "not_a_string": 0,
+        "empty": 0,
+        "bad_label": 0
+      }
+    },
+    "rows_in_raw_split": {
+      "train": 560000,
+      "test": 38000
+    },
+    "reviews_with_escapes": {
+      "train": {
+        "newline": 269718,
+        "quote": 102352,
+        "unicode": 12521,
+        "any": 302738
+      },
+      "test": {
+        "newline": 18279,
+        "quote": 6800,
+        "unicode": 879,
+        "any": 20462
+      }
+    },
+    "empty_after_cleaning": {
+      "train": 32,
+      "val": 5,
+      "test": 0
+    },
+    "oov_token_percent": {
+      "train": 0.432,
+      "val": 0.494,
+      "test": 0.489
+    },
+    "mean_tokens_per_review": {
+      "train": 93.04,
+      "val": 92.98,
+      "test": 92.7
+    },
+    "clean_seconds": 27.19,
+    "cleaning_reviews_per_sec": 21993.0,
+    "build_seconds": 47.82,
+    "label_check": [
+      "  label=0: \"Unfortunately, the frustration of being Dr. Goldberg's patient is a repeat of the experience I've had with so many other doctors in NYC -- good doctor, terrible staff.  It seems that his staff simply \"",
+      "  label=1: \"Been going to Dr. Goldberg for over 10 years. I think I was one of his 1st patients when he started at MHMG. He's been great over the years and is really all about the big picture. It is because of hi\"",
+      "  label=0: \"I don't know what Dr. Goldberg was like before  moving to Arizona, but let me tell you, STAY AWAY from this doctor and this office. I was going to Dr. Johnson before he left and Goldberg took over whe\"",
+      "  label=1: 'All the food is great here. But the best thing they have is their wings. Their wings are simply fantastic!!  The \\\\\"\"Wet Cajun\\\\\"\" are by the best & most popular.  I also like the seasoned salt wings.  '"
+    ]
+  },
+  "class_balance": {
+    "train": {
+      "total": 504000,
+      "negative": 251808,
+      "positive": 252192,
+      "positive_share": 0.5004
+    },
+    "val": {
+      "total": 56000,
+      "negative": 28192,
+      "positive": 27808,
+      "positive_share": 0.4966
+    },
+    "test": {
+      "total": 38000,
+      "negative": 19000,
+      "positive": 19000,
+      "positive_share": 0.5
+    }
+  },
+  "length_stats": [
+    {
+      "variable": "raw_words",
+      "group": "all",
+      "mean": 133.0,
+      "median": 97.0,
+      "p75": 173.0,
+      "p90": 282.0,
+      "p95": 372.0,
+      "p99": 610.0,
+      "max": 1052
+    },
+    {
+      "variable": "raw_words",
+      "group": "negative",
+      "mean": 151.6,
+      "median": 112.0,
+      "p75": 198.0,
+      "p90": 319.0,
+      "p95": 419.0,
+      "p99": 683.0,
+      "max": 1052
+    },
+    {
+      "variable": "raw_words",
+      "group": "positive",
+      "mean": 114.5,
+      "median": 84.0,
+      "p75": 150.0,
+      "p90": 241.0,
+      "p95": 316.0,
+      "p99": 514.0,
+      "max": 988
+    },
+    {
+      "variable": "tokens",
+      "group": "all",
+      "mean": 93.0,
+      "median": 68.0,
+      "p75": 121.0,
+      "p90": 197.0,
+      "p95": 261.0,
+      "p99": 427.0100000000093,
+      "max": 822
+    },
+    {
+      "variable": "tokens",
+      "group": "negative",
+      "mean": 106.4,
+      "median": 78.0,
+      "p75": 139.0,
+      "p90": 224.0,
+      "p95": 294.0,
+      "p99": 478.0,
+      "max": 762
+    },
+    {
+      "variable": "tokens",
+      "group": "positive",
+      "mean": 79.7,
+      "median": 58.0,
+      "p75": 104.0,
+      "p90": 169.0,
+      "p95": 221.0,
+      "p99": 359.0,
+      "max": 822
+    }
+  ],
+  "truncation": [
+    {
+      "max_len": 128,
+      "pct_reviews_cut": 22.78,
+      "avg_pct_tokens_lost_in_cut": 32.94
+    },
+    {
+      "max_len": 192,
+      "pct_reviews_cut": 10.55,
+      "avg_pct_tokens_lost_in_cut": 27.42
+    },
+    {
+      "max_len": 256,
+      "pct_reviews_cut": 5.21,
+      "avg_pct_tokens_lost_in_cut": 23.92
+    },
+    {
+      "max_len": 320,
+      "pct_reviews_cut": 2.71,
+      "avg_pct_tokens_lost_in_cut": 21.3
+    },
+    {
+      "max_len": 384,
+      "pct_reviews_cut": 1.47,
+      "avg_pct_tokens_lost_in_cut": 19.09
+    },
+    {
+      "max_len": 512,
+      "pct_reviews_cut": 0.5,
+      "avg_pct_tokens_lost_in_cut": 12.66
+    }
+  ],
+  "top_words": {
+    "negative": [
+      "unethical",
+      "blandest",
+      "disrespected",
+      "poorest",
+      "unprofessionalism",
+      "dishonesty",
+      "humiliated",
+      "livid",
+      "argues",
+      "argumentative",
+      "rudest",
+      "unknowledgeable",
+      "unedible",
+      "unprofessional",
+      "ontrac",
+      "disputing",
+      "unacceptable",
+      "uneatable",
+      "appalled",
+      "rudely"
+    ],
+    "positive": [
+      "huli",
+      "yummo",
+      "delicioso",
+      "montagu",
+      "tonya",
+      "phenominal",
+      "addicting",
+      "mazing",
+      "mmmmmm",
+      "versatile",
+      "creamiest",
+      "unmatched",
+      "chaleureux",
+      "excellently",
+      "goooood",
+      "yummmm",
+      "unassuming",
+      "yumm",
+      "scrumptious",
+      "sinful"
+    ]
+  },
+  "quality_checks": {
+    "train_reviews": 504000,
+    "train_duplicate_extra_copies": 0,
+    "test_reviews_also_in_train_rows": 0,
+    "reviews_under_5_tokens": {
+      "train": 3817,
+      "val": 399,
+      "test": 312
+    },
+    "oov_token_percent": {
+      "val": 0.494,
+      "test": 0.489
+    },
+    "test_reviews_also_in_full_original_train_split": 0
+  },
+  "lemmatizer_changes": [
+    {
+      "word": "minutes",
+      "lemma": "minute",
+      "count": 706
+    },
+    {
+      "word": "times",
+      "lemma": "time",
+      "count": 536
+    },
+    {
+      "word": "drinks",
+      "lemma": "drink",
+      "count": 449
+    },
+    {
+      "word": "stars",
+      "lemma": "star",
+      "count": 420
+    },
+    {
+      "word": "things",
+      "lemma": "thing",
+      "count": 370
+    },
+    {
+      "word": "prices",
+      "lemma": "price",
+      "count": 336
+    },
+    {
+      "word": "friends",
+      "lemma": "friend",
+      "count": 335
+    },
+    {
+      "word": "places",
+      "lemma": "place",
+      "count": 322
+    },
+    {
+      "word": "fries",
+      "lemma": "fry",
+      "count": 322
+    },
+    {
+      "word": "years",
+      "lemma": "year",
+      "count": 301
+    },
+    {
+      "word": "reviews",
+      "lemma": "review",
+      "count": 267
+    },
+    {
+      "word": "tables",
+      "lemma": "table",
+      "count": 243
+    },
+    {
+      "word": "items",
+      "lemma": "item",
+      "count": 236
+    },
+    {
+      "word": "hours",
+      "lemma": "hour",
+      "count": 230
+    },
+    {
+      "word": "restaurants",
+      "lemma": "restaurant",
+      "count": 228
+    },
+    {
+      "word": "dishes",
+      "lemma": "dish",
+      "count": 220
+    },
+    {
+      "word": "chips",
+      "lemma": "chip",
+      "count": 217
+    },
+    {
+      "word": "customers",
+      "lemma": "customer",
+      "count": 199
+    },
+    {
+      "word": "tacos",
+      "lemma": "taco",
+      "count": 197
+    },
+    {
+      "word": "makes",
+      "lemma": "make",
+      "count": 194
+    },
+    {
+      "word": "rooms",
+      "lemma": "room",
+      "count": 193
+    },
+    {
+      "word": "comes",
+      "lemma": "come",
+      "count": 188
+    },
+    {
+      "word": "options",
+      "lemma": "option",
+      "count": 178
+    },
+    {
+      "word": "days",
+      "lemma": "day",
+      "count": 176
+    },
+    {
+      "word": "lots",
+      "lemma": "lot",
+      "count": 174
+    },
+    {
+      "word": "guys",
+      "lemma": "guy",
+      "count": 169
+    },
+    {
+      "word": "kids",
+      "lemma": "kid",
+      "count": 147
+    },
+    {
+      "word": "employees",
+      "lemma": "employee",
+      "count": 144
+    },
+    {
+      "word": "burgers",
+      "lemma": "burger",
+      "count": 143
+    },
+    {
+      "word": "beans",
+      "lemma": "bean",
+      "count": 141
+    },
+    {
+      "word": "flavors",
+      "lemma": "flavor",
+      "count": 140
+    },
+    {
+      "word": "looks",
+      "lemma": "look",
+      "count": 139
+    },
+    {
+      "word": "rolls",
+      "lemma": "roll",
+      "count": 135
+    },
+    {
+      "word": "portions",
+      "lemma": "portion",
+      "count": 134
+    },
+    {
+      "word": "says",
+      "lemma": "say",
+      "count": 130
+    },
+    {
+      "word": "gets",
+      "lemma": "get",
+      "count": 129
+    },
+    {
+      "word": "sandwiches",
+      "lemma": "sandwich",
+      "count": 126
+    },
+    {
+      "word": "needs",
+      "lemma": "need",
+      "count": 125
+    },
+    {
+      "word": "months",
+      "lemma": "month",
+      "count": 124
+    },
+    {
+      "word": "eggs",
+      "lemma": "egg",
+      "count": 123
+    }
+  ],
+  "slice_sizes": [
+    {
+      "slice": "all",
+      "reviews": 38000,
+      "share_pct": 100.0,
+      "positive_share": 0.5
+    },
+    {
+      "slice": "short",
+      "reviews": 9122,
+      "share_pct": 24.01,
+      "positive_share": 0.6
+    },
+    {
+      "slice": "medium",
+      "reviews": 21412,
+      "share_pct": 56.35,
+      "positive_share": 0.5
+    },
+    {
+      "slice": "long",
+      "reviews": 7466,
+      "share_pct": 19.65,
+      "positive_share": 0.379
+    },
+    {
+      "slice": "has_negation",
+      "reviews": 27859,
+      "share_pct": 73.31,
+      "positive_share": 0.409
+    },
+    {
+      "slice": "has_contrast",
+      "reviews": 21277,
+      "share_pct": 55.99,
+      "positive_share": 0.448
+    }
+  ]
+}

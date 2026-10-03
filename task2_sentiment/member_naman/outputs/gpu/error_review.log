@@ -1,0 +1,3 @@
+error review | run gpu | model bigru (best validation accuracy 0.9618)
+bucket sizes: {'confident false positive': 5, 'confident false negative': 5, 'near-threshold error': 5, 'slice-specific failure': 5}
+worst slice: ('short', 0.9557818519053642, 9122)

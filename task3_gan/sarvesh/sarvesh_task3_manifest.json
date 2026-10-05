@@ -1,0 +1,63 @@
+{
+  "member": "sarvesh",
+  "task": "task3_gan",
+  "run_name": "cyclegan_final",
+  "domains": {
+    "A": "monet",
+    "B": "photo"
+  },
+  "image_size": 256,
+  "epochs_completed": 200,
+  "epochs_config": 250,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4090 (from original training machine)",
+  "dataset_counts": {
+    "monet_images": 300,
+    "photo_images": 7038
+  },
+  "libraries_declared": [
+    "torch",
+    "torchvision",
+    "numpy",
+    "pillow",
+    "matplotlib",
+    "pandas",
+    "tqdm"
+  ],
+  "requirements_file": "task3_gan/sarvesh/requirements.txt",
+  "checkpoints": {
+    "final": {
+      "path": "task3_gan/sarvesh/checkpoints/cyclegan_final.pth",
+      "sha256": "a7a26d8952017b8ebb550dd63074eb4aad0d161b85c60f09ebca5c605a64e681"
+    },
+    "epoch_250": {
+      "path": "task3_gan/sarvesh/checkpoints/cyclegan_epoch_250.pth",
+      "sha256": "6949cbc96af81cef026c3ffda903755ea24be7a5419f3594a2ed8098b2ddde54"
+    },
+    "G_A2B_final": {
+      "path": "task3_gan/sarvesh/checkpoints/G_A2B_final.pth",
+      "sha256": "41b19d6f35c9736edf3f3fc042cacffb6fabc907d7bbfe48bc0be6eac3202829",
+      "maps_to": "outputs/pred_A2B (Monet -> Photo)"
+    },
+    "G_B2A_final": {
+      "path": "task3_gan/sarvesh/checkpoints/G_B2A_final.pth",
+      "sha256": "c303d788fdd1fb0f426fd3f251f971acd5fac42c7d004a2d28373e1bce5cb1d7",
+      "maps_to": "outputs/pred_B2A (Photo -> Monet) and Kaggle submission images"
+    }
+  },
+  "outputs": {
+    "pred_A2B": "task3_gan/sarvesh/outputs/pred_A2B",
+    "pred_B2A": "task3_gan/sarvesh/outputs/pred_B2A",
+    "submission_csv": "task3_gan/sarvesh/submission.csv",
+    "images_zip": "task3_gan/sarvesh/outputs/images.zip",
+    "full_metrics_report": "task3_gan/sarvesh/full_metrics_report.csv",
+    "training_history": "task3_gan/sarvesh/logs/final_training_history_epochs.csv"
+  },
+  "kaggle": {
+    "local_part3_fid": 104.00403608031934,
+    "local_part3_mifid": 0.4123632311820984,
+    "submission_score": -52.2081,
+    "note": "Confirmed on Kaggle leaderboard. Still record public/private split and exact rank for the report bonus table."
+  },
+  "raw_logs_dir": "reproducibility/raw_logs/task3/sarvesh/"
+}

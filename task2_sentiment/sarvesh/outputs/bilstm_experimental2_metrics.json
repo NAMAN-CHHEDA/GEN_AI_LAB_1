@@ -1,0 +1,32 @@
+{
+  "model": "bilstm_experimental2",
+  "accuracy": 0.9486315789473684,
+  "precision_macro": 0.9487195279748515,
+  "precision_micro": 0.9486315789473684,
+  "precision_weighted": 0.9487195279748515,
+  "recall_macro": 0.9486315789473684,
+  "recall_micro": 0.9486315789473684,
+  "recall_weighted": 0.9486315789473684,
+  "f1_macro": 0.9486290617713953,
+  "f1_micro": 0.9486315789473684,
+  "f1_weighted": 0.9486290617713952,
+  "roc_auc": 0.9883783185595567,
+  "pr_auc": 0.9885087720472893,
+  "mcc": 0.8973511026122952,
+  "brier_score": 0.04011910781264305,
+  "ece": 0.0210700522025949,
+  "confusion_matrix": [
+    [
+      18157,
+      843
+    ],
+    [
+      1109,
+      17891
+    ]
+  ],
+  "parameter_count": 4104449,
+  "training_time_sec": 583.6266326904297,
+  "peak_gpu_memory_mb": 224.544921875,
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

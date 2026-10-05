@@ -1,0 +1,24 @@
+{
+ "run_name": "main",
+ "param_count": 830976,
+ "epochs_completed": 15,
+ "steps_per_epoch": 1562,
+ "total_steps": 23430,
+ "warmup_steps": 1172,
+ "best_val_loss": 0.8301251489639282,
+ "best_epoch": 15,
+ "final_val_loss": 0.8301251489639282,
+ "train_tokens_per_sec_mean": 649526.1592955907,
+ "tokens_seen": 191938560,
+ "total_train_time_sec": 303.2319467999914,
+ "peak_memory_mb": 324.369140625,
+ "nonfinite_steps": 6,
+ "max_grad_norm": 5.34266996383667,
+ "device": "cuda",
+ "fp16_autocast": true,
+ "checkpoints": {
+  "best": "..\\checkpoints\\main_best.pt",
+  "final": "..\\checkpoints\\main_final.pt",
+  "resume": "..\\checkpoints\\main_resume.pt"
+ }
+}

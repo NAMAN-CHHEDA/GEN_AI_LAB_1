@@ -1,0 +1,144 @@
+{
+ "run_name": "abl_dropout0p2",
+ "seed": 8893,
+ "created": "2026-10-02 14:29:23",
+ "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+ "platform": "Windows-11-10.0.22631-SP0",
+ "libraries": {
+  "torch": "2.14.1+cu130",
+  "numpy": "2.5.3",
+  "PyYAML": "6.0.3",
+  "matplotlib": "3.11.2"
+ },
+ "device": "cuda",
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "cuda_version": "13.0",
+ "fp16_autocast": true,
+ "config_file": "ablation_configs/abl_dropout0p2.yaml",
+ "config": {
+  "seed": 8893,
+  "run_name": "abl_dropout0p2",
+  "device": "auto",
+  "paths": {
+   "data_dir": "../../data",
+   "processed_dir": "../data_processed_ablations",
+   "checkpoint_dir": "../checkpoints",
+   "output_dir": "../outputs",
+   "raw_logs_dir": "../../reproducibility/raw_logs",
+   "manifest_dir": "../../reproducibility/manifests",
+   "metrics_csv": "../metrics_abl_dropout0p2.csv"
+  },
+  "data": {
+   "raw_url": "https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt",
+   "raw_file": "TinyStoriesV2-GPT4-valid.txt",
+   "story_delimiter": "<|endoftext|>",
+   "story_joiner": "\n\n",
+   "strip_story_edges": true,
+   "split_unit": "sequences",
+   "train_size": 100000,
+   "val_size": 10000,
+   "block_size": 128
+  },
+  "model": {
+   "d_model": 128,
+   "n_layers": 4,
+   "n_heads": 4,
+   "d_ff": 512,
+   "dropout": 0.2,
+   "tie_weights": false,
+   "init_std": 0.02
+  },
+  "train": {
+   "epochs": 15,
+   "batch_size": 64,
+   "steps_per_epoch": null,
+   "lr": 0.001,
+   "min_lr_ratio": 0.1,
+   "warmup_frac": 0.05,
+   "weight_decay": 0.1,
+   "betas": [
+    0.9,
+    0.95
+   ],
+   "grad_clip": 1.0,
+   "amp": true,
+   "print_every_steps": 50,
+   "resume": false
+  },
+  "eval": {
+   "batch_size": 256,
+   "train_eval_windows": 2000,
+   "checkpoint": "best"
+  },
+  "sanity": {
+   "enabled": true,
+   "init_batch_size": 32,
+   "init_loss_tol": 0.3,
+   "causal_position_frac": 0.5,
+   "causal_atol": 1e-05,
+   "overfit_batch_size": 8,
+   "overfit_steps": 300,
+   "overfit_lr": 0.003,
+   "overfit_pass_loss": 0.1,
+   "overfit_print_every": 50
+  },
+  "generation": {
+   "max_new_tokens": 500,
+   "ngram_unit": "words",
+   "prompts": [
+    "Once upon a time",
+    "One day, a little girl named Lily",
+    "The big dog",
+    "Tom and his mom went to the",
+    "Sara was sad because"
+   ],
+   "settings": [
+    {
+     "name": "greedy",
+     "greedy": true
+    },
+    {
+     "name": "temp_0.7",
+     "temperature": 0.7
+    },
+    {
+     "name": "temp_1.0",
+     "temperature": 1.0
+    },
+    {
+     "name": "temp_1.2",
+     "temperature": 1.2
+    },
+    {
+     "name": "temp_0.7_topk40",
+     "temperature": 0.7,
+     "top_k": 40
+    },
+    {
+     "name": "temp_1.0_topk40",
+     "temperature": 1.0,
+     "top_k": 40
+    },
+    {
+     "name": "temp_1.2_topk40",
+     "temperature": 1.2,
+     "top_k": 40
+    }
+   ]
+  },
+  "plots": {
+   "smooth_window": 20
+  }
+ },
+ "checkpoints": {
+  "best": "..\\checkpoints\\abl_dropout0p2_best.pt",
+  "final": "..\\checkpoints\\abl_dropout0p2_final.pt",
+  "resume": "..\\checkpoints\\abl_dropout0p2_resume.pt"
+ },
+ "raw_logs": {
+  "steps": "..\\..\\reproducibility\\raw_logs\\abl_dropout0p2_steps.csv",
+  "epochs": "..\\..\\reproducibility\\raw_logs\\abl_dropout0p2_epochs.csv"
+ },
+ "metrics_csv": "..\\metrics_abl_dropout0p2.csv",
+ "run_summary": "..\\..\\reproducibility\\manifests\\abl_dropout0p2_summary.json"
+}

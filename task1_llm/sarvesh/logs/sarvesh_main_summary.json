@@ -1,0 +1,19 @@
+{
+  "run_name": "sarvesh_main",
+  "param_count": 2267904,
+  "epochs_completed": 12,
+  "steps_per_epoch": 2083,
+  "total_steps": 24996,
+  "warmup_steps": 800,
+  "best_val_loss": 0.7392010305404663,
+  "best_epoch": 12,
+  "final_val_loss": 0.7392010305404663,
+  "train_tokens_per_sec_mean": 573182.6523378068,
+  "tokens_seen": 191969280,
+  "total_train_time_sec": 369.90371540002525,
+  "peak_memory_mb": 598.62158203125,
+  "nonfinite_steps": 8,
+  "max_grad_norm": 3.197147846221924,
+  "device": "cuda",
+  "fp16_autocast": true
+}

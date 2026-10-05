@@ -1,0 +1,24 @@
+{
+  "train": 504000,
+  "val": 56000,
+  "test": 38000,
+  "max_len": 160,
+  "vocab_size": 30000,
+  "vocab_cap": 30000,
+  "seed": 42,
+  "length_p50": 50.0,
+  "length_p90": 144.0,
+  "length_p95": 189.0,
+  "train_label_counts": {
+    "0": 252000,
+    "1": 252000
+  },
+  "val_label_counts": {
+    "0": 28000,
+    "1": 28000
+  },
+  "test_label_counts": {
+    "0": 19000,
+    "1": 19000
+  }
+}

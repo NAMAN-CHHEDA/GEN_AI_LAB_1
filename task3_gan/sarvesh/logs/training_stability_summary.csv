@@ -1,0 +1,20 @@
+Metric,Value
+Epochs completed,200.0
+Optimization steps,13400.0
+Non-finite loss steps,0.0
+Non-finite gradient steps,0.0
+Max grad G_A2B,156.85871640887817
+Max grad G_B2A,156.0666079490755
+Max grad D_A,198.70077269691015
+Max grad D_B,111.29189542025944
+Final generator loss,3.672418402202094
+Final D_A loss,0.1178837009330294
+Final D_B loss,0.1521996646674711
+Final cycle A,0.0769173841534265
+Final cycle B,0.0984336441354965
+Final identity A,0.0808655863155179
+Final identity B,0.0960129985391204
+Training time (minutes),35.426283113333675
+Mean images/sec,50.46140510608666
+Peak GPU memory (GB),4.8861002922058105
+Total parameters,28275336.0

@@ -2,3 +2,8 @@ data/
 *.pt
 __pycache__/
 .ipynb_checkpoints/
+
+# Full CycleGAN training states exceed GitHub's 100MB file limit.
+# Inference generators G_A2B_final.pth / G_B2A_final.pth are committed instead.
+**/cyclegan_final.pth
+**/cyclegan_epoch_250.pth

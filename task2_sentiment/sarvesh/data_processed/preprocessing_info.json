@@ -1,0 +1,54 @@
+{
+  "member": "sarvesh",
+  "task": "task2_sentiment",
+  "status": "vocab_and_split_metadata_saved",
+  "why_empty_originally": "Notebooks built vocabulary and tensors in memory at runtime and did not write data_processed/ artifacts.",
+  "dataset": "fancyzhx/yelp_polarity",
+  "splits": {
+    "train": 504000,
+    "val": 56000,
+    "test": 38000,
+    "val_fraction": 0.1,
+    "stratified": true
+  },
+  "preprocessing": {
+    "lowercasing": true,
+    "negation_normalization": true,
+    "url_html_removal": true,
+    "punctuation_digit_removal": true,
+    "stopword_removal": true,
+    "kept_negations": [
+      "no",
+      "not",
+      "nor",
+      "never"
+    ],
+    "lemmatization": "WordNetLemmatizer",
+    "tokenization": "whitespace after cleaning"
+  },
+  "vocabulary": {
+    "built_from": "training split only",
+    "special_tokens": [
+      "<PAD>",
+      "<UNK>"
+    ],
+    "max_len": 160,
+    "vocab_size": 30000,
+    "vocab_cap": 30000,
+    "seed": 42
+  },
+  "models_using_this_pipeline": [
+    "baseline_meanpool",
+    "textcnn_experimental1",
+    "bilstm_experimental2"
+  ],
+  "related_outputs": {
+    "metrics_report": "task2_sentiment/sarvesh/metrics_report.csv",
+    "manifest": "reproducibility/manifests/task2/sarvesh_task2_manifest.json"
+  },
+  "artifacts": {
+    "vocab_json": "task2_sentiment/sarvesh/data_processed/vocab.json",
+    "split_sizes_json": "task2_sentiment/sarvesh/data_processed/split_sizes.json",
+    "preprocessing_info_json": "task2_sentiment/sarvesh/data_processed/preprocessing_info.json"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "kaggle_runtime": false,
+  "device": "cuda",
+  "monet_images": 300,
+  "photo_images": 7038,
+  "trained_this_run": true,
+  "checkpoint": "c:\\Users\\019129357\\Downloads\\lab1_dl\\lab1_dl\\checkpoints\\retrain_full_v1\\cyclegan_final.pth",
+  "submission_images": 7038,
+  "submission_zip": "c:\\Users\\019129357\\Downloads\\lab1_dl\\lab1_dl\\images.zip",
+  "submission_zip_exists": true,
+  "submission_zip_mb": 94.74,
+  "local_fid_proxy": null,
+  "real_stats_npz": null,
+  "image_size": 256,
+  "epochs_config": 250
+}

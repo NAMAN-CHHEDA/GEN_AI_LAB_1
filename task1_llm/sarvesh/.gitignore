@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Local raw dataset copy (prefer shared task1_llm/data/)
+data/*.txt
+
+# Optional: very large binary arrays — keep vocab/split metadata
+# Uncomment if GitHub file-size limits block pushes:
+# data_processed/*.npy

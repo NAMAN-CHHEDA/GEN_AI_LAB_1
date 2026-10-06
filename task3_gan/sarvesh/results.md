@@ -1,62 +1,63 @@
 # Results — Sarvesh Task 3 (CycleGAN Monet ↔ Photo)
 
-## Setup
+## Setup (V3 — current submission)
 
-- **Model:** CycleGAN with two generators (`G_A2B`, `G_B2A`) and two discriminators (`D_A`, `D_B`)
+- **Model:** CycleGAN with two generators (`G_A2B`, `G_B2A`) and two discriminators (`D_A`, `D_B`, spectral norm)
 - **Domains:** Monet (A, 300 images) ↔ Photo (B, 7038 images)
 - **Image size:** 256×256
-- **Training:** 200 epochs completed (config target 250), 13,400 optimization steps
+- **Training:** 150 epochs, batch size 12, λ_cycle=10, λ_identity=**0.5**, D LR = 0.5×G LR, TTA at inference
 - **Losses:** adversarial + cycle-consistency + identity
-- **Device:** CUDA (NVIDIA GeForce RTX 4090 on original training machine), peak memory ~4.89 GB
+- **Device:** NVIDIA GeForce RTX 4090, AMP bfloat16
 - **Parameters:** 28,275,336
+- **Wall time:** ~755.8 min (~12.6 h)
 
 ## Checkpoints → results
 
 | Checkpoint | Path | Used for |
 |---|---|---|
-| Final full state | `checkpoints/cyclegan_final.pth` (local only; >100MB, not on GitHub) | resume / full model state |
-| Epoch 250 snapshot | `checkpoints/cyclegan_epoch_250.pth` (local only; >100MB, not on GitHub) | late-training snapshot |
-| Generator A→B | `checkpoints/G_A2B_final.pth` (committed) | `outputs/pred_A2B/` (Monet→Photo) |
-| Generator B→A | `checkpoints/G_B2A_final.pth` (committed) | `outputs/pred_B2A/` + Kaggle images (Photo→Monet) |
+| Best full state | `cyclegan_best.pth` (local only; ~324MB, not on GitHub) | source of generator weights |
+| Final full state | `cyclegan_final_v3.pth` (local only) | end-of-run snapshot |
+| Generator A→B | `checkpoints/G_A2B_final.pth` (committed) | `outputs/pred_A2B/` |
+| Generator B→A | `checkpoints/G_B2A_final.pth` (committed) | `outputs/pred_B2A/` + Kaggle direction |
 
-## Quantitative metrics (both directions)
+## Kaggle submission (V3)
 
-From `full_metrics_report.csv` / `metrics_report.csv`:
-
-| Metric | Monet → Photo | Photo → Monet |
+| | V1 (previous) | **V3 (current)** |
 |---|---:|---:|
-| FID | 199.27 | 220.99 |
-| KID | 0.0301 | 0.0291 |
-| Generative precision | 0.633 | 0.533 |
-| Generative recall | 0.533 | 0.600 |
-| Cycle L1 | 0.146 | 0.113 |
-| Translation LPIPS | 0.282 | 0.360 |
-| Cycle LPIPS | 0.370 | 0.270 |
-| Content cosine | 0.690 | 0.645 |
+| FID (avg) | 104.004 | **94.494** |
+| MiFID (avg) | 0.4124 | **0.4108** |
+| Est. class score (≈ FID/2) | ~52.2 | **~47.2** |
 
-Training / systems metrics:
-- Mean throughput ≈ **50.5 images/sec**
-- Training time ≈ **36 minutes** (stability summary ~35.4 min)
-- Non-finite loss/grad steps: **0**
-- Final losses (approx): G 3.67, D_A 0.118, D_B 0.152, cycle A/B 0.077/0.098, identity A/B 0.081/0.096
+Per-direction local eval (inline Part3-style, N=300):
 
-Loss curves / history: `logs/final_training_history_epochs.csv`  
-Preview grid: `outputs/preview/preview_grid.png`
+| Direction | FID | MiFID |
+|---|---:|---:|
+| Photo → Monet | 95.309 | 0.4056 |
+| Monet → Photo | 93.679 | 0.4159 |
 
-## Kaggle submission
+- File: **`submission.csv`**
+- Predictions: `outputs/pred_B2A/` (7038), `outputs/pred_A2B/` (300)
+- Loss curves: `outputs/loss_curves_v3.png`
+- Epoch history: `logs/training_history_v3.csv`
 
-- `submission.csv` local Part3 values: **FID ≈ 104.004**, **MiFID ≈ 0.412**
-- **Kaggle submission score (confirmed on leaderboard): `-52.2081`**
-- Submit artifact: `outputs/images.zip` (Photo→Monet translations)
-- **Still record:** public/private distinction (if shown) and exact **leaderboard rank** for the team report bonus table.
+### Leaderboard (recorded)
+
+| Field | Value |
+|---|---|
+| **Rank** | **11** |
+| **Kaggle score** | **47.4524** |
+| Recorded at | Tue Oct 6, 2026 ~10:44 AM |
+| Local FID / MiFID | 94.494 / 0.4108 |
+
+Update if public/private scores are shown separately on Kaggle.
+
+## Extended metrics note
+
+`full_metrics_report.csv` / `metrics_report.csv` still contain the **earlier V1 probe** (FID/KID/LPIPS/precision-recall on a 30-sample subset). Re-run the full metrics notebook on V3 preds if you need those updated for the written report. The **official class CSV numbers** for this submission are the V3 FID/MiFID above.
 
 ## Human audit (30 fixed samples, 2 raters)
 
-Artifacts in `outputs/human_audit/`:
-- `comparison_panels/` — 30 blinded sample images (`sample_01.jpg` … `sample_30.jpg`)
-- `rater_1.csv`, `rater_2.csv` — style / content / artifact scores (1–5)
-- `rater_comparison.csv` — side-by-side merge
-- `inter_rater_agreement.json` — agreement summary
+Artifacts in `outputs/human_audit/` (from prior audit pass — panels may need refresh if required to match V3 preds):
 
 | Axis | Mean R1 | Mean R2 | Exact agree | Within ±1 | Cohen’s κ |
 |---|---:|---:|---:|---:|---:|
@@ -65,10 +66,8 @@ Artifacts in `outputs/human_audit/`:
 | Artifacts | 4.33 | 3.30 | 26.7% | 56.7% | 0.073 |
 | **Overall** | **4.13** | **3.57** | **34.4%** | — | — |
 
-Content preservation shows the strongest agreement (50% exact, 90% within 1). Style and artifact axes disagree more often — Rater 1 scores higher on average — so report both means and κ rather than a single “quality” number.
-
 ## Observations
 
-- Training was stable (no NaN losses/grads) with falling adversarial + cycle terms in the epoch log.
-- Photo→Monet is the competition direction (7038 outputs); Monet→Photo is also generated for both-direction metrics.
-- FID/KID remain high in absolute terms on the local 30-sample probe — report leaderboard score as the official competition metric.
+- V3 main fix vs V1: λ_identity **5.0 → 0.5** (style transfer was over-suppressed), plus spectral-norm D, larger batch, full photo coverage per epoch.
+- Local FID improved ~9.5 points (104 → 94.5); MiFID only slightly better.
+- Training completed 150/150 epochs with best checkpoint tracked by cycle loss.

@@ -1,0 +1,10 @@
+{
+  "source": "checkpoints/rtx4090_v3/cyclegan_best.pth",
+  "keys_saved": [
+    "G_A2B",
+    "G_B2A"
+  ],
+  "note": "Full cyclegan_best.pth (~324MB) kept local only; exceeds GitHub 100MB limit",
+  "submission_FID": 94.49415687683565,
+  "submission_MiFID": 0.41078032553195953
+}

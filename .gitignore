@@ -2,3 +2,7 @@
 .DS_Store
 __pycache__/
 .ipynb_checkpoints/
+
+# Keep team report as Markdown only; PDF generated locally
+report/*.pdf
+

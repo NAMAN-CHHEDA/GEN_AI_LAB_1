@@ -54,10 +54,32 @@
     "training_history": "task3_gan/sarvesh/logs/final_training_history_epochs.csv"
   },
   "kaggle": {
-    "local_part3_fid": 104.00403608031934,
-    "local_part3_mifid": 0.4123632311820984,
-    "submission_score": -52.2081,
-    "note": "Confirmed on Kaggle leaderboard. Still record public/private split and exact rank for the report bonus table."
+    "rank": 11,
+    "recorded_at": "2026-10-06T10:44:00",
+    "submission_FID": 94.49415687683565,
+    "submission_MiFID": 0.41078032553195953,
+    "score": 47.4524
   },
-  "raw_logs_dir": "reproducibility/raw_logs/task3/sarvesh/"
+  "raw_logs_dir": "reproducibility/raw_logs/task3/sarvesh/",
+  "run": "rtx4090_v3",
+  "updated_at": "2026-10-06T10:46:14",
+  "submission_csv": {
+    "FID": 94.49415687683565,
+    "MiFID": 0.41078032553195953
+  },
+  "training": {
+    "epochs": 150,
+    "batch_size": 12,
+    "lambda_identity": 0.5,
+    "wall_time_min": 755.8
+  },
+  "artifacts": {
+    "pred_B2A": 7038,
+    "pred_A2B": 300,
+    "generators_committed": [
+      "checkpoints/G_A2B_final.pth",
+      "checkpoints/G_B2A_final.pth"
+    ],
+    "main_notebook": "src/cyclegan_4090_v3.ipynb"
+  }
 }

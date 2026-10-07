@@ -56,7 +56,7 @@ Each member is solely responsible for the architecture, hyperparameters, trainin
 
 **Sarvesh Reshimwale (019129357)** contributed a character-level GPT on TinyStories; MeanPool, TextCNN, and BiLSTM sentiment models; and a CycleGAN Monet↔Photo system whose competition submission reports local FID 94.494, MiFID 0.4108, Kaggle score 47.4524, and leaderboard rank 11 (recorded 6 October 2026).
 
-**Naman Chheda (019158893)** contributed a smaller character-level GPT with layer and dropout ablations; n-gram bag, Transformer, and BiGRU sentiment models with calibration and slice analyses; and an independent CycleGAN implementation under `task3_gan/naman/`, with member-specific results and artifacts documented in that folder.
+**Naman Chheda (019158893)** contributed a smaller character-level GPT with layer and dropout ablations; n-gram bag, Transformer, and BiGRU sentiment models with calibration and slice analyses; and an independent CycleGAN implementation under `task3_gan/naman/` (a 60,000-step baseline, run01, and a 150,000-step final model, run02) whose competition submission reports local FID 99.501, MiFID 0.4121, and Kaggle score 49.9565, with member-specific results and artifacts documented in that folder.
 
 Reproduction entry points are documented in the repository root `README.md` (smoke scripts and notebook sequences per member and task). Raw training logs and environment manifests are retained under `reproducibility/` and the corresponding member directories. No credentials or API keys are included in the repository.
 
@@ -225,16 +225,16 @@ Each member implemented a CycleGAN with two generators and two discriminators tr
 
 | Item                        | Sarvesh                                                                                 | Naman                                                                                   |
 | --------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Generators / discriminators | ResNet generators; PatchGAN discriminators with spectral normalization                  | CycleGAN generators and discriminators (member implementation under `task3_gan/naman/`) |
-| Resolution                  | 256\times256                                                                            | As specified in member configuration                                                    |
-| Data                        | 300 Monet, 7,038 photos (unpaired)                                                      | Shared Monet/Photo domains under `task3_gan/data/`                                      |
-| Batch size / epochs         | 12 / 150                                                                                | As specified in member configuration                                                    |
-| Loss weights                | \lambda_{\mathrm{cycle}}=10, \lambda_{\mathrm{identity}}=0.5                            | As specified in member configuration                                                    |
-| Additional training choices | Discriminator learning rate 0.5\times generator; AMP (bfloat16); test-time augmentation | Documented in `task3_gan/naman/results.md`                                              |
+| Generators / discriminators | ResNet generators; PatchGAN discriminators with spectral normalization                  | Generators with 9 residual blocks (ngf = 64) and resize-convolution upsampling; discriminators with ndf = 64 (member implementation under `task3_gan/naman/`) |
+| Resolution                  | 256\times256                                                                            | 256\times256 (random crop from 286\times286, horizontal flip)                           |
+| Data                        | 300 Monet, 7,038 photos (unpaired)                                                      | Shared Monet/Photo domains under `task3_gan/data/` (300 Monet, 7,038 photos); run02 trained on all images, no held-out set |
+| Batch size / epochs         | 12 / 150                                                                                | 1 / 150,000 iterations                                                                  |
+| Loss weights                | \lambda_{\mathrm{cycle}}=10, \lambda_{\mathrm{identity}}=0.5                            | \lambda_{\mathrm{cycle}}=10 (steps 0-40,000), 5 (40,000-100,000), 10 (100,000-150,000); \lambda_{\mathrm{identity}}=2.5 (steps 0-100,000), 5 (100,000-150,000) |
+| Additional training choices | Discriminator learning rate 0.5\times generator; AMP (bfloat16); test-time augmentation | Adam (lr 2\times10^{-4}, \beta=(0.5,0.999)), constant until step 50,000 then linear decay; DiffAugment (color, translation) on discriminator inputs only; image pool of 50; EMA generator weights (decay 0.999); seed 42; run stopped and resumed at steps 40,000 and 100,000 (manifests in `reproducibility/manifests_run02/`) |
 | Parameters                  | 28,275,336                                                                              | Reported in member metrics                                                              |
-| Hardware / cost             | RTX 4090; \approx 755.8 min; peak VRAM \approx 12.9 GB                                  | Reported in member hardware disclosure                                                  |
-| Outputs                     | `pred_A2B` (300), `pred_B2A` (7,038)                                                    | `task3_gan/naman/outputs/`                                                              |
-| Checkpoints                 | `G_A2B_final.pth`, `G_B2A_final.pth`                                                    | `task3_gan/naman/checkpoints/`                                                          |
+| Hardware / cost             | RTX 4090; \approx 755.8 min; peak VRAM \approx 12.9 GB                                  | \approx 297.7 min (17,863 s); peak GPU memory \approx 19.6 GB; 0 non-finite steps       |
+| Outputs                     | `pred_A2B` (300), `pred_B2A` (7,038)                                                    | `task3_gan/naman/outputs/`: `pred_A2B` (300), `pred_B2A` (300)                          |
+| Checkpoints                 | `G_A2B_final.pth`, `G_B2A_final.pth`                                                    | `task3_gan/naman/checkpoints_run02/ema_step125000.pt` (EMA generator weights; submitted model) |
 
 
 
@@ -244,18 +244,18 @@ Each member implemented a CycleGAN with two generators and two discriminators tr
 **Table 7.** Class competition submission metrics and leaderboard outcome
 
 
-| Quantity                     | Value                                  |
-| ---------------------------- | -------------------------------------- |
-| Mean FID (both directions)   | 94.494                                 |
-| Mean MiFID (both directions) | 0.4108                                 |
-| Photo → Monet FID / MiFID    | 95.309 / 0.4056                        |
-| Monet → Photo FID / MiFID    | 93.679 / 0.4159                        |
-| Kaggle score                 | 47.4524                                |
-| Leaderboard rank             | 11                                     |
-| Timestamp of record          | 6 October 2026, approximately 10:44 AM |
+| Quantity                     | Sarvesh                                | Naman                                     |
+| ---------------------------- | -------------------------------------- | ----------------------------------------- |
+| Mean FID (both directions)   | 94.494                                 | 99.501                                    |
+| Mean MiFID (both directions) | 0.4108                                 | 0.4121                                    |
+| Photo → Monet FID / MiFID    | 95.309 / 0.4056                        | 97.667 / 0.4082                           |
+| Monet → Photo FID / MiFID    | 93.679 / 0.4159                        | 101.335 / 0.4161                          |
+| Kaggle score                 | 47.4524                                | 49.9565                                   |
+| Leaderboard rank             | 11                                     | 8 (team entry, morning of 6 October 2026) |
 
 
-Source file: `task3_gan/sarvesh/submission.csv`. Training curves and epoch histories are available at `outputs/loss_curves_v3.png` and `logs/training_history_v3.csv`.
+
+Source file: `task3_gan/sarvesh/submission.csv`. Training curves and epoch histories are available at `outputs/loss_curves_v3.png` and `logs/training_history_v3.csv`. Naman’s source file is `task3_gan/naman/submission.csv` (run02, step 125,000); his Kaggle score improved across submissions from 54.4377 (run01, step 60,000) to 51.0272 (run02, step 100,000) to 49.9565 (run02, step 125,000).
 
 **Table 8.** Supplementary distributional and perceptual metrics (Sarvesh; see `full_metrics_report.csv`).
 
@@ -274,7 +274,7 @@ Source file: `task3_gan/sarvesh/submission.csv`. Training curves and epoch histo
 
 Parameter count, training time, throughput, and peak memory associated with these probes are recorded alongside the metric CSV and member `results.md`.
 
-Naman’s corresponding metric tables, curves, predictions, and competition records are maintained in `task3_gan/naman/` (`results.md`, metric CSVs, and `outputs/`).
+Naman (run02, step 125,000; class grader protocol on the first 300 sorted images per direction): Monet → Photo FID 101.335 / MiFID 0.4161; Photo → Monet FID 97.667 / MiFID 0.4082. Naman’s corresponding metric tables, curves, predictions, and competition records are maintained in `task3_gan/naman/` (`results.md`, metric CSVs, and `outputs/`).
 
 ### 5.3 Human Audit
 

@@ -7,16 +7,36 @@ paths:                           # relative to the task3/ folder, never absolute
   manifest_dir: reproducibility/manifests
   raw_log_dir: reproducibility/raw_logs
   checkpoint_dir: naman/checkpoints
-  backup_dir: null               # optional second folder that checkpoints are copied to
+  log_dir: naman/logs            # history.csv, raw_train_log.txt, run_summary.json
+  sample_dir: naman/outputs/samples
+  backup_dir: null               # optional second folder that checkpoints are copied to (leave null = no backup)
 
 data:
   split_seed: 8893
-  holdout_a: null                # int count or float fraction in (0,1)
-  holdout_b: null
-  image_size: null
-  augment: null                  # list from {hflip, random_crop}; [] for none
-  load_size: null                # only needed with random_crop (resize to this, then crop to image_size)
-  batch_size: null
-  num_workers: null
+  holdout_a: 30                  # int count or float fraction in (0,1)
+  holdout_b: 500
+  image_size: 256
+  augment: [random_crop, hflip]  # list from {hflip, random_crop}; [] for none
+  load_size: 286                 # resize to this, then crop to image_size
+  batch_size: 1
+  num_workers: 2                 # use 0 on Windows if the DataLoader hangs
 
-seed: null                       # training seed
+seed: 42                         # training seed
+
+model:
+  ngf: 64
+  n_blocks: 9
+  ndf: 64
+
+train:
+  total_steps: 60000
+  decay_start: 30000             # LR constant until here, then linear decay to 0 at total_steps
+  log_every: 100
+  ckpt_every: 5000
+  lr: 2.0e-4
+  betas: [0.5, 0.999]
+  lambda_cycle: 10
+  lambda_identity: 5
+  diffaug: "color,translation"   # applied to discriminator inputs only
+  pool_size: 50
+  ema_decay: 0.999

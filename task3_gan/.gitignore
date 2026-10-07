@@ -2,3 +2,20 @@ data/
 *.pt
 __pycache__/
 .ipynb_checkpoints/
+.venv/
+naman/outputs/candidates/
+naman/outputs/_smoke_eval/
+
+# run02 outputs (kept trackable: logs_run02/history.csv, raw_train_log.txt, run_summary.json)
+naman/checkpoints_run02/
+naman/logs_run02/*
+!naman/logs_run02/history.csv
+!naman/logs_run02/raw_train_log.txt
+!naman/logs_run02/run_summary.json
+naman/outputs/samples_run02/
+
+# console copy of run01's output (the same lines are in naman/logs/raw_train_log.txt)
+full_run_stdout.txt
+
+# Python noise (__pycache__/ and .ipynb_checkpoints/ are already listed at the top)
+*.pyc

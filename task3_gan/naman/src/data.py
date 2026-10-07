@@ -5,6 +5,7 @@ each has its own dataset and its own DataLoader.
 """
 import json
 import random
+import signal
 from pathlib import Path
 
 from PIL import Image
@@ -22,7 +23,9 @@ def list_images(folder):
 
 
 def _n_holdout(holdout, n_total):
-    """holdout may be an int count or a float fraction in (0,1)."""
+    """holdout may be an int count or a float fraction in (0,1); 0 means no held-out images."""
+    if holdout == 0:
+        return 0
     n = round(holdout * n_total) if isinstance(holdout, float) and holdout < 1 else int(holdout)
     if not 0 < n < n_total:
         raise ValueError(f"Held-out size {n} invalid for {n_total} images.")
@@ -56,6 +59,8 @@ def build_manifest(cfg):
         "A": {"dir": cfg["paths"]["monet_dir"], **make_split(files_a, require(d, "holdout_a"), seed)},
         "B": {"dir": cfg["paths"]["photo_dir"], **make_split(files_b, require(d, "holdout_b"), seed)},
     }
+    if not manifest["A"]["heldout"] and not manifest["B"]["heldout"]:
+        manifest["holdout"] = "none"  # every image is used for training
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
@@ -98,6 +103,12 @@ class ImageFolderDataset(Dataset):
         return self.transform(img)
 
 
+def _ignore_sigint(worker_id):
+    """DataLoader workers ignore Ctrl+C: the main process handles it (graceful stop in train.py). Without this a
+    worker quits on the console's Ctrl+C and the main process then fails with 'worker exited unexpectedly'."""
+    signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+
 def make_dataloaders(cfg, manifest, subset="train", limit=None):
     """Return (loader_A, loader_B), independent. subset is 'train' or 'heldout'.
 
@@ -110,6 +121,7 @@ def make_dataloaders(cfg, manifest, subset="train", limit=None):
     for dom in ("A", "B"):
         files = manifest[dom][subset][:limit]
         ds = ImageFolderDataset(resolve(manifest[dom]["dir"]), files, tf)
-        loaders.append(DataLoader(ds, batch_size=require(d, "batch_size"), shuffle=train,
-                                  num_workers=require(d, "num_workers"), drop_last=train))
+        nw = require(d, "num_workers")
+        loaders.append(DataLoader(ds, batch_size=require(d, "batch_size"), shuffle=train, num_workers=nw,
+                                  drop_last=train, worker_init_fn=_ignore_sigint if nw > 0 else None))
     return tuple(loaders)

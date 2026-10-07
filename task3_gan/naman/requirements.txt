@@ -3,3 +3,8 @@ torchvision
 numpy
 pillow
 pyyaml
+torch-fidelity
+lpips
+torchmetrics
+pandas
+matplotlib

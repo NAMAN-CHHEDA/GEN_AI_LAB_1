@@ -20,6 +20,8 @@ def write_run_manifest(cfg, split_manifest_path):
         "config": cfg,
         "checkpoint_results": [],  # rows like {"checkpoint": "...", "result": "..."}
     }
+    if not cfg["data"].get("holdout_a") and not cfg["data"].get("holdout_b"):
+        manifest["holdout"] = "none"  # no held-out images: the model is trained on every image
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)

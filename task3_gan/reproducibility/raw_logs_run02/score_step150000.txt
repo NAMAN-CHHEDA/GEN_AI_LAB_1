@@ -1,0 +1,52 @@
+device: cuda
+loaded EMA generators from checkpoints_run02/ema_step150000.pt (step 150000), image size 256
+  A2B: OK - 300 predictions, all RGB JPG 256x256
+  B2A: OK - 300 predictions, all RGB JPG 256x256
+wrote 300 + 300 images under C:\Users\naman\Desktop\GEN_AI_LAB_1\GEN_AI_LAB_1\task3_gan\naman\outputs_run02_s150000 in 6.8 s
+Device: cuda
+
+Counts (after N_EVAL cap):
+Real Monet: 300  | Gen Monet (B2A): 300
+Real Photo: 300  | Gen Photo (A2B): 300
+Used after min() matching: B2A n = 300 | A2B n = 300
+
+ Evaluating Photo -> Monet (B2A) 
+
+Inception activations:   0%|          | 0/10 [00:00<?, ?it/s]
+Inception activations:  10%|█         | 1/10 [00:00<00:02,  3.07it/s]
+Inception activations:  30%|███       | 3/10 [00:00<00:01,  6.86it/s]
+Inception activations:  50%|█████     | 5/10 [00:00<00:00,  8.93it/s]
+Inception activations:  70%|███████   | 7/10 [00:00<00:00, 10.14it/s]
+Inception activations:  90%|█████████ | 9/10 [00:00<00:00, 10.98it/s]
+Inception activations: 100%|██████████| 10/10 [00:01<00:00,  9.66it/s]
+
+Inception activations:   0%|          | 0/10 [00:00<?, ?it/s]
+Inception activations:  20%|██        | 2/10 [00:00<00:00, 12.54it/s]
+Inception activations:  40%|████      | 4/10 [00:00<00:00, 12.67it/s]
+Inception activations:  60%|██████    | 6/10 [00:00<00:00, 12.56it/s]
+Inception activations:  80%|████████  | 8/10 [00:00<00:00, 12.18it/s]
+Inception activations: 100%|██████████| 10/10 [00:00<00:00, 12.99it/s]
+Inception activations: 100%|██████████| 10/10 [00:00<00:00, 12.74it/s]
+[Photo->Monet] FID=98.549  MiFID=0.4073
+
+ Evaluating Monet -> Photo (A2B) 
+
+Inception activations:   0%|          | 0/10 [00:00<?, ?it/s]
+Inception activations:  10%|█         | 1/10 [00:00<00:02,  3.13it/s]
+Inception activations:  30%|███       | 3/10 [00:00<00:00,  7.23it/s]
+Inception activations:  50%|█████     | 5/10 [00:00<00:00,  9.50it/s]
+Inception activations:  70%|███████   | 7/10 [00:00<00:00, 10.93it/s]
+Inception activations:  90%|█████████ | 9/10 [00:00<00:00, 11.66it/s]
+Inception activations: 100%|██████████| 10/10 [00:00<00:00, 10.53it/s]
+
+Inception activations:   0%|          | 0/10 [00:00<?, ?it/s]
+Inception activations:  20%|██        | 2/10 [00:00<00:00, 12.73it/s]
+Inception activations:  40%|████      | 4/10 [00:00<00:00, 12.55it/s]
+Inception activations:  60%|██████    | 6/10 [00:00<00:00, 12.74it/s]
+Inception activations:  80%|████████  | 8/10 [00:00<00:00, 12.56it/s]
+Inception activations: 100%|██████████| 10/10 [00:00<00:00, 13.90it/s]
+Inception activations: 100%|██████████| 10/10 [00:00<00:00, 13.31it/s]
+[Monet->Photo] FID=101.144  MiFID=0.4167
+   ID        FID    MiFID
+0   1  99.846105  0.41199
+wrote C:\Users\naman\Desktop\GEN_AI_LAB_1\GEN_AI_LAB_1\task3_gan\naman\outputs_run02_s150000\submission.csv | runtime 17.1 s

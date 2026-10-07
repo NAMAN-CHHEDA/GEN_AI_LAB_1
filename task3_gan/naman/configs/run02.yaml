@@ -1,0 +1,48 @@
+# Run02 config: copy of run01.yaml with the changes below. Run01's files are never touched (all paths are run02-specific).
+#   - model.upsample: resize_conv        (nearest x2 + reflect-pad + 3x3 conv instead of transposed conv)
+#   - train.lambda_identity: 2.5         (run01 used 5)
+#   - train.total_steps 100000, decay_start 50000
+#   - data.holdout_a / holdout_b: 0      (train on ALL 300 Monet and ALL 7,038 photos; no held-out images)
+run_name: run02
+
+paths:                           # relative to the task3/ folder, never absolute
+  monet_dir: data/monet_jpg      # domain A
+  photo_dir: data/photo_jpg      # domain B
+  manifest_dir: reproducibility/manifests_run02
+  raw_log_dir: reproducibility/raw_logs_run02
+  checkpoint_dir: naman/checkpoints_run02
+  log_dir: naman/logs_run02      # history.csv, raw_train_log.txt, run_summary.json
+  sample_dir: naman/outputs/samples_run02
+  backup_dir: null               # optional second folder that checkpoints are copied to (leave null = no backup)
+
+data:
+  split_seed: 8893
+  holdout_a: 0                   # 0 = no held-out images (train on everything)
+  holdout_b: 0
+  image_size: 256
+  augment: [random_crop, hflip]  # list from {hflip, random_crop}; [] for none
+  load_size: 286                 # resize to this, then crop to image_size
+  batch_size: 1
+  num_workers: 2                 # use 0 on Windows if the DataLoader hangs
+
+seed: 42                         # training seed
+
+model:
+  ngf: 64
+  n_blocks: 9
+  ndf: 64
+  upsample: resize_conv          # "convtranspose" (run01) or "resize_conv"
+
+train:
+  total_steps: 150000
+  decay_start: 50000             # LR constant until here, then linear decay to 0 at total_steps
+  log_every: 100
+  ckpt_every: 5000
+  fid_every: 5000                # grader FID (first 300 files, torchvision Inception) after every Nth step; 0 / missing = off
+  lr: 2.0e-4
+  betas: [0.5, 0.999]
+  lambda_cycle: 10
+  lambda_identity: 5
+  diffaug: "color,translation"   # applied to discriminator inputs only
+  pool_size: 50
+  ema_decay: 0.999

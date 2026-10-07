@@ -1,0 +1,10 @@
+# Repository-wide rules (they apply to every folder, including task1_llm/ and task3_gan/).
+
+# Secrets: credentials must never be committed
+.kaggle/
+kaggle.json
+.env
+*.env
+
+# Large archives
+*.zip

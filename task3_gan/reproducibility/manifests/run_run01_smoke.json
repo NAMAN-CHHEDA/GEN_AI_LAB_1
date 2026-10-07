@@ -1,0 +1,67 @@
+{
+  "run_name": "run01_smoke",
+  "created_utc": "2026-10-02T23:03:57+00:00",
+  "seed": 42,
+  "split_seed": 8893,
+  "split_manifest": "split_run01_smoke.json",
+  "libraries": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "pyyaml": "6.0.3",
+    "cuda": "12.4",
+    "gpu": "NVIDIA GeForce RTX 4090"
+  },
+  "config": {
+    "run_name": "run01_smoke",
+    "paths": {
+      "monet_dir": "data/monet_jpg",
+      "photo_dir": "data/photo_jpg",
+      "manifest_dir": "reproducibility/manifests",
+      "raw_log_dir": "reproducibility/raw_logs",
+      "checkpoint_dir": "naman/checkpoints",
+      "log_dir": "naman/logs",
+      "sample_dir": "naman/outputs/samples",
+      "backup_dir": null
+    },
+    "data": {
+      "split_seed": 8893,
+      "holdout_a": 30,
+      "holdout_b": 500,
+      "image_size": 64,
+      "augment": [
+        "random_crop",
+        "hflip"
+      ],
+      "load_size": 72,
+      "batch_size": 1,
+      "num_workers": 0
+    },
+    "seed": 42,
+    "model": {
+      "ngf": 64,
+      "n_blocks": 6,
+      "ndf": 64
+    },
+    "train": {
+      "total_steps": 300,
+      "decay_start": 150,
+      "log_every": 20,
+      "ckpt_every": 100,
+      "lr": 0.0002,
+      "betas": [
+        0.5,
+        0.999
+      ],
+      "lambda_cycle": 10,
+      "lambda_identity": 2.5,
+      "diffaug": "color,translation",
+      "pool_size": 50,
+      "ema_decay": 0.999
+    }
+  },
+  "checkpoint_results": []
+}

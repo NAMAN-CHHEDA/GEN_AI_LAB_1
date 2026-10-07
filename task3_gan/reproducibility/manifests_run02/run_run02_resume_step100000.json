@@ -1,0 +1,86 @@
+{
+  "run_name": "run02",
+  "resumed_at_step": 100000,
+  "created_utc": "2026-10-05T23:14:44+00:00",
+  "compared_with": "run manifest run_run02.json",
+  "changed_keys": {
+    "train.lambda_identity": {
+      "old": 2.5,
+      "new": 5
+    },
+    "train.total_steps": {
+      "old": 100000,
+      "new": 150000
+    }
+  },
+  "config": {
+    "run_name": "run02",
+    "paths": {
+      "monet_dir": "data/monet_jpg",
+      "photo_dir": "data/photo_jpg",
+      "manifest_dir": "reproducibility/manifests_run02",
+      "raw_log_dir": "reproducibility/raw_logs_run02",
+      "checkpoint_dir": "naman/checkpoints_run02",
+      "log_dir": "naman/logs_run02",
+      "sample_dir": "naman/outputs/samples_run02",
+      "backup_dir": null
+    },
+    "data": {
+      "split_seed": 8893,
+      "holdout_a": 0,
+      "holdout_b": 0,
+      "image_size": 256,
+      "augment": [
+        "random_crop",
+        "hflip"
+      ],
+      "load_size": 286,
+      "batch_size": 1,
+      "num_workers": 2
+    },
+    "seed": 42,
+    "model": {
+      "ngf": 64,
+      "n_blocks": 9,
+      "ndf": 64,
+      "upsample": "resize_conv"
+    },
+    "train": {
+      "total_steps": 150000,
+      "decay_start": 50000,
+      "log_every": 100,
+      "ckpt_every": 5000,
+      "fid_every": 5000,
+      "lr": 0.0002,
+      "betas": [
+        0.5,
+        0.999
+      ],
+      "lambda_cycle": 10,
+      "lambda_identity": 5,
+      "diffaug": "color,translation",
+      "pool_size": 50,
+      "ema_decay": 0.999
+    }
+  },
+  "code": {
+    "git": {
+      "commit": "2ff7ad330900ad4b97fc4ae2c093e5846a2765b5",
+      "uncommitted_changes_here": true
+    },
+    "file_sha256": {
+      "train.py": "91491bd5e44fbad6989806936d995c889de0d94c9d242b0a176f65147fb96a5e",
+      "grader_eval.py": "394862655d9cc7eef4df38db574815033e97b5102fb39127e8066568fe73a18d",
+      "gen_preds.py": "8e2e05f041f97797fbb6010747e7606d29b0ad3496cd6ddfe1e164e6fe83f08f",
+      "evaluate_local.py": "53449e831b0d329bfe3945cb8cdfd797f2cd81b9b1c0e6eb9657b4041fcd5e68",
+      "src/models.py": "5378f5873068429c5d5f0b517100adede6067a38a0b02b49cca596401e2680e7",
+      "src/losses_aug.py": "9bc9663086d451b478ec8a34f6c3eeb61d16f2d2ad7c852d58bf19d227e83e8e",
+      "src/data.py": "0673828f7ad8f6eeff9a8773bd7ac633ac8d382f881b50498c9de5e7c7f5860b",
+      "src/manifest.py": "267a22406dab04fe930e5825f45ea6c1a6b9ba1939163b14d204291e30eda4a9",
+      "src/checkpoint.py": "22ff28bc4216c7740e665f87c14a9b1d812867c4d97c99e6d92e433ad57e2270",
+      "src/config.py": "350289c641ecfa84e6ffd4d7aea4c91a526999a51807ff7fc183d51a6275d80e",
+      "src/logging_utils.py": "cb9172bced2e477a64e4ee8450c995dbe6e1d50b62a76e8c37cad79c1def8bf2",
+      "config:run02.yaml": "2acfb40fbd75c31c90aa08e5390e65b37cf3a861fa041f295afdb77c29bba129"
+    }
+  }
+}

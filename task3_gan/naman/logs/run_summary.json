@@ -1,0 +1,8 @@
+{
+  "run_name": "run01",
+  "device": "cuda",
+  "steps": 60000,
+  "total_train_seconds": 6585.181127799995,
+  "peak_gpu_memory_mb": 10564.478515625,
+  "nan_count": 0
+}

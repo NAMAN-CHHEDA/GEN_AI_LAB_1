@@ -1,0 +1,10 @@
+{
+  "run_name": "run02",
+  "device": "cuda",
+  "steps": 150000,
+  "total_train_seconds": 17863.21513320002,
+  "peak_gpu_memory_mb": 19598.52001953125,
+  "nan_count": 0,
+  "best_grader_fid_step": 125000,
+  "best_grader_fid_avg": 99.56940419022965
+}

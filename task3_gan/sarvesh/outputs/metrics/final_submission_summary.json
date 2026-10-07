@@ -1,0 +1,17 @@
+{
+  "kaggle_runtime": false,
+  "device": "cuda",
+  "monet_images": 300,
+  "photo_images": 7038,
+  "trained_this_run": true,
+  "checkpoint": "task3_gan/sarvesh/checkpoints/cyclegan_final.pth",
+  "submission_images": 7038,
+  "submission_zip": "task3_gan/sarvesh/outputs/images.zip",
+  "submission_zip_exists": true,
+  "submission_zip_mb": 94.74,
+  "local_fid_proxy": null,
+  "real_stats_npz": null,
+  "image_size": 256,
+  "epochs_config": 250,
+  "submission_csv": "task3_gan/sarvesh/submission.csv"
+}

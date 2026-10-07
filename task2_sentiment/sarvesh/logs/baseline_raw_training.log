@@ -1,0 +1,5 @@
+Epoch 1/5 | Train Loss: 0.2662 | Val Loss: 0.1970 | Val Accuracy: 0.9264 | Val Macro-F1: 0.9264 | Time: 19.38s | Examples/sec: 26005.06
+Epoch 2/5 | Train Loss: 0.1957 | Val Loss: 0.1888 | Val Accuracy: 0.9301 | Val Macro-F1: 0.9301 | Time: 23.66s | Examples/sec: 21298.65
+Epoch 3/5 | Train Loss: 0.1859 | Val Loss: 0.1861 | Val Accuracy: 0.9317 | Val Macro-F1: 0.9317 | Time: 20.52s | Examples/sec: 24563.71
+Epoch 4/5 | Train Loss: 0.1809 | Val Loss: 0.1854 | Val Accuracy: 0.9319 | Val Macro-F1: 0.9319 | Time: 20.68s | Examples/sec: 24375.83
+Epoch 5/5 | Train Loss: 0.1771 | Val Loss: 0.1854 | Val Accuracy: 0.9321 | Val Macro-F1: 0.9321 | Time: 27.45s | Examples/sec: 18361.89

@@ -1,0 +1,24 @@
+{
+ "run_name": "abl_layers2",
+ "param_count": 434432,
+ "epochs_completed": 15,
+ "steps_per_epoch": 1562,
+ "total_steps": 23430,
+ "warmup_steps": 1172,
+ "best_val_loss": 0.966197908782959,
+ "best_epoch": 15,
+ "final_val_loss": 0.966197908782959,
+ "train_tokens_per_sec_mean": 1095203.846642822,
+ "tokens_seen": 191938560,
+ "total_train_time_sec": 181.60170639998978,
+ "peak_memory_mb": 247.1669921875,
+ "nonfinite_steps": 7,
+ "max_grad_norm": 3.586834192276001,
+ "device": "cuda",
+ "fp16_autocast": true,
+ "checkpoints": {
+  "best": "..\\checkpoints\\abl_layers2_best.pt",
+  "final": "..\\checkpoints\\abl_layers2_final.pt",
+  "resume": "..\\checkpoints\\abl_layers2_resume.pt"
+ }
+}

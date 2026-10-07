@@ -1,0 +1,29 @@
+{
+  "n_samples": 30,
+  "axes": {
+    "style_score_1_to_5": {
+      "mean_rater1": 3.967,
+      "mean_rater2": 3.233,
+      "exact_agreement": 0.267,
+      "within_1_agreement": 0.733,
+      "cohen_kappa": -0.059
+    },
+    "content_score_1_to_5": {
+      "mean_rater1": 4.1,
+      "mean_rater2": 4.167,
+      "exact_agreement": 0.5,
+      "within_1_agreement": 0.9,
+      "cohen_kappa": 0.185
+    },
+    "artifact_score_1_to_5": {
+      "mean_rater1": 4.333,
+      "mean_rater2": 3.3,
+      "exact_agreement": 0.267,
+      "within_1_agreement": 0.567,
+      "cohen_kappa": 0.073
+    }
+  },
+  "overall_exact_agreement": 0.344,
+  "overall_mean_score_rater1": 4.133,
+  "overall_mean_score_rater2": 3.567
+}

@@ -1,0 +1,180 @@
+date: 2026-10-03T03:33:17
+torch: 2.14.1+cu126
+device: NVIDIA GeForce RTX 4090
+config:
+{
+  "seed": 42,
+  "run_name": "gpu",
+  "paths": {
+    "processed_dir": "data_processed/gpu",
+    "checkpoint_dir": "checkpoints/gpu",
+    "output_dir": "outputs/gpu"
+  },
+  "data": {
+    "dataset": "fancyzhx/yelp_polarity",
+    "train_samples": null,
+    "val_fraction": 0.1,
+    "val_samples": null,
+    "test_samples": null,
+    "vocab_max": 50000,
+    "min_freq": 3,
+    "max_len": null,
+    "head_fraction": 0.25,
+    "lemmatize": true,
+    "stopwords": "minimal",
+    "keep_digits": true
+  },
+  "train": {
+    "epochs": 8,
+    "batch_size": 128,
+    "lr_warmup_ratio": 0.05,
+    "schedule": "cosine",
+    "grad_clip": 1.0,
+    "patience": 2,
+    "weight_decay": 0.01,
+    "amp": true,
+    "ema_decay": 0.999,
+    "length_bucketing": true
+  },
+  "models": {
+    "ngram_bag": {
+      "embed_dim": 32,
+      "bigram_buckets": 2000000,
+      "dropout": 0.4,
+      "lr": 0.002,
+      "weight_decay": 0.0
+    },
+    "transformer": {
+      "d_model": 128,
+      "layers": 2,
+      "heads": 4,
+      "ffn": 512,
+      "dropout": 0.2,
+      "token_dropout": 0.1,
+      "pool": "mean_max",
+      "lr": 0.0005
+    },
+    "bigru": {
+      "word_dim": 128,
+      "bigram_dim": 64,
+      "bigram_buckets": 500000,
+      "hidden": 128,
+      "layers": 2,
+      "rnn_dropout": 0.25,
+      "emb_dropout": 0.25,
+      "head_dropout": 0.4,
+      "pooling": "max_mean_attn",
+      "lr": 0.001
+    }
+  }
+}
+Loading fancyzhx/yelp_polarity (cache: data/hf_cache)
+Label check (first 2 train reviews for each label, first 200 chars):
+  label=0: "Unfortunately, the frustration of being Dr. Goldberg's patient is a repeat of the experience I've had with so many other doctors in NYC -- good doctor, terrible staff.  It seems that his staff simply "
+  label=1: "Been going to Dr. Goldberg for over 10 years. I think I was one of his 1st patients when he started at MHMG. He's been great over the years and is really all about the big picture. It is because of hi"
+  label=0: "I don't know what Dr. Goldberg was like before  moving to Arizona, but let me tell you, STAY AWAY from this doctor and this office. I was going to Dr. Johnson before he left and Goldberg took over whe"
+  label=1: 'All the food is great here. But the best thing they have is their wings. Their wings are simply fantastic!!  The \\""Wet Cajun\\"" are by the best & most popular.  I also like the seasoned salt wings.  '
+Validation train: 560000 rows, kept 560000, dropped {'not_a_string': 0, 'empty': 0, 'bad_label': 0}, reviews with literal escapes {'newline': 269718, 'quote': 102352, 'unicode': 12521, 'any': 302738}
+Validation test: 38000 rows, kept 38000, dropped {'not_a_string': 0, 'empty': 0, 'bad_label': 0}, reviews with literal escapes {'newline': 18279, 'quote': 6800, 'unicode': 879, 'any': 20462}
+Cleaned train: 504000 reviews
+Cleaned val: 56000 reviews
+Cleaned test: 38000 reviews
+Cleaning speed: 22326 reviews/s (598000 reviews in 26.8s)
+Vocabulary: 50000 ids (from 177912 distinct train words)
+Build finished in 48.6s
+--- Summary ---
+vocab size: 50000
+train: 504000 reviews, classes {'label_0': 251808, 'label_1': 252192}, mean tokens 93.04, OOV 0.432%, empty after cleaning 32
+val: 56000 reviews, classes {'label_0': 28192, 'label_1': 27808}, mean tokens 92.98, OOV 0.494%, empty after cleaning 5
+test: 38000 reviews, classes {'label_0': 19000, 'label_1': 19000}, mean tokens 92.7, OOV 0.488%, empty after cleaning 0
+example: train review 0 has 64 token ids
+date: 2026-10-03T03:39:12
+torch: 2.14.1+cu126
+device: NVIDIA GeForce RTX 4090
+config:
+{
+  "seed": 42,
+  "run_name": "gpu",
+  "paths": {
+    "processed_dir": "data_processed/gpu",
+    "checkpoint_dir": "checkpoints/gpu",
+    "output_dir": "outputs/gpu"
+  },
+  "data": {
+    "dataset": "fancyzhx/yelp_polarity",
+    "train_samples": null,
+    "val_fraction": 0.1,
+    "val_samples": null,
+    "test_samples": null,
+    "vocab_max": 50000,
+    "min_freq": 3,
+    "max_len": 320,
+    "head_fraction": 0.25,
+    "lemmatize": true,
+    "stopwords": "minimal",
+    "keep_digits": true
+  },
+  "train": {
+    "epochs": 8,
+    "batch_size": 128,
+    "lr_warmup_ratio": 0.05,
+    "schedule": "cosine",
+    "grad_clip": 1.0,
+    "patience": 2,
+    "weight_decay": 0.01,
+    "amp": true,
+    "ema_decay": 0.999,
+    "length_bucketing": true
+  },
+  "models": {
+    "ngram_bag": {
+      "embed_dim": 32,
+      "bigram_buckets": 2000000,
+      "dropout": 0.4,
+      "lr": 0.002,
+      "weight_decay": 0.0
+    },
+    "transformer": {
+      "d_model": 128,
+      "layers": 2,
+      "heads": 4,
+      "ffn": 512,
+      "dropout": 0.2,
+      "token_dropout": 0.1,
+      "pool": "mean_max",
+      "lr": 0.0005
+    },
+    "bigru": {
+      "word_dim": 128,
+      "bigram_dim": 64,
+      "bigram_buckets": 500000,
+      "hidden": 128,
+      "layers": 2,
+      "rnn_dropout": 0.25,
+      "emb_dropout": 0.25,
+      "head_dropout": 0.4,
+      "pooling": "max_mean_attn",
+      "lr": 0.001
+    }
+  }
+}
+Loading fancyzhx/yelp_polarity (cache: data/hf_cache)
+Label check (first 2 train reviews for each label, first 200 chars):
+  label=0: "Unfortunately, the frustration of being Dr. Goldberg's patient is a repeat of the experience I've had with so many other doctors in NYC -- good doctor, terrible staff.  It seems that his staff simply "
+  label=1: "Been going to Dr. Goldberg for over 10 years. I think I was one of his 1st patients when he started at MHMG. He's been great over the years and is really all about the big picture. It is because of hi"
+  label=0: "I don't know what Dr. Goldberg was like before  moving to Arizona, but let me tell you, STAY AWAY from this doctor and this office. I was going to Dr. Johnson before he left and Goldberg took over whe"
+  label=1: 'All the food is great here. But the best thing they have is their wings. Their wings are simply fantastic!!  The \\""Wet Cajun\\"" are by the best & most popular.  I also like the seasoned salt wings.  '
+Validation train: 560000 rows, kept 560000, dropped {'not_a_string': 0, 'empty': 0, 'bad_label': 0}, reviews with literal escapes {'newline': 269718, 'quote': 102352, 'unicode': 12521, 'any': 302738}
+Validation test: 38000 rows, kept 38000, dropped {'not_a_string': 0, 'empty': 0, 'bad_label': 0}, reviews with literal escapes {'newline': 18279, 'quote': 6800, 'unicode': 879, 'any': 20462}
+Cleaned train: 504000 reviews
+Cleaned val: 56000 reviews
+Cleaned test: 38000 reviews
+Cleaning speed: 21993 reviews/s (598000 reviews in 27.2s)
+Vocabulary: 50000 ids (from 177915 distinct train words)
+Build finished in 47.8s
+--- Summary ---
+vocab size: 50000
+train: 504000 reviews, classes {'label_0': 251808, 'label_1': 252192}, mean tokens 93.04, OOV 0.432%, empty after cleaning 32
+val: 56000 reviews, classes {'label_0': 28192, 'label_1': 27808}, mean tokens 92.98, OOV 0.494%, empty after cleaning 5
+test: 38000 reviews, classes {'label_0': 19000, 'label_1': 19000}, mean tokens 92.7, OOV 0.489%, empty after cleaning 0
+example: train review 0 has 64 token ids

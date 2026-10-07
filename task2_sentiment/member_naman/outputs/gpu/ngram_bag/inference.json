@@ -1,0 +1,8 @@
+{
+  "model": "ngram_bag",
+  "device": "NVIDIA GeForce RTX 4090",
+  "n_reviews": 38000,
+  "seconds": 0.19223356246948242,
+  "inference_examples_per_sec": 197676.1992642809,
+  "checkpoint_epoch": 2
+}

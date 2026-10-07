@@ -1,0 +1,13 @@
+{
+  "model": "baseline_meanpool",
+  "parameter_count": 3840129,
+  "training_time_sec": 111.90751910209656,
+  "average_examples_per_sec": 22921.029066927167,
+  "peak_gpu_memory_mb": 97.9599609375,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "epochs": 5,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "embedding_dim": 128,
+  "dropout": 0.3
+}

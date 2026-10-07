@@ -1,0 +1,221 @@
+============================================================
+CycleGAN V3 - RTX 4090  |  submission.csv flow
+============================================================
+  BATCH_SIZE         : 12  (was 4)
+  LAMBDA_IDENTITY    : 0.5  (was 5.0 - style transfer was suppressed!)
+  TOTAL_EPOCHS       : 150  (was 250)
+  MONET_REPEATS      : 24  (full photo coverage each epoch)
+  Est. batches/epoch : 600
+  Est. total steps   : 90,000  (V1 had ~13,400)
+  Est. train time    : ~60-82 min on 4090
+
+  OUTPUTS (for eval script):
+    outputs/pred_B2A/  <- Photo -> Monet  (primary - what Kaggle judges)
+    outputs/pred_A2B/  <- Monet -> Photo  (both directions evaluated)
+
+  THEN run Part3_Evaluation_Script.ipynb -> submission.csv -> upload to Kaggle
+
+Device : cuda
+GPU    : NVIDIA GeForce RTX 4090
+VRAM   : 24.0 GB
+BF16   : True
+
+Monet : 300  (C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\dataset\monet_jpg)
+Photo : 7,038  (C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\dataset\photo_jpg)
+
+pred_B2A -> C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\outputs\pred_B2A
+pred_A2B -> C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\outputs\pred_A2B
+
+Mode: FULL dataset (competition - no hold-out)
+Train: 300 Monet | 7038 Photo
+
+Dataset : 7,200 samples | 600 batches/epoch
+Photo coverage/epoch : 7,038 / 7,038 (100%)
+
+G_A2B :   11,372,931
+G_B2A :   11,372,931
+D_A   :    2,764,737
+D_B   :    2,764,737
+TOTAL :   28,275,336
+VRAM after model init: 0.11 / 24.0 GB
+
+AMP : True | dtype : torch.bfloat16
+
+======================================================================
+START TRAINING  -  RTX 4090 V3
+  Epochs  : 150  |  Batches/epoch : 600
+  Batch   : 12    |  lambda_id : 0.5  (fixed from 5.0)
+  Spectral-norm discriminators : YES
+======================================================================
+
+Ep 001/150:   0%|          | 1/600 [00:01<19:45,  1.98s/it, DA=0.668, DB=0.836, G=15.276]
+Ep 001/150:   0%|          | 1/600 [00:02<19:45,  1.98s/it, DA=2.380, DB=2.973, G=14.693]
+Ep 001/150:   0%|          | 2/600 [00:02<11:32,  1.16s/it, DA=2.380, DB=2.973, G=14.693]
+Ep 001/150:   0%|          | 2/600 [00:03<11:32,  1.16s/it, DA=1.096, DB=1.226, G=12.816]
+Ep 001/150 | G=6.3344 DA=0.2468 DB=0.2550 cyc=0.2614 id=0.2647 lr=2.00e-04 ips=25  *BEST
+Ep 002/150 | G=5.4657 DA=0.1851 DB=0.1928 cyc=0.2182 id=0.2390 lr=2.00e-04 ips=25  *BEST
+Ep 003/150 | G=5.1495 DA=0.1802 DB=0.1903 cyc=0.2066 id=0.2302 lr=2.00e-04 ips=25  *BEST
+Ep 004/150 | G=4.9845 DA=0.1938 DB=0.1954 cyc=0.2008 id=0.2283 lr=2.00e-04 ips=25  *BEST
+Ep 005/150 | G=4.7084 DA=0.1931 DB=0.1934 cyc=0.1891 id=0.2210 lr=2.00e-04 ips=24  *BEST
+Ep 006/150 | G=4.5491 DA=0.1859 DB=0.1888 cyc=0.1826 id=0.2147 lr=2.00e-04 ips=24  *BEST
+Ep 007/150 | G=4.4443 DA=0.1797 DB=0.1899 cyc=0.1769 id=0.2098 lr=2.00e-04 ips=24  *BEST
+Ep 008/150 | G=4.3277 DA=0.1784 DB=0.1879 cyc=0.1721 id=0.2047 lr=2.00e-04 ips=24  *BEST
+Ep 009/150 | G=4.2084 DA=0.1789 DB=0.1861 cyc=0.1662 id=0.2001 lr=2.00e-04 ips=24  *BEST
+Ep 010/150 | G=4.1389 DA=0.1758 DB=0.1860 cyc=0.1628 id=0.1959 lr=2.00e-04 ips=24  *BEST
+Ep 011/150 | G=4.0963 DA=0.1730 DB=0.1801 cyc=0.1599 id=0.1930 lr=2.00e-04 ips=24  *BEST
+Ep 012/150 | G=4.0368 DA=0.1703 DB=0.1770 cyc=0.1568 id=0.1892 lr=2.00e-04 ips=24  *BEST
+Ep 013/150 | G=4.0022 DA=0.1694 DB=0.1740 cyc=0.1552 id=0.1888 lr=2.00e-04 ips=24  *BEST
+Ep 014/150 | G=3.9458 DA=0.1670 DB=0.1761 cyc=0.1521 id=0.1853 lr=2.00e-04 ips=24  *BEST
+Ep 015/150 | G=3.9073 DA=0.1612 DB=0.1752 cyc=0.1501 id=0.1847 lr=2.00e-04 ips=24  *BEST
+Ep 016/150 | G=3.9160 DA=0.1585 DB=0.1706 cyc=0.1498 id=0.1826 lr=2.00e-04 ips=24  *BEST
+Ep 017/150 | G=3.8480 DA=0.1555 DB=0.1699 cyc=0.1467 id=0.1817 lr=2.00e-04 ips=24  *BEST
+Ep 018/150 | G=3.8159 DA=0.1560 DB=0.1700 cyc=0.1447 id=0.1769 lr=2.00e-04 ips=24  *BEST
+Ep 019/150 | G=3.8116 DA=0.1546 DB=0.1682 cyc=0.1437 id=0.1779 lr=2.00e-04 ips=24  *BEST
+Ep 020/150 | G=3.7544 DA=0.1564 DB=0.1654 cyc=0.1409 id=0.1774 lr=2.00e-04 ips=24  *BEST
+Ep 021/150 | G=3.7353 DA=0.1560 DB=0.1652 cyc=0.1401 id=0.1765 lr=2.00e-04 ips=24  *BEST
+Ep 022/150 | G=3.7642 DA=0.1510 DB=0.1659 cyc=0.1404 id=0.1765 lr=2.00e-04 ips=24
+Ep 023/150 | G=3.7399 DA=0.1493 DB=0.1664 cyc=0.1391 id=0.1742 lr=2.00e-04 ips=24  *BEST
+Ep 024/150 | G=3.6953 DA=0.1496 DB=0.1640 cyc=0.1368 id=0.1720 lr=2.00e-04 ips=24  *BEST
+Ep 025/150 | G=3.6960 DA=0.1480 DB=0.1681 cyc=0.1367 id=0.1721 lr=2.00e-04 ips=24  *BEST
+Ep 026/150 | G=3.6821 DA=0.1477 DB=0.1667 cyc=0.1357 id=0.1717 lr=2.00e-04 ips=24  *BEST
+Ep 027/150 | G=3.6313 DA=0.1434 DB=0.1643 cyc=0.1335 id=0.1689 lr=2.00e-04 ips=24  *BEST
+Ep 028/150 | G=3.6349 DA=0.1429 DB=0.1656 cyc=0.1330 id=0.1687 lr=2.00e-04 ips=24  *BEST
+Ep 029/150 | G=3.6203 DA=0.1410 DB=0.1674 cyc=0.1320 id=0.1680 lr=2.00e-04 ips=24  *BEST
+Ep 030/150 | G=3.5834 DA=0.1418 DB=0.1653 cyc=0.1304 id=0.1675 lr=2.00e-04 ips=24  *BEST
+Ep 031/150 | G=3.6008 DA=0.1414 DB=0.1642 cyc=0.1308 id=0.1671 lr=2.00e-04 ips=24
+Ep 032/150 | G=3.5901 DA=0.1354 DB=0.1636 cyc=0.1297 id=0.1647 lr=2.00e-04 ips=24  *BEST
+Ep 033/150 | G=3.5940 DA=0.1354 DB=0.1622 cyc=0.1293 id=0.1656 lr=2.00e-04 ips=24  *BEST
+Ep 034/150 | G=3.5675 DA=0.1332 DB=0.1624 cyc=0.1279 id=0.1651 lr=2.00e-04 ips=24  *BEST
+Ep 035/150 | G=3.5613 DA=0.1285 DB=0.1645 cyc=0.1274 id=0.1642 lr=2.00e-04 ips=24  *BEST
+Ep 036/150 | G=3.5585 DA=0.1227 DB=0.1629 cyc=0.1268 id=0.1627 lr=2.00e-04 ips=24  *BEST
+Ep 037/150 | G=3.5429 DA=0.1230 DB=0.1652 cyc=0.1264 id=0.1630 lr=2.00e-04 ips=24  *BEST
+Ep 038/150 | G=3.5116 DA=0.1219 DB=0.1686 cyc=0.1248 id=0.1610 lr=2.00e-04 ips=24  *BEST
+Ep 039/150 | G=3.5328 DA=0.1171 DB=0.1695 cyc=0.1255 id=0.1621 lr=2.00e-04 ips=24
+Ep 040/150 | G=3.5198 DA=0.1151 DB=0.1688 cyc=0.1245 id=0.1606 lr=2.00e-04 ips=24  *BEST
+Ep 041/150 | G=3.5199 DA=0.1153 DB=0.1717 cyc=0.1240 id=0.1594 lr=2.00e-04 ips=24  *BEST
+Ep 042/150 | G=3.5337 DA=0.1153 DB=0.1681 cyc=0.1246 id=0.1589 lr=2.00e-04 ips=24
+Ep 043/150 | G=3.4982 DA=0.1126 DB=0.1686 cyc=0.1227 id=0.1588 lr=2.00e-04 ips=24  *BEST
+Ep 044/150 | G=3.5148 DA=0.1120 DB=0.1685 cyc=0.1229 id=0.1581 lr=2.00e-04 ips=24
+Ep 045/150 | G=3.5148 DA=0.1075 DB=0.1649 cyc=0.1227 id=0.1574 lr=2.00e-04 ips=24
+Ep 046/150 | G=3.4908 DA=0.1074 DB=0.1657 cyc=0.1213 id=0.1573 lr=2.00e-04 ips=24  *BEST
+Ep 047/150 | G=3.4989 DA=0.1058 DB=0.1652 cyc=0.1211 id=0.1551 lr=2.00e-04 ips=24  *BEST
+Ep 048/150 | G=3.4757 DA=0.1019 DB=0.1646 cyc=0.1198 id=0.1540 lr=2.00e-04 ips=24  *BEST
+Ep 049/150 | G=3.4993 DA=0.1017 DB=0.1653 cyc=0.1205 id=0.1550 lr=2.00e-04 ips=24
+Ep 050/150 | G=3.5068 DA=0.0965 DB=0.1617 cyc=0.1200 id=0.1543 lr=2.00e-04 ips=24
+  Peak VRAM: 12.90 GB
+Ep 051/150 | G=3.4857 DA=0.0963 DB=0.1601 cyc=0.1191 id=0.1524 lr=2.00e-04 ips=24  *BEST
+Ep 052/150 | G=3.4831 DA=0.0960 DB=0.1586 cyc=0.1186 id=0.1529 lr=2.00e-04 ips=24  *BEST
+Ep 053/150 | G=3.5028 DA=0.0949 DB=0.1605 cyc=0.1188 id=0.1527 lr=2.00e-04 ips=24
+Ep 054/150 | G=3.4735 DA=0.0918 DB=0.1596 cyc=0.1178 id=0.1503 lr=2.00e-04 ips=24  *BEST
+Ep 055/150 | G=3.4912 DA=0.0916 DB=0.1583 cyc=0.1178 id=0.1525 lr=2.00e-04 ips=24
+Ep 056/150 | G=3.4952 DA=0.0919 DB=0.1586 cyc=0.1181 id=0.1510 lr=2.00e-04 ips=24
+Ep 057/150 | G=3.3650 DA=0.1188 DB=0.1573 cyc=0.1172 id=0.1499 lr=2.00e-04 ips=24  *BEST
+Ep 058/150 | G=3.3296 DA=0.1336 DB=0.1583 cyc=0.1170 id=0.1506 lr=2.00e-04 ips=24  *BEST
+Ep 059/150 | G=3.3368 DA=0.1365 DB=0.1567 cyc=0.1175 id=0.1506 lr=2.00e-04 ips=24
+Ep 060/150 | G=3.3090 DA=0.1369 DB=0.1545 cyc=0.1162 id=0.1480 lr=2.00e-04 ips=24  *BEST
+Ep 061/150 | G=3.3069 DA=0.1347 DB=0.1536 cyc=0.1159 id=0.1485 lr=2.00e-04 ips=24  *BEST
+Ep 062/150 | G=3.3271 DA=0.1366 DB=0.1513 cyc=0.1162 id=0.1494 lr=2.00e-04 ips=24
+Ep 063/150 | G=3.3047 DA=0.1333 DB=0.1554 cyc=0.1157 id=0.1481 lr=2.00e-04 ips=24  *BEST
+Ep 064/150 | G=3.2768 DA=0.1333 DB=0.1567 cyc=0.1152 id=0.1475 lr=2.00e-04 ips=24  *BEST
+Ep 065/150 | G=3.2780 DA=0.1333 DB=0.1525 cyc=0.1145 id=0.1478 lr=2.00e-04 ips=24  *BEST
+Ep 066/150 | G=3.2696 DA=0.1336 DB=0.1542 cyc=0.1143 id=0.1466 lr=2.00e-04 ips=24  *BEST
+Ep 067/150 | G=3.2621 DA=0.1366 DB=0.1547 cyc=0.1141 id=0.1466 lr=2.00e-04 ips=24  *BEST
+Ep 068/150 | G=3.2525 DA=0.1362 DB=0.1517 cyc=0.1136 id=0.1459 lr=2.00e-04 ips=24  *BEST
+Ep 069/150 | G=3.2614 DA=0.1368 DB=0.1540 cyc=0.1140 id=0.1465 lr=2.00e-04 ips=24
+Ep 070/150 | G=3.2274 DA=0.1388 DB=0.1503 cyc=0.1123 id=0.1450 lr=2.00e-04 ips=24  *BEST
+Ep 071/150 | G=3.2434 DA=0.1381 DB=0.1531 cyc=0.1127 id=0.1441 lr=2.00e-04 ips=24
+Ep 072/150 | G=3.2316 DA=0.1360 DB=0.1505 cyc=0.1122 id=0.1436 lr=2.00e-04 ips=24  *BEST
+Ep 073/150 | G=3.2595 DA=0.1368 DB=0.1500 cyc=0.1135 id=0.1442 lr=2.00e-04 ips=24
+Ep 074/150 | G=3.2271 DA=0.1373 DB=0.1505 cyc=0.1117 id=0.1430 lr=2.00e-04 ips=24  *BEST
+Ep 075/150 | G=3.2299 DA=0.1363 DB=0.1523 cyc=0.1122 id=0.1437 lr=2.00e-04 ips=24
+Ep 076/150 | G=3.2265 DA=0.1384 DB=0.1520 cyc=0.1119 id=0.1431 lr=1.97e-04 ips=24
+Ep 077/150 | G=3.2344 DA=0.1388 DB=0.1500 cyc=0.1119 id=0.1436 lr=1.95e-04 ips=24
+Ep 078/150 | G=3.2084 DA=0.1367 DB=0.1508 cyc=0.1111 id=0.1413 lr=1.92e-04 ips=24  *BEST
+Ep 079/150 | G=3.2021 DA=0.1371 DB=0.1484 cyc=0.1105 id=0.1415 lr=1.89e-04 ips=24  *BEST
+Ep 080/150 | G=3.2101 DA=0.1353 DB=0.1498 cyc=0.1106 id=0.1410 lr=1.87e-04 ips=24
+Ep 081/150 | G=3.2072 DA=0.1362 DB=0.1463 cyc=0.1100 id=0.1397 lr=1.84e-04 ips=24  *BEST
+Ep 082/150 | G=3.1827 DA=0.1337 DB=0.1473 cyc=0.1089 id=0.1394 lr=1.81e-04 ips=24  *BEST
+Ep 083/150 | G=3.1911 DA=0.1346 DB=0.1471 cyc=0.1092 id=0.1388 lr=1.79e-04 ips=24
+Ep 084/150 | G=3.1757 DA=0.1342 DB=0.1458 cyc=0.1084 id=0.1391 lr=1.76e-04 ips=24  *BEST
+Ep 085/150 | G=3.1797 DA=0.1360 DB=0.1477 cyc=0.1087 id=0.1393 lr=1.73e-04 ips=24
+Ep 086/150 | G=3.1689 DA=0.1332 DB=0.1458 cyc=0.1076 id=0.1372 lr=1.71e-04 ips=24  *BEST
+Ep 087/150 | G=3.1452 DA=0.1349 DB=0.1445 cyc=0.1066 id=0.1363 lr=1.68e-04 ips=24  *BEST
+Ep 088/150 | G=3.1724 DA=0.1333 DB=0.1459 cyc=0.1080 id=0.1367 lr=1.65e-04 ips=24
+Ep 089/150 | G=3.1514 DA=0.1352 DB=0.1477 cyc=0.1067 id=0.1366 lr=1.63e-04 ips=24
+Ep 090/150 | G=3.1462 DA=0.1334 DB=0.1451 cyc=0.1062 id=0.1351 lr=1.60e-04 ips=24  *BEST
+Ep 091/150 | G=3.1363 DA=0.1334 DB=0.1455 cyc=0.1057 id=0.1352 lr=1.57e-04 ips=24  *BEST
+Ep 092/150 | G=3.1215 DA=0.1298 DB=0.1479 cyc=0.1046 id=0.1341 lr=1.55e-04 ips=24  *BEST
+Ep 093/150 | G=3.1283 DA=0.1293 DB=0.1476 cyc=0.1044 id=0.1341 lr=1.52e-04 ips=24  *BEST
+Ep 094/150 | G=3.1364 DA=0.1288 DB=0.1472 cyc=0.1044 id=0.1336 lr=1.49e-04 ips=24
+Ep 095/150 | G=3.1430 DA=0.1272 DB=0.1435 cyc=0.1041 id=0.1328 lr=1.47e-04 ips=24  *BEST
+Ep 096/150 | G=3.1417 DA=0.1259 DB=0.1436 cyc=0.1036 id=0.1327 lr=1.44e-04 ips=24  *BEST
+Ep 097/150 | G=3.1438 DA=0.1260 DB=0.1431 cyc=0.1027 id=0.1300 lr=1.41e-04 ips=24  *BEST
+Ep 098/150 | G=3.1495 DA=0.1238 DB=0.1424 cyc=0.1028 id=0.1309 lr=1.39e-04 ips=23
+Ep 099/150 | G=3.1707 DA=0.1256 DB=0.1382 cyc=0.1039 id=0.1324 lr=1.36e-04 ips=24
+Ep 100/150 | G=3.1512 DA=0.1234 DB=0.1396 cyc=0.1032 id=0.1312 lr=1.33e-04 ips=24
+  Peak VRAM: 12.90 GB
+Ep 101/150 | G=3.1641 DA=0.1214 DB=0.1384 cyc=0.1032 id=0.1309 lr=1.31e-04 ips=24
+Ep 102/150 | G=3.1725 DA=0.1187 DB=0.1378 cyc=0.1034 id=0.1316 lr=1.28e-04 ips=24
+Ep 103/150 | G=3.1845 DA=0.1196 DB=0.1372 cyc=0.1033 id=0.1311 lr=1.25e-04 ips=24
+Ep 104/150 | G=3.1499 DA=0.1205 DB=0.1372 cyc=0.1019 id=0.1299 lr=1.23e-04 ips=24  *BEST
+Ep 105/150 | G=3.1806 DA=0.1204 DB=0.1380 cyc=0.1032 id=0.1319 lr=1.20e-04 ips=24
+Ep 106/150 | G=3.1888 DA=0.1201 DB=0.1369 cyc=0.1034 id=0.1316 lr=1.17e-04 ips=24
+Ep 107/150 | G=3.1758 DA=0.1164 DB=0.1355 cyc=0.1026 id=0.1305 lr=1.15e-04 ips=24
+Ep 108/150 | G=3.1818 DA=0.1162 DB=0.1385 cyc=0.1031 id=0.1311 lr=1.12e-04 ips=24
+Ep 109/150 | G=3.1697 DA=0.1160 DB=0.1359 cyc=0.1020 id=0.1296 lr=1.09e-04 ips=24
+Ep 110/150 | G=3.1592 DA=0.1178 DB=0.1368 cyc=0.1021 id=0.1300 lr=1.07e-04 ips=24
+Ep 111/150 | G=3.1862 DA=0.1166 DB=0.1355 cyc=0.1024 id=0.1305 lr=1.04e-04 ips=24
+Ep 112/150 | G=3.1572 DA=0.1158 DB=0.1367 cyc=0.1014 id=0.1291 lr=1.01e-04 ips=24  *BEST
+Ep 113/150 | G=3.1780 DA=0.1164 DB=0.1353 cyc=0.1024 id=0.1294 lr=9.87e-05 ips=24
+Ep 114/150 | G=3.1691 DA=0.1190 DB=0.1370 cyc=0.1022 id=0.1290 lr=9.60e-05 ips=24
+Ep 115/150 | G=3.1519 DA=0.1180 DB=0.1365 cyc=0.1017 id=0.1286 lr=9.33e-05 ips=24
+Ep 116/150 | G=3.1699 DA=0.1160 DB=0.1348 cyc=0.1016 id=0.1283 lr=9.07e-05 ips=24
+Ep 117/150 | G=3.1385 DA=0.1143 DB=0.1361 cyc=0.1002 id=0.1276 lr=8.80e-05 ips=24  *BEST
+Ep 118/150 | G=3.1170 DA=0.1179 DB=0.1376 cyc=0.0998 id=0.1267 lr=8.53e-05 ips=24  *BEST
+Ep 119/150 | G=3.1271 DA=0.1177 DB=0.1369 cyc=0.1000 id=0.1280 lr=8.27e-05 ips=24
+Ep 120/150 | G=3.1298 DA=0.1157 DB=0.1377 cyc=0.0997 id=0.1269 lr=8.00e-05 ips=24  *BEST
+Ep 121/150 | G=3.0988 DA=0.1178 DB=0.1367 cyc=0.0990 id=0.1260 lr=7.73e-05 ips=24  *BEST
+Ep 122/150 | G=3.0967 DA=0.1170 DB=0.1383 cyc=0.0986 id=0.1256 lr=7.47e-05 ips=24  *BEST
+Ep 123/150 | G=3.1226 DA=0.1167 DB=0.1377 cyc=0.0994 id=0.1266 lr=7.20e-05 ips=24
+Ep 124/150 | G=3.1008 DA=0.1172 DB=0.1384 cyc=0.0990 id=0.1254 lr=6.93e-05 ips=24
+Ep 125/150 | G=3.0871 DA=0.1175 DB=0.1399 cyc=0.0982 id=0.1251 lr=6.67e-05 ips=24  *BEST
+Ep 126/150 | G=3.0968 DA=0.1151 DB=0.1379 cyc=0.0981 id=0.1252 lr=6.40e-05 ips=24  *BEST
+Ep 127/150 | G=3.0753 DA=0.1178 DB=0.1392 cyc=0.0977 id=0.1244 lr=6.13e-05 ips=24  *BEST
+Ep 128/150 | G=3.0726 DA=0.1149 DB=0.1401 cyc=0.0971 id=0.1243 lr=5.87e-05 ips=24  *BEST
+Ep 129/150 | G=3.0812 DA=0.1167 DB=0.1403 cyc=0.0975 id=0.1243 lr=5.60e-05 ips=24
+Ep 130/150 | G=3.0650 DA=0.1171 DB=0.1403 cyc=0.0968 id=0.1234 lr=5.33e-05 ips=24  *BEST
+Ep 131/150 | G=3.0638 DA=0.1182 DB=0.1402 cyc=0.0966 id=0.1249 lr=5.07e-05 ips=24  *BEST
+Ep 132/150 | G=3.0715 DA=0.1182 DB=0.1413 cyc=0.0972 id=0.1230 lr=4.80e-05 ips=24
+Ep 133/150 | G=3.0540 DA=0.1180 DB=0.1396 cyc=0.0961 id=0.1232 lr=4.53e-05 ips=24  *BEST
+Ep 134/150 | G=3.0381 DA=0.1190 DB=0.1429 cyc=0.0956 id=0.1220 lr=4.27e-05 ips=24  *BEST
+Ep 135/150 | G=3.0485 DA=0.1195 DB=0.1407 cyc=0.0962 id=0.1227 lr=4.00e-05 ips=24
+Ep 136/150 | G=3.0471 DA=0.1211 DB=0.1436 cyc=0.0963 id=0.1227 lr=3.73e-05 ips=24
+Ep 137/150 | G=3.0383 DA=0.1217 DB=0.1424 cyc=0.0959 id=0.1222 lr=3.47e-05 ips=24
+Ep 138/150 | G=3.0287 DA=0.1212 DB=0.1436 cyc=0.0952 id=0.1221 lr=3.20e-05 ips=24  *BEST
+Ep 139/150 | G=3.0258 DA=0.1220 DB=0.1428 cyc=0.0950 id=0.1215 lr=2.93e-05 ips=24  *BEST
+Ep 140/150 | G=3.0122 DA=0.1228 DB=0.1423 cyc=0.0944 id=0.1204 lr=2.67e-05 ips=24  *BEST
+Ep 141/150 | G=3.0029 DA=0.1232 DB=0.1429 cyc=0.0940 id=0.1206 lr=2.40e-05 ips=24  *BEST
+Ep 142/150 | G=3.0086 DA=0.1234 DB=0.1446 cyc=0.0945 id=0.1210 lr=2.13e-05 ips=24
+Ep 143/150 | G=3.0018 DA=0.1247 DB=0.1465 cyc=0.0943 id=0.1210 lr=1.87e-05 ips=24
+Ep 144/150 | G=2.9872 DA=0.1249 DB=0.1448 cyc=0.0934 id=0.1196 lr=1.60e-05 ips=24  *BEST
+Ep 145/150 | G=2.9922 DA=0.1260 DB=0.1467 cyc=0.0940 id=0.1204 lr=1.33e-05 ips=24
+Ep 146/150 | G=2.9745 DA=0.1264 DB=0.1459 cyc=0.0932 id=0.1198 lr=1.07e-05 ips=24  *BEST
+Ep 147/150 | G=2.9524 DA=0.1258 DB=0.1464 cyc=0.0920 id=0.1187 lr=8.00e-06 ips=24  *BEST
+Ep 148/150 | G=2.9514 DA=0.1274 DB=0.1472 cyc=0.0922 id=0.1187 lr=5.33e-06 ips=24
+Ep 149/150 | G=2.9533 DA=0.1266 DB=0.1468 cyc=0.0922 id=0.1187 lr=2.67e-06 ips=24
+Ep 150/150 | G=2.9555 DA=0.1270 DB=0.1470 cyc=0.0924 id=0.1194 lr=0.00e+00 ips=24
+  Peak VRAM: 12.90 GB
+✓ Training complete in 755.8 min
+Generating pred_B2A  (Photo -> Monet)
+✓ pred_B2A: 7,038 images -> C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\outputs\pred_B2A
+Generating pred_A2B  (Monet -> Photo)
+✓ pred_A2B: 300 images -> C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\outputs\pred_A2B
+LOCAL FID / MiFID  (same as Part3_Evaluation_Script.ipynb)
+  [Photo->Monet]  FID=95.309  MiFID=0.4056
+  [Monet->Photo]  FID=93.679  MiFID=0.4159
+SUBMISSION.CSV  <- upload this to Kaggle
+ ID       FID   MiFID
+  Saved -> C:\Users\sarvesh\Downloads\CycleGAN_RTX4090_Package\submission.csv
+  V1 baseline : FID=104.004  MiFID=0.4124  (Kaggle=52.2)
+  V3 result   : FID=94.494  MiFID=0.4108
+  MiFID change: -0.16%  (better ↓)

@@ -1,0 +1,31 @@
+sample_id,style_score_1_to_5,content_score_1_to_5,artifact_score_1_to_5,notes
+sample_01,4,4,3,Photo->Monet: good painterly blue-grey treatment of sky and building; vertical streak artifacts visible in sky
+sample_02,4,4,4,Monet->Photo: trees and sky gain convincing photographic depth and saturation; minor edge fringing
+sample_03,4,4,4,Photo->Monet: snowy landscape rendered in soft pastel impressionist tones with visible brush-like texture
+sample_04,3,3,3,Monet->Photo: flower garden darkened heavily toward photographic look but detail crushed in foreground; some smearing
+sample_05,3,5,4,Monet->Photo: tree textures more photographic but image retains slight painterly feel; content very well preserved
+sample_06,4,5,4,Photo->Monet: boats and sky rendered with soft impressionist texture and muted palette; content fully preserved
+sample_07,3,4,3,Monet->Photo: flowers slightly more contrasted/photographic but still painterly; blurry/smeared edges
+sample_08,3,5,4,Monet->Photo: winter town gains photographic saturation and sharpness; scene fully preserved
+sample_09,4,4,4,Monet->Photo: landscape convincingly rendered more photographic with deepened colors; minor smoothing
+sample_10,3,4,2,Photo->Monet: painterly texture applied but prominent grid/checkerboard pattern artifacts visible throughout
+sample_11,4,4,3,Monet->Photo: poppy field sky becomes photographic/HDR-like; slight noise in flower field area
+sample_12,3,5,4,Monet->Photo: snow scene becomes slightly more photographic; retains some softness; content fully preserved
+sample_13,3,5,4,Photo->Monet: winding road gets muted impressionist palette; structure completely preserved
+sample_14,3,4,3,Photo->Monet: sunset lake gains softer pastel treatment; noise/grain and loss of tree detail in midground
+sample_15,3,3,3,Monet->Photo: winter village becomes more photographic but foreground structure notably changed; moderate blur
+sample_16,3,4,2,Photo->Monet: Singapore skyline gets impressionist palette but clear grid artifact pattern across image
+sample_17,4,4,3,Photo->Monet: coastal cliff gains painterly brush-like texture in sky and grass; some noise in foreground
+sample_18,3,4,3,Photo->Monet: sunset tree scene partially painted; artifacts visible as banding/streaks in bright sky
+sample_19,3,3,3,Monet->Photo: foggy scene darkened significantly toward photographic style; spatial structure altered
+sample_20,2,4,3,Monet->Photo: water lilies scene still strongly painterly; only minor photographic shift in color; edge artifacts
+sample_21,4,4,4,Monet->Photo: rock arch scene becomes convincingly photographic with dramatic lighting; content well preserved
+sample_22,4,4,3,Photo->Monet: mountain village gains impressionist muted palette and texture; moderate noise in detail areas
+sample_23,3,5,4,Photo->Monet: forest river softened with painterly treatment; content almost completely preserved
+sample_24,3,5,4,Monet->Photo: arctic water scene becomes slightly more photographic; content fully preserved
+sample_25,2,5,4,Style transfer minimal - mountain scene barely changed; slight color shift only; content fully intact
+sample_26,4,4,3,Monet->Photo: cliff scene dramatically rendered with vivid photographic sunset; structure preserved; minor smear
+sample_27,3,4,3,Photo->Monet: hay bales field softened with impressionist palette; some right-edge artifact patch visible
+sample_28,2,4,1,Photo->Monet: winding road scene heavily corrupted - strong horizontal banding artifacts and border corruption
+sample_29,3,4,4,Monet->Photo: river/tree scene slightly more photographic; retains some painterly feel; fairly clean
+sample_30,3,4,3,Photo->Monet: dry landscape gets minor painterly treatment; slight checkerboard artifacts in ground area

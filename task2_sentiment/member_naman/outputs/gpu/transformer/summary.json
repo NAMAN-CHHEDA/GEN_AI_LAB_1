@@ -1,0 +1,87 @@
+{
+  "model": "transformer",
+  "run_name": "gpu",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch_version": "2.14.1+cu126",
+  "parameters": 6838017,
+  "epochs_run": 4,
+  "best_epoch": 2,
+  "best_val_loss": 0.16117511689662933,
+  "best_val_accuracy": 0.9388928571428572,
+  "best_val_macro_f1": 0.9388840564469855,
+  "stopped_early": true,
+  "total_training_time_s": 121.15314412117004,
+  "train_examples_per_sec": 16898.272474686546,
+  "peak_memory_mb": 702.16943359375,
+  "peak_memory_note": "CUDA max_memory_allocated",
+  "nan_losses": 0,
+  "seed": 42,
+  "ema_used": true,
+  "max_train": null,
+  "config": {
+    "seed": 42,
+    "run_name": "gpu",
+    "paths": {
+      "processed_dir": "data_processed/gpu",
+      "checkpoint_dir": "checkpoints/gpu",
+      "output_dir": "outputs/gpu"
+    },
+    "data": {
+      "dataset": "fancyzhx/yelp_polarity",
+      "train_samples": null,
+      "val_fraction": 0.1,
+      "val_samples": null,
+      "test_samples": null,
+      "vocab_max": 50000,
+      "min_freq": 3,
+      "max_len": 320,
+      "head_fraction": 0.25,
+      "lemmatize": true,
+      "stopwords": "minimal",
+      "keep_digits": true
+    },
+    "train": {
+      "epochs": 8,
+      "batch_size": 128,
+      "lr_warmup_ratio": 0.05,
+      "schedule": "cosine",
+      "grad_clip": 1.0,
+      "patience": 2,
+      "weight_decay": 0.01,
+      "amp": true,
+      "ema_decay": 0.999,
+      "length_bucketing": true
+    },
+    "models": {
+      "ngram_bag": {
+        "embed_dim": 32,
+        "bigram_buckets": 2000000,
+        "dropout": 0.4,
+        "lr": 0.002,
+        "weight_decay": 0.0
+      },
+      "transformer": {
+        "d_model": 128,
+        "layers": 2,
+        "heads": 4,
+        "ffn": 512,
+        "dropout": 0.2,
+        "token_dropout": 0.1,
+        "pool": "mean_max",
+        "lr": 0.0005
+      },
+      "bigru": {
+        "word_dim": 128,
+        "bigram_dim": 64,
+        "bigram_buckets": 500000,
+        "hidden": 128,
+        "layers": 2,
+        "rnn_dropout": 0.25,
+        "emb_dropout": 0.25,
+        "head_dropout": 0.4,
+        "pooling": "max_mean_attn",
+        "lr": 0.001
+      }
+    }
+  }
+}

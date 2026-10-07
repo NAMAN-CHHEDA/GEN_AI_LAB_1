@@ -1,0 +1,8 @@
+{
+  "model": "transformer",
+  "device": "NVIDIA GeForce RTX 4090",
+  "n_reviews": 38000,
+  "seconds": 0.5989072322845459,
+  "inference_examples_per_sec": 63448.8915003549,
+  "checkpoint_epoch": 2
+}

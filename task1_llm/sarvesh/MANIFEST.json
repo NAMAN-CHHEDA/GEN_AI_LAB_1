@@ -1,0 +1,162 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 150
+  },
+  {
+    "path": "DESIGN_NOTES.md",
+    "bytes": 1905
+  },
+  {
+    "path": "failure_analysis.md",
+    "bytes": 3254
+  },
+  {
+    "path": "metrics_report.csv",
+    "bytes": 1729
+  },
+  {
+    "path": "README.md",
+    "bytes": 2627
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 90
+  },
+  {
+    "path": "results.md",
+    "bytes": 2702
+  },
+  {
+    "path": "checkpoints\\sarvesh_main_best.pt",
+    "bytes": 27973627
+  },
+  {
+    "path": "checkpoints\\sarvesh_main_final.pt",
+    "bytes": 27973889
+  },
+  {
+    "path": "data\\TinyStoriesV2-GPT4-valid.txt",
+    "bytes": 22502601
+  },
+  {
+    "path": "data_processed\\split_info.json",
+    "bytes": 494
+  },
+  {
+    "path": "data_processed\\train_ids.npy",
+    "bytes": 64001408
+  },
+  {
+    "path": "data_processed\\val_ids.npy",
+    "bytes": 12800136
+  },
+  {
+    "path": "data_processed\\vocab.json",
+    "bytes": 1769
+  },
+  {
+    "path": "logs\\sarvesh_main_epochs.csv",
+    "bytes": 1622
+  },
+  {
+    "path": "logs\\sarvesh_main_steps.csv",
+    "bytes": 2218897
+  },
+  {
+    "path": "logs\\sarvesh_main_summary.json",
+    "bytes": 543
+  },
+  {
+    "path": "outputs\\sarvesh_main_loss_curves.png",
+    "bytes": 71247
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples.json",
+    "bytes": 13177
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples\\greedy.txt",
+    "bytes": 2317
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples\\temp_0.8.txt",
+    "bytes": 2316
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples\\temp_0.9_topk50.txt",
+    "bytes": 2317
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples\\temp_1.0_topp0.9.txt",
+    "bytes": 2316
+  },
+  {
+    "path": "outputs\\sarvesh_main_samples\\temp_1.0.txt",
+    "bytes": 2318
+  },
+  {
+    "path": "src\\config_smoke.yaml",
+    "bytes": 490
+  },
+  {
+    "path": "src\\config.yaml",
+    "bytes": 2436
+  },
+  {
+    "path": "src\\run_full.py",
+    "bytes": 3661
+  },
+  {
+    "path": "src\\run_posttrain.py",
+    "bytes": 2373
+  },
+  {
+    "path": "src\\run_smoke.py",
+    "bytes": 2375
+  },
+  {
+    "path": "src\\task1_gpt.ipynb",
+    "bytes": 10977
+  },
+  {
+    "path": "src\\charlm\\__init__.py",
+    "bytes": 218
+  },
+  {
+    "path": "src\\charlm\\config.py",
+    "bytes": 1571
+  },
+  {
+    "path": "src\\charlm\\data.py",
+    "bytes": 8618
+  },
+  {
+    "path": "src\\charlm\\generate.py",
+    "bytes": 3170
+  },
+  {
+    "path": "src\\charlm\\metrics.py",
+    "bytes": 5098
+  },
+  {
+    "path": "src\\charlm\\model.py",
+    "bytes": 9731
+  },
+  {
+    "path": "src\\charlm\\plots.py",
+    "bytes": 1748
+  },
+  {
+    "path": "src\\charlm\\sanity.py",
+    "bytes": 3680
+  },
+  {
+    "path": "src\\charlm\\train.py",
+    "bytes": 11548
+  },
+  {
+    "path": "src\\charlm\\utils.py",
+    "bytes": 878
+  }
+]

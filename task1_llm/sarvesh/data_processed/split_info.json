@@ -1,0 +1,19 @@
+{
+ "split_strategy": "story_shuffle",
+ "seed": 3141,
+ "n_stories_in_raw_file": 27630,
+ "n_train_stories": 9946,
+ "n_val_stories": 1999,
+ "train_chars": 8000160,
+ "val_chars": 1600001,
+ "first_train_story_index": 3454,
+ "first_val_story_index": 11160,
+ "train_val_story_overlap": 0,
+ "block_size": 160,
+ "train_stride": 80,
+ "val_stride": 160,
+ "train_sequences_target": 100000,
+ "val_sequences_target": 10000,
+ "n_train_chars_budget": 8000160,
+ "n_val_chars_budget": 1600001
+}

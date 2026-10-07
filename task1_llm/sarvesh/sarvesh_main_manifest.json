@@ -1,0 +1,196 @@
+{
+  "member": "sarvesh",
+  "task": "task1_llm",
+  "run_name": "sarvesh_main",
+  "seed": 3141,
+  "created_note": "Reconstructed env manifest after the run for reproducibility (original training machine: NVIDIA RTX 4090).",
+  "python": "3.x (exact patch not recorded on original machine)",
+  "platform": "Windows (original training) / portable repo layout",
+  "libraries": {
+    "torch": ">=2.0 (CUDA build used on RTX 4090; exact pip freeze not saved)",
+    "numpy": ">=1.24",
+    "matplotlib": ">=3.7",
+    "PyYAML": ">=6.0",
+    "tqdm": ">=4.65",
+    "jupyter": ">=1.0",
+    "nbconvert": ">=7.0"
+  },
+  "requirements_file": "task1_llm/sarvesh/requirements.txt",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "fp16_autocast": true,
+  "config_file": "task1_llm/sarvesh/src/config.yaml",
+  "config": {
+    "seed": 3141,
+    "run_name": "sarvesh_main",
+    "device": "auto",
+    "paths": {
+      "data_dir": "../data",
+      "processed_dir": "../data_processed",
+      "checkpoint_dir": "../checkpoints",
+      "output_dir": "../outputs",
+      "logs_dir": "../logs",
+      "metrics_csv": "../metrics_report.csv"
+    },
+    "data": {
+      "raw_url": "https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt",
+      "raw_file": "TinyStoriesV2-GPT4-valid.txt",
+      "story_delimiter": "<|endoftext|>",
+      "story_joiner": "\n",
+      "split_strategy": "story_shuffle",
+      "train_sequences": 100000,
+      "val_sequences": 10000,
+      "block_size": 160,
+      "train_stride": 80,
+      "val_stride": 160
+    },
+    "model": {
+      "d_model": 192,
+      "n_layers": 5,
+      "n_heads": 6,
+      "d_ff": 768,
+      "dropout": 0.1,
+      "attn_dropout": 0.1,
+      "activation": "relu",
+      "tie_embeddings": true,
+      "emb_scale": true,
+      "init_std": 0.02,
+      "scale_residual_proj": true
+    },
+    "train": {
+      "epochs": 12,
+      "batch_size": 48,
+      "lr": 0.0008,
+      "min_lr": 8e-05,
+      "warmup_steps": 800,
+      "weight_decay": 0.05,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "grad_clip": 1.0,
+      "amp": true,
+      "log_every": 40,
+      "resume": false
+    },
+    "eval": {
+      "batch_size": 128,
+      "train_eval_batches": 40,
+      "checkpoint": "best"
+    },
+    "generation": {
+      "max_new_tokens": 400,
+      "prompts": [
+        "Once upon a time",
+        "One day, a little girl named Lily",
+        "The big dog",
+        "Tom and his mom went to the",
+        "Sara was sad because"
+      ],
+      "settings": [
+        {
+          "name": "greedy",
+          "greedy": true
+        },
+        {
+          "name": "temp_0.8",
+          "temperature": 0.8
+        },
+        {
+          "name": "temp_1.0",
+          "temperature": 1.0
+        },
+        {
+          "name": "temp_1.0_topp0.9",
+          "temperature": 1.0,
+          "top_p": 0.9
+        },
+        {
+          "name": "temp_0.9_topk50",
+          "temperature": 0.9,
+          "top_k": 50
+        }
+      ]
+    },
+    "plots": {
+      "smooth_window": 25
+    }
+  },
+  "data_split": {
+    "split_strategy": "story_shuffle",
+    "seed": 3141,
+    "n_stories_in_raw_file": 27630,
+    "n_train_stories": 9946,
+    "n_val_stories": 1999,
+    "train_chars": 8000160,
+    "val_chars": 1600001,
+    "first_train_story_index": 3454,
+    "first_val_story_index": 11160,
+    "train_val_story_overlap": 0,
+    "block_size": 160,
+    "train_stride": 80,
+    "val_stride": 160,
+    "train_sequences_target": 100000,
+    "val_sequences_target": 10000,
+    "n_train_chars_budget": 8000160,
+    "n_val_chars_budget": 1600001
+  },
+  "run_summary": {
+    "run_name": "sarvesh_main",
+    "param_count": 2267904,
+    "epochs_completed": 12,
+    "steps_per_epoch": 2083,
+    "total_steps": 24996,
+    "warmup_steps": 800,
+    "best_val_loss": 0.7392010305404663,
+    "best_epoch": 12,
+    "final_val_loss": 0.7392010305404663,
+    "train_tokens_per_sec_mean": 573182.6523378068,
+    "tokens_seen": 191969280,
+    "total_train_time_sec": 369.90371540002525,
+    "peak_memory_mb": 598.62158203125,
+    "nonfinite_steps": 8,
+    "max_grad_norm": 3.197147846221924,
+    "device": "cuda",
+    "fp16_autocast": true
+  },
+  "checkpoints": {
+    "best": {
+      "path": "task1_llm/sarvesh/checkpoints/sarvesh_main_best.pt",
+      "sha256": "2845ba53c432e988a14b10b4fea9afbc291c8035b63f4284a56f30d913492a3f",
+      "maps_to": "metrics in metrics_report.csv / results.md (best_epoch=12)"
+    },
+    "final": {
+      "path": "task1_llm/sarvesh/checkpoints/sarvesh_main_final.pt",
+      "sha256": "e756f54207c198b1bee65a4aa2f6a06fc64181b1bdd257c1297a96dd73e520fd"
+    },
+    "resume": {
+      "path": "task1_llm/sarvesh/checkpoints/sarvesh_main_resume.pt",
+      "sha256": "53eb461f8d53b49418ce2c87615e27d2565e97553e16b88b0193d2d6aaa5be6a"
+    }
+  },
+  "raw_logs": {
+    "steps": "reproducibility/raw_logs/task1/sarvesh/sarvesh_main_steps.csv",
+    "epochs": "reproducibility/raw_logs/task1/sarvesh/sarvesh_main_epochs.csv",
+    "summary": "reproducibility/raw_logs/task1/sarvesh/sarvesh_main_summary.json",
+    "member_copies": {
+      "steps": "task1_llm/sarvesh/logs/sarvesh_main_steps.csv",
+      "epochs": "task1_llm/sarvesh/logs/sarvesh_main_epochs.csv",
+      "summary": "task1_llm/sarvesh/logs/sarvesh_main_summary.json"
+    }
+  },
+  "outputs": {
+    "loss_curves": "task1_llm/sarvesh/outputs/sarvesh_main_loss_curves.png",
+    "samples_dir": "task1_llm/sarvesh/outputs/sarvesh_main_samples/",
+    "samples_json": "task1_llm/sarvesh/outputs/sarvesh_main_samples.json"
+  },
+  "metrics_csv": "task1_llm/sarvesh/metrics_report.csv",
+  "results_md": "task1_llm/sarvesh/results.md",
+  "failure_analysis_md": "task1_llm/sarvesh/failure_analysis.md",
+  "processed_data": {
+    "vocab": "task1_llm/sarvesh/data_processed/vocab.json",
+    "train_ids": "task1_llm/sarvesh/data_processed/train_ids.npy",
+    "val_ids": "task1_llm/sarvesh/data_processed/val_ids.npy",
+    "split_info": "task1_llm/sarvesh/data_processed/split_info.json"
+  }
+}

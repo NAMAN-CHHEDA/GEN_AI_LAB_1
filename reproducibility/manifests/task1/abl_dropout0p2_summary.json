@@ -1,0 +1,24 @@
+{
+ "run_name": "abl_dropout0p2",
+ "param_count": 830976,
+ "epochs_completed": 15,
+ "steps_per_epoch": 1562,
+ "total_steps": 23430,
+ "warmup_steps": 1172,
+ "best_val_loss": 0.8301614117622376,
+ "best_epoch": 15,
+ "final_val_loss": 0.8301614117622376,
+ "train_tokens_per_sec_mean": 645881.1629531913,
+ "tokens_seen": 191938560,
+ "total_train_time_sec": 304.941198799992,
+ "peak_memory_mb": 324.369140625,
+ "nonfinite_steps": 7,
+ "max_grad_norm": 5.34263277053833,
+ "device": "cuda",
+ "fp16_autocast": true,
+ "checkpoints": {
+  "best": "..\\checkpoints\\abl_dropout0p2_best.pt",
+  "final": "..\\checkpoints\\abl_dropout0p2_final.pt",
+  "resume": "..\\checkpoints\\abl_dropout0p2_resume.pt"
+ }
+}

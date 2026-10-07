@@ -1,0 +1,22 @@
+# Contents of these folders are not committed (the .gitkeep files are)
+checkpoints/*
+data_processed/*
+!checkpoints/.gitkeep
+!data_processed/.gitkeep
+
+# Large binary / array files
+*.pt
+*.npz
+*.npy
+
+# Python and notebook clutter
+__pycache__/
+*.pyc
+*.tmp
+.ipynb_checkpoints/
+.DS_Store
+
+# Smoke-test / tagged runs (the full run in outputs/gpu IS committed)
+outputs/local*/
+
+# NOTE: reproducibility/raw_logs is deliberately NOT ignored; those logs must be committed.

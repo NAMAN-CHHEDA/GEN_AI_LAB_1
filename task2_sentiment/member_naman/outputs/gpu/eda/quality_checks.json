@@ -1,0 +1,15 @@
+{
+  "train_reviews": 504000,
+  "train_duplicate_extra_copies": 0,
+  "test_reviews_also_in_train_rows": 0,
+  "reviews_under_5_tokens": {
+    "train": 3817,
+    "val": 399,
+    "test": 312
+  },
+  "oov_token_percent": {
+    "val": 0.494,
+    "test": 0.489
+  },
+  "test_reviews_also_in_full_original_train_split": 0
+}

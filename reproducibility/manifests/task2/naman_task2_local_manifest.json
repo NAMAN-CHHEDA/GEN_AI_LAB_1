@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-03T04:51:20",
+  "run_name": "local",
+  "seed": 42,
+  "python": "3.12.10",
+  "torch": "2.14.1+cu126",
+  "cuda": "12.6",
+  "packages": {
+    "torch": "2.14.1+cu126",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "PyYAML": "6.0.3",
+    "datasets": "4.8.5",
+    "nltk": "3.10.3",
+    "matplotlib": "3.11.2",
+    "tqdm": "4.70.1",
+    "psutil": "7.2.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.1",
+    "ipykernel": "7.4.0"
+  },
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD Ryzen 9 7950X 16-Core Processor",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "git_commit": null,
+  "git_note": "git is not installed on this machine",
+  "config_sha256": {
+    "configs/local.yaml": "fd2eee86b49a411d604eb0faa1792c3c18ad2867719600c2f214bf8ea6a27c4e"
+  },
+  "data_cache_key": {
+    "dataset": "fancyzhx/yelp_polarity",
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "val_fraction": 0.1,
+    "test_samples": 2000,
+    "vocab_max": 10000,
+    "min_freq": 3,
+    "lemmatize": true,
+    "keep_digits": true,
+    "stopwords": "minimal",
+    "seed": 42,
+    "cleaning_version": 2
+  },
+  "dataset": "fancyzhx/yelp_polarity",
+  "dataset_sizes": {
+    "train": 5000,
+    "val": 1000,
+    "test": 2000
+  },
+  "checkpoint_to_result": {
+    "ngram_bag": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/local/ngram_bag/best.pt",
+      "checkpoint_sha256": "4e06539bbac035bfdf9678ddaad9643521acea700bf4346e300035e8a5b3d503",
+      "best_epoch": 1,
+      "best_val_loss": 0.6853842735290527,
+      "train_log": "task2_sentiment/member_naman/outputs/local/ngram_bag/train_log.txt",
+      "summary_json": "task2_sentiment/member_naman/outputs/local/ngram_bag/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/local/ngram_bag/test_predictions.csv",
+      "metrics_report_row": "ngram_bag"
+    },
+    "transformer": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/local/transformer/best.pt",
+      "checkpoint_sha256": "a0259d38a7ec4076609f7f2581325bcd96ab07e433e3b3eea91e65d528d6a9c6",
+      "best_epoch": 1,
+      "best_val_loss": 0.3537246286869049,
+      "train_log": "task2_sentiment/member_naman/outputs/local/transformer/train_log.txt",
+      "summary_json": "task2_sentiment/member_naman/outputs/local/transformer/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/local/transformer/test_predictions.csv",
+      "metrics_report_row": "transformer"
+    },
+    "bigru": {
+      "checkpoint": "task2_sentiment/member_naman/checkpoints/local/bigru/best.pt",
+      "checkpoint_sha256": "d7c17aab258bce20ca235612cb03fa72dbfde8cc3d02dc739fb1af882bbd1bfe",
+      "best_epoch": 1,
+      "best_val_loss": 0.5590903162956238,
+      "train_log": "task2_sentiment/member_naman/outputs/local/bigru/train_log.txt",
+      "summary_json": "task2_sentiment/member_naman/outputs/local/bigru/summary.json",
+      "predictions_csv": "task2_sentiment/member_naman/outputs/local/bigru/test_predictions.csv",
+      "metrics_report_row": "bigru"
+    }
+  }
+}

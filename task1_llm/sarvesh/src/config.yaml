@@ -1,0 +1,80 @@
+# Sarvesh — Task 1 hyper-parameters (character-level GPT on TinyStories)
+# Paths are relative to the notebook / working directory: task1_sarvesh/src
+
+seed: 3141                 # replace with your course-assigned SEED if you have one
+run_name: sarvesh_main
+device: auto               # auto | cpu | cuda
+
+paths:
+  data_dir: ../data
+  processed_dir: ../data_processed
+  checkpoint_dir: ../checkpoints
+  output_dir: ../outputs
+  logs_dir: ../logs
+  metrics_csv: ../metrics_report.csv
+
+data:
+  raw_url: https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt
+  raw_file: TinyStoriesV2-GPT4-valid.txt
+  story_delimiter: "<|endoftext|>"
+  story_joiner: "\n"
+  # Distinct split strategy vs contiguous chunking: shuffle stories, then fill
+  # train/val character budgets from disjoint story pools (seeded).
+  split_strategy: story_shuffle
+  train_sequences: 100000
+  val_sequences: 10000
+  block_size: 160
+  # Sliding windows with stride < block_size reuse characters across examples.
+  train_stride: 80
+  val_stride: 160
+
+model:
+  # Deliberately different footprint from a 128/4/4/512 GELU pre-LN baseline.
+  d_model: 192
+  n_layers: 5
+  n_heads: 6
+  d_ff: 768
+  dropout: 0.1
+  attn_dropout: 0.1
+  activation: relu          # classic Transformer FFN (Vaswani et al.)
+  tie_embeddings: true      # share token embedding ↔ LM head
+  emb_scale: true           # multiply token embeds by sqrt(d_model)
+  init_std: 0.02
+  # Residual output projections scaled by 1/sqrt(2 * n_layers)
+  scale_residual_proj: true
+
+train:
+  epochs: 12
+  batch_size: 48
+  lr: 8.0e-4
+  min_lr: 8.0e-5            # absolute floor (warmup + cosine → min_lr)
+  warmup_steps: 800         # fixed warm-up steps (not a fraction)
+  weight_decay: 0.05
+  betas: [0.9, 0.999]       # classic Adam betas
+  grad_clip: 1.0
+  amp: true
+  log_every: 40
+  resume: false
+
+eval:
+  batch_size: 128
+  train_eval_batches: 40
+  checkpoint: best          # best | final
+
+generation:
+  max_new_tokens: 400
+  prompts:
+    - "Once upon a time"
+    - "One day, a little girl named Lily"
+    - "The big dog"
+    - "Tom and his mom went to the"
+    - "Sara was sad because"
+  settings:
+    - {name: greedy, greedy: true}
+    - {name: temp_0.8, temperature: 0.8}
+    - {name: temp_1.0, temperature: 1.0}
+    - {name: temp_1.0_topp0.9, temperature: 1.0, top_p: 0.9}
+    - {name: temp_0.9_topk50, temperature: 0.9, top_k: 50}
+
+plots:
+  smooth_window: 25

@@ -1,0 +1,8 @@
+{
+  "model": "bigru",
+  "device": "NVIDIA GeForce RTX 4090",
+  "n_reviews": 38000,
+  "seconds": 1.1910650730133057,
+  "inference_examples_per_sec": 31904.21821694665,
+  "checkpoint_epoch": 1
+}

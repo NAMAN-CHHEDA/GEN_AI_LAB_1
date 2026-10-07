@@ -1,0 +1,246 @@
+
+##### train ngram_bag | run gpu | 2026-10-03 04:19:02 #####
+date: 2026-10-03T04:19:02
+torch: 2.14.1+cu126
+device: NVIDIA GeForce RTX 4090
+config:
+{
+  "seed": 42,
+  "run_name": "gpu",
+  "paths": {
+    "processed_dir": "data_processed/gpu",
+    "checkpoint_dir": "checkpoints/gpu",
+    "output_dir": "outputs/gpu"
+  },
+  "data": {
+    "dataset": "fancyzhx/yelp_polarity",
+    "train_samples": null,
+    "val_fraction": 0.1,
+    "val_samples": null,
+    "test_samples": null,
+    "vocab_max": 50000,
+    "min_freq": 3,
+    "max_len": 320,
+    "head_fraction": 0.25,
+    "lemmatize": true,
+    "stopwords": "minimal",
+    "keep_digits": true
+  },
+  "train": {
+    "epochs": 8,
+    "batch_size": 128,
+    "lr_warmup_ratio": 0.05,
+    "schedule": "cosine",
+    "grad_clip": 1.0,
+    "patience": 2,
+    "weight_decay": 0.01,
+    "amp": true,
+    "ema_decay": 0.999,
+    "length_bucketing": true
+  },
+  "models": {
+    "ngram_bag": {
+      "embed_dim": 32,
+      "bigram_buckets": 2000000,
+      "dropout": 0.4,
+      "lr": 0.002,
+      "weight_decay": 0.0
+    },
+    "transformer": {
+      "d_model": 128,
+      "layers": 2,
+      "heads": 4,
+      "ffn": 512,
+      "dropout": 0.2,
+      "token_dropout": 0.1,
+      "pool": "mean_max",
+      "lr": 0.0005
+    },
+    "bigru": {
+      "word_dim": 128,
+      "bigram_dim": 64,
+      "bigram_buckets": 500000,
+      "hidden": 128,
+      "layers": 2,
+      "rnn_dropout": 0.25,
+      "emb_dropout": 0.25,
+      "head_dropout": 0.4,
+      "pooling": "max_mean_attn",
+      "lr": 0.001
+    }
+  }
+}
+training device: cuda (NVIDIA GeForce RTX 4090)
+parameters: 65,600,033   vocab_size: 50000   epochs: 8
+train reviews: 504000, val reviews: 56000, steps/epoch: 3938, total steps: 31504
+mixed precision: torch.bfloat16
+EMA: decay 0.999
+step 100  loss 0.6742  lr 1.28e-04  grad_norm 0.114  10828 examples/s
+step 200  loss 0.6878  lr 2.55e-04  grad_norm 0.010  13635 examples/s
+step 300  loss 0.6863  lr 3.82e-04  grad_norm 0.034  13889 examples/s
+step 400  loss 0.6719  lr 5.09e-04  grad_norm 0.082  14048 examples/s
+step 500  loss 0.6249  lr 6.36e-04  grad_norm 0.053  13944 examples/s
+step 600  loss 0.5624  lr 7.63e-04  grad_norm 0.046  14108 examples/s
+step 700  loss 0.5034  lr 8.90e-04  grad_norm 0.047  13554 examples/s
+step 800  loss 0.4560  lr 1.02e-03  grad_norm 0.068  13903 examples/s
+step 900  loss 0.3443  lr 1.14e-03  grad_norm 0.068  14010 examples/s
+step 1000  loss 0.3389  lr 1.27e-03  grad_norm 0.038  13661 examples/s
+step 1100  loss 0.2982  lr 1.40e-03  grad_norm 0.048  13811 examples/s
+step 1200  loss 0.3329  lr 1.53e-03  grad_norm 0.032  13900 examples/s
+step 1300  loss 0.2313  lr 1.65e-03  grad_norm 0.033  13957 examples/s
+step 1400  loss 0.2815  lr 1.78e-03  grad_norm 0.070  13345 examples/s
+step 1500  loss 0.2669  lr 1.91e-03  grad_norm 0.041  14043 examples/s
+step 1600  loss 0.2152  lr 2.00e-03  grad_norm 0.032  14098 examples/s
+step 1700  loss 0.2339  lr 2.00e-03  grad_norm 0.030  14166 examples/s
+step 1800  loss 0.1359  lr 2.00e-03  grad_norm 0.021  14066 examples/s
+step 1900  loss 0.1630  lr 2.00e-03  grad_norm 0.036  14046 examples/s
+step 2000  loss 0.1915  lr 2.00e-03  grad_norm 0.046  13944 examples/s
+step 2100  loss 0.1489  lr 2.00e-03  grad_norm 0.027  13707 examples/s
+step 2200  loss 0.1586  lr 2.00e-03  grad_norm 0.041  13993 examples/s
+step 2300  loss 0.1333  lr 2.00e-03  grad_norm 0.041  13912 examples/s
+step 2400  loss 0.1682  lr 2.00e-03  grad_norm 0.027  13840 examples/s
+step 2500  loss 0.1146  lr 2.00e-03  grad_norm 0.026  13439 examples/s
+step 2600  loss 0.0903  lr 1.99e-03  grad_norm 0.026  13599 examples/s
+step 2700  loss 0.1366  lr 1.99e-03  grad_norm 0.036  13699 examples/s
+step 2800  loss 0.1751  lr 1.99e-03  grad_norm 0.042  13757 examples/s
+step 2900  loss 0.1426  lr 1.99e-03  grad_norm 0.044  13631 examples/s
+step 3000  loss 0.1473  lr 1.99e-03  grad_norm 0.055  13788 examples/s
+step 3100  loss 0.0905  lr 1.99e-03  grad_norm 0.025  13954 examples/s
+step 3200  loss 0.1756  lr 1.99e-03  grad_norm 0.048  13589 examples/s
+step 3300  loss 0.2028  lr 1.98e-03  grad_norm 0.050  13737 examples/s
+step 3400  loss 0.1184  lr 1.98e-03  grad_norm 0.044  13799 examples/s
+step 3500  loss 0.2208  lr 1.98e-03  grad_norm 0.064  13679 examples/s
+step 3600  loss 0.1471  lr 1.98e-03  grad_norm 0.048  13737 examples/s
+step 3700  loss 0.1656  lr 1.98e-03  grad_norm 0.042  13600 examples/s
+step 3800  loss 0.1498  lr 1.97e-03  grad_norm 0.040  13371 examples/s
+step 3900  loss 0.1695  lr 1.97e-03  grad_norm 0.038  13539 examples/s
+epoch 1/8  train_loss 0.2751  val_loss 0.1342  val_acc 0.9528  val_macro_f1 0.9528  time 36.9s  peak_mem 1768MB  nan 0
+  (validation used EMA weights, 3938 updates)
+  new best (val_loss 0.1342) -> best.pt
+step 4000  loss 0.0809  lr 1.97e-03  grad_norm 0.042  13560 examples/s
+step 4100  loss 0.1441  lr 1.97e-03  grad_norm 0.059  13471 examples/s
+step 4200  loss 0.0759  lr 1.96e-03  grad_norm 0.028  13560 examples/s
+step 4300  loss 0.0417  lr 1.96e-03  grad_norm 0.020  13701 examples/s
+step 4400  loss 0.0902  lr 1.96e-03  grad_norm 0.038  13755 examples/s
+step 4500  loss 0.0647  lr 1.95e-03  grad_norm 0.025  13990 examples/s
+step 4600  loss 0.1701  lr 1.95e-03  grad_norm 0.064  14123 examples/s
+step 4700  loss 0.0634  lr 1.95e-03  grad_norm 0.030  14060 examples/s
+step 4800  loss 0.0676  lr 1.94e-03  grad_norm 0.043  14006 examples/s
+step 4900  loss 0.1118  lr 1.94e-03  grad_norm 0.030  14145 examples/s
+step 5000  loss 0.1092  lr 1.94e-03  grad_norm 0.033  13399 examples/s
+step 5100  loss 0.0938  lr 1.93e-03  grad_norm 0.035  13708 examples/s
+step 5200  loss 0.0382  lr 1.93e-03  grad_norm 0.020  13707 examples/s
+step 5300  loss 0.0476  lr 1.92e-03  grad_norm 0.021  13708 examples/s
+step 5400  loss 0.0654  lr 1.92e-03  grad_norm 0.026  13957 examples/s
+step 5500  loss 0.0908  lr 1.92e-03  grad_norm 0.037  13708 examples/s
+step 5600  loss 0.0584  lr 1.91e-03  grad_norm 0.039  13953 examples/s
+step 5700  loss 0.0538  lr 1.91e-03  grad_norm 0.025  13711 examples/s
+step 5800  loss 0.1385  lr 1.90e-03  grad_norm 0.033  13443 examples/s
+step 5900  loss 0.0879  lr 1.90e-03  grad_norm 0.037  13731 examples/s
+step 6000  loss 0.1534  lr 1.89e-03  grad_norm 0.048  13822 examples/s
+step 6100  loss 0.0893  lr 1.89e-03  grad_norm 0.044  13800 examples/s
+step 6200  loss 0.0551  lr 1.88e-03  grad_norm 0.029  13851 examples/s
+step 6300  loss 0.0799  lr 1.88e-03  grad_norm 0.067  13810 examples/s
+step 6400  loss 0.0840  lr 1.87e-03  grad_norm 0.028  14003 examples/s
+step 6500  loss 0.0463  lr 1.87e-03  grad_norm 0.037  13618 examples/s
+step 6600  loss 0.0711  lr 1.86e-03  grad_norm 0.041  13711 examples/s
+step 6700  loss 0.1656  lr 1.86e-03  grad_norm 0.086  13794 examples/s
+step 6800  loss 0.0863  lr 1.85e-03  grad_norm 0.042  13329 examples/s
+step 6900  loss 0.0416  lr 1.85e-03  grad_norm 0.020  13886 examples/s
+step 7000  loss 0.1118  lr 1.84e-03  grad_norm 0.051  13954 examples/s
+step 7100  loss 0.0515  lr 1.84e-03  grad_norm 0.018  14018 examples/s
+step 7200  loss 0.0844  lr 1.83e-03  grad_norm 0.039  13492 examples/s
+step 7300  loss 0.1265  lr 1.82e-03  grad_norm 0.059  13838 examples/s
+step 7400  loss 0.0532  lr 1.82e-03  grad_norm 0.026  13947 examples/s
+step 7500  loss 0.1908  lr 1.81e-03  grad_norm 0.087  13326 examples/s
+step 7600  loss 0.2772  lr 1.81e-03  grad_norm 0.158  14080 examples/s
+step 7700  loss 0.0630  lr 1.80e-03  grad_norm 0.038  13972 examples/s
+step 7800  loss 0.0864  lr 1.79e-03  grad_norm 0.038  14059 examples/s
+epoch 2/8  train_loss 0.0867  val_loss 0.1224  val_acc 0.9582  val_macro_f1 0.9582  time 36.7s  peak_mem 2018MB  nan 0
+  (validation used EMA weights, 7876 updates)
+  new best (val_loss 0.1224) -> best.pt
+step 7900  loss 0.0136  lr 1.79e-03  grad_norm 0.009  13497 examples/s
+step 8000  loss 0.0318  lr 1.78e-03  grad_norm 0.047  14038 examples/s
+step 8100  loss 0.0474  lr 1.77e-03  grad_norm 0.036  13952 examples/s
+step 8200  loss 0.0769  lr 1.77e-03  grad_norm 0.042  13891 examples/s
+step 8300  loss 0.0213  lr 1.76e-03  grad_norm 0.022  13881 examples/s
+step 8400  loss 0.0239  lr 1.75e-03  grad_norm 0.016  13997 examples/s
+step 8500  loss 0.0539  lr 1.75e-03  grad_norm 0.064  13937 examples/s
+step 8600  loss 0.0368  lr 1.74e-03  grad_norm 0.024  13935 examples/s
+step 8700  loss 0.0214  lr 1.73e-03  grad_norm 0.019  13891 examples/s
+step 8800  loss 0.0250  lr 1.73e-03  grad_norm 0.016  13977 examples/s
+step 8900  loss 0.0221  lr 1.72e-03  grad_norm 0.013  13766 examples/s
+step 9000  loss 0.0489  lr 1.71e-03  grad_norm 0.037  14051 examples/s
+step 9100  loss 0.0649  lr 1.70e-03  grad_norm 0.026  13434 examples/s
+step 9200  loss 0.0499  lr 1.70e-03  grad_norm 0.042  13671 examples/s
+step 9300  loss 0.0308  lr 1.69e-03  grad_norm 0.033  13708 examples/s
+step 9400  loss 0.0281  lr 1.68e-03  grad_norm 0.019  13957 examples/s
+step 9500  loss 0.0138  lr 1.67e-03  grad_norm 0.008  13596 examples/s
+step 9600  loss 0.0205  lr 1.67e-03  grad_norm 0.016  13821 examples/s
+step 9700  loss 0.0207  lr 1.66e-03  grad_norm 0.022  13957 examples/s
+step 9800  loss 0.0630  lr 1.65e-03  grad_norm 0.043  13302 examples/s
+step 9900  loss 0.0344  lr 1.64e-03  grad_norm 0.043  13385 examples/s
+step 10000  loss 0.1111  lr 1.63e-03  grad_norm 0.042  13708 examples/s
+step 10100  loss 0.0409  lr 1.63e-03  grad_norm 0.039  13722 examples/s
+step 10200  loss 0.0373  lr 1.62e-03  grad_norm 0.075  13383 examples/s
+step 10300  loss 0.0794  lr 1.61e-03  grad_norm 0.041  13524 examples/s
+step 10400  loss 0.0558  lr 1.60e-03  grad_norm 0.056  13738 examples/s
+step 10500  loss 0.0212  lr 1.59e-03  grad_norm 0.014  13687 examples/s
+step 10600  loss 0.0300  lr 1.58e-03  grad_norm 0.036  13976 examples/s
+step 10700  loss 0.1388  lr 1.58e-03  grad_norm 0.068  13710 examples/s
+step 10800  loss 0.0266  lr 1.57e-03  grad_norm 0.024  13693 examples/s
+step 10900  loss 0.0241  lr 1.56e-03  grad_norm 0.116  13973 examples/s
+step 11000  loss 0.0533  lr 1.55e-03  grad_norm 0.067  13483 examples/s
+step 11100  loss 0.0181  lr 1.54e-03  grad_norm 0.019  13940 examples/s
+step 11200  loss 0.0221  lr 1.53e-03  grad_norm 0.030  13708 examples/s
+step 11300  loss 0.0810  lr 1.52e-03  grad_norm 0.074  13955 examples/s
+step 11400  loss 0.0904  lr 1.51e-03  grad_norm 0.080  13469 examples/s
+step 11500  loss 0.0203  lr 1.50e-03  grad_norm 0.023  13722 examples/s
+step 11600  loss 0.0691  lr 1.50e-03  grad_norm 0.068  13693 examples/s
+step 11700  loss 0.0184  lr 1.49e-03  grad_norm 0.015  13708 examples/s
+step 11800  loss 0.0436  lr 1.48e-03  grad_norm 0.055  13708 examples/s
+epoch 3/8  train_loss 0.0435  val_loss 0.1294  val_acc 0.9582  val_macro_f1 0.9582  time 36.8s  peak_mem 2018MB  nan 0
+  (validation used EMA weights, 11814 updates)
+step 11900  loss 0.0136  lr 1.47e-03  grad_norm 0.014  13130 examples/s
+step 12000  loss 0.0125  lr 1.46e-03  grad_norm 0.014  13299 examples/s
+step 12100  loss 0.1105  lr 1.45e-03  grad_norm 0.042  13236 examples/s
+step 12200  loss 0.0124  lr 1.44e-03  grad_norm 0.011  13011 examples/s
+step 12300  loss 0.0092  lr 1.43e-03  grad_norm 0.010  13232 examples/s
+step 12400  loss 0.0236  lr 1.42e-03  grad_norm 0.041  13204 examples/s
+step 12500  loss 0.0075  lr 1.41e-03  grad_norm 0.005  13756 examples/s
+step 12600  loss 0.0067  lr 1.40e-03  grad_norm 0.008  13701 examples/s
+step 12700  loss 0.0328  lr 1.39e-03  grad_norm 0.035  14042 examples/s
+step 12800  loss 0.0309  lr 1.38e-03  grad_norm 0.054  14097 examples/s
+step 12900  loss 0.0150  lr 1.37e-03  grad_norm 0.038  14159 examples/s
+step 13000  loss 0.0382  lr 1.36e-03  grad_norm 0.045  14137 examples/s
+step 13100  loss 0.0121  lr 1.35e-03  grad_norm 0.018  14143 examples/s
+step 13200  loss 0.0060  lr 1.34e-03  grad_norm 0.005  14129 examples/s
+step 13300  loss 0.0079  lr 1.33e-03  grad_norm 0.005  14095 examples/s
+step 13400  loss 0.0129  lr 1.32e-03  grad_norm 0.021  14095 examples/s
+step 13500  loss 0.0092  lr 1.31e-03  grad_norm 0.009  14129 examples/s
+step 13600  loss 0.0322  lr 1.30e-03  grad_norm 0.027  14139 examples/s
+step 13700  loss 0.0059  lr 1.29e-03  grad_norm 0.009  14124 examples/s
+step 13800  loss 0.0150  lr 1.28e-03  grad_norm 0.016  14116 examples/s
+step 13900  loss 0.0306  lr 1.27e-03  grad_norm 0.048  14074 examples/s
+step 14000  loss 0.0075  lr 1.26e-03  grad_norm 0.008  13963 examples/s
+step 14100  loss 0.0074  lr 1.25e-03  grad_norm 0.009  13892 examples/s
+step 14200  loss 0.0469  lr 1.24e-03  grad_norm 0.041  14074 examples/s
+step 14300  loss 0.1198  lr 1.23e-03  grad_norm 0.072  14072 examples/s
+step 14400  loss 0.0827  lr 1.22e-03  grad_norm 0.087  14072 examples/s
+step 14500  loss 0.0128  lr 1.21e-03  grad_norm 0.020  13962 examples/s
+step 14600  loss 0.0041  lr 1.20e-03  grad_norm 0.003  14073 examples/s
+step 14700  loss 0.0175  lr 1.19e-03  grad_norm 0.035  14120 examples/s
+step 14800  loss 0.1312  lr 1.18e-03  grad_norm 0.223  14135 examples/s
+step 14900  loss 0.0435  lr 1.17e-03  grad_norm 0.031  14111 examples/s
+step 15000  loss 0.0151  lr 1.16e-03  grad_norm 0.023  14062 examples/s
+step 15100  loss 0.0047  lr 1.15e-03  grad_norm 0.009  14021 examples/s
+step 15200  loss 0.0167  lr 1.14e-03  grad_norm 0.021  14116 examples/s
+step 15300  loss 0.0094  lr 1.13e-03  grad_norm 0.017  14074 examples/s
+step 15400  loss 0.0049  lr 1.12e-03  grad_norm 0.004  14098 examples/s
+step 15500  loss 0.0189  lr 1.11e-03  grad_norm 0.033  14139 examples/s
+step 15600  loss 0.0765  lr 1.10e-03  grad_norm 0.087  14105 examples/s
+step 15700  loss 0.0634  lr 1.09e-03  grad_norm 0.088  14060 examples/s
+epoch 4/8  train_loss 0.0227  val_loss 0.1421  val_acc 0.9561  val_macro_f1 0.9561  time 36.3s  peak_mem 2018MB  nan 0
+  (validation used EMA weights, 15752 updates)
+early stopping: no improvement for 2 epochs
+finished: best epoch 2, val_loss 0.1224, val_acc 0.9582, total time 146.7s

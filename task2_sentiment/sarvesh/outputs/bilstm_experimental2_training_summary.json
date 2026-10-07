@@ -1,0 +1,15 @@
+{
+  "model": "bilstm_experimental2",
+  "parameter_count": 4104449,
+  "training_time_sec": 583.6266326904297,
+  "average_examples_per_sec": 4324.411748945385,
+  "peak_gpu_memory_mb": 224.544921875,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "epochs": 5,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "embedding_dim": 128,
+  "hidden_dim": 128,
+  "num_layers": 1,
+  "dropout": 0.5
+}

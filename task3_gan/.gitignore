@@ -19,3 +19,8 @@ full_run_stdout.txt
 
 # Python noise (__pycache__/ and .ipynb_checkpoints/ are already listed at the top)
 *.pyc
+
+# Full CycleGAN training states exceed GitHub's 100MB file limit.
+# Inference generators G_A2B_final.pth / G_B2A_final.pth are committed instead.
+**/cyclegan_final.pth
+**/cyclegan_epoch_250.pth

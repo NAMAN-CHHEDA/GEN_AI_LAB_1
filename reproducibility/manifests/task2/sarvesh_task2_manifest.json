@@ -1,0 +1,92 @@
+{
+  "member": "sarvesh",
+  "task": "task2_sentiment",
+  "dataset": "fancyzhx/yelp_polarity",
+  "dataset_sizes": {
+    "train": 504000,
+    "val": 56000,
+    "test": 38000
+  },
+  "constraint": "no pretrained embeddings or pretrained LMs; embeddings learned from scratch",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "note": "Reported in per-model metrics/training summaries from the original run"
+  },
+  "packages_declared": [
+    "torch",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "nltk",
+    "datasets",
+    "tqdm"
+  ],
+  "requirements_file": "task2_sentiment/sarvesh/requirements.txt",
+  "source_notebooks": [
+    "task2_sentiment/sarvesh/src/01_baseline_meanpool.ipynb",
+    "task2_sentiment/sarvesh/src/02_textcnn_experimental1.ipynb",
+    "task2_sentiment/sarvesh/src/03_bilstm_experimental2.ipynb"
+  ],
+  "metrics_report": "task2_sentiment/sarvesh/metrics_report.csv",
+  "results_md": "task2_sentiment/sarvesh/results.md",
+  "failure_analysis_md": "task2_sentiment/sarvesh/failure_analysis.md",
+  "raw_logs_dir": "reproducibility/raw_logs/task2/sarvesh/",
+  "checkpoint_to_result": {
+    "baseline_meanpool": {
+      "role": "baseline",
+      "checkpoint": "task2_sentiment/sarvesh/checkpoints/baseline_best.pt",
+      "checkpoint_sha256": "ae418a4dcd1af5d2468eb0677026ae8617e44208a3fef35a9178d9baf6413cdc",
+      "best_epoch": 5,
+      "training_time_sec": 111.90751910209656,
+      "parameter_count": 3840129,
+      "accuracy": 0.9341842105263158,
+      "f1_macro": 0.9341841864151209,
+      "mcc": 0.8683690572955673,
+      "train_log": "reproducibility/raw_logs/task2/sarvesh/baseline_raw_training.log",
+      "summary_json": "task2_sentiment/sarvesh/outputs/baseline_training_summary.json",
+      "metrics_json": "task2_sentiment/sarvesh/outputs/baseline_metrics.json",
+      "predictions_csv": "task2_sentiment/sarvesh/outputs/baseline_predictions.csv",
+      "metrics_report_row": "baseline_meanpool",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "textcnn_experimental1": {
+      "role": "experimental",
+      "checkpoint": "task2_sentiment/sarvesh/checkpoints/textcnn_experimental1_best.pt",
+      "checkpoint_sha256": "906dc57daf78a621f0e4b9c5709677530c1e33f3323b6ff5a583c6b08c7a15c0",
+      "best_epoch": 5,
+      "training_time_sec": 109.092369556427,
+      "parameter_count": 4037377,
+      "accuracy": 0.9395263157894737,
+      "f1_macro": 0.9395137366573221,
+      "mcc": 0.8794184873058313,
+      "train_log": "reproducibility/raw_logs/task2/sarvesh/textcnn_experimental1_raw_training.log",
+      "summary_json": "task2_sentiment/sarvesh/outputs/textcnn_experimental1_training_summary.json",
+      "metrics_json": "task2_sentiment/sarvesh/outputs/textcnn_experimental1_metrics.json",
+      "predictions_csv": "task2_sentiment/sarvesh/outputs/textcnn_experimental1_predictions.csv",
+      "metrics_report_row": "textcnn_experimental1",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "bilstm_experimental2": {
+      "role": "experimental",
+      "checkpoint": "task2_sentiment/sarvesh/checkpoints/bilstm_experimental2_best.pt",
+      "checkpoint_sha256": "7f978fe9c56f02d66d944e8da987f4fb715d980cdfbd9c025a3f0a01775d7323",
+      "best_epoch": 5,
+      "training_time_sec": 583.6266326904297,
+      "parameter_count": 4104449,
+      "accuracy": 0.9486315789473684,
+      "f1_macro": 0.9486290617713953,
+      "mcc": 0.8973511026122952,
+      "train_log": "reproducibility/raw_logs/task2/sarvesh/bilstm_experimental2_raw_training.log",
+      "summary_json": "task2_sentiment/sarvesh/outputs/bilstm_experimental2_training_summary.json",
+      "metrics_json": "task2_sentiment/sarvesh/outputs/bilstm_experimental2_metrics.json",
+      "predictions_csv": "task2_sentiment/sarvesh/outputs/bilstm_experimental2_predictions.csv",
+      "metrics_report_row": "bilstm_experimental2",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    }
+  },
+  "notes": [
+    "Exact pip freeze from the original Windows training machine was not saved; requirements.txt lists the packages used.",
+    "All paths are repo-relative. Notebooks resolve BASE_DIR from cwd (member folder), not personal absolute paths."
+  ]
+}

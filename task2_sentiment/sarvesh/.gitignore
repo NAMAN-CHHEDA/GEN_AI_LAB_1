@@ -1,0 +1,14 @@
+# Large binaries (match team convention); keep folder placeholders
+# Uncomment the next lines if checkpoints should stay local-only:
+# checkpoints/*
+# !checkpoints/.gitkeep
+# *.pt
+# *.npy
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+.venv/
+__pycache__/
